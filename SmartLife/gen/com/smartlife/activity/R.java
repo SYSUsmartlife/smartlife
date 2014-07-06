@@ -27,42 +27,61 @@ public final class R {
         public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
-        public static final int btn_group_normal=0x7f020000;
-        public static final int btn_group_pressed=0x7f020001;
-        public static final int btn_person_normal=0x7f020002;
-        public static final int btn_person_pressed=0x7f020003;
-        public static final int btn_task_normal=0x7f020004;
-        public static final int btn_task_pressed=0x7f020005;
-        public static final int ic_launcher=0x7f020006;
-        public static final int tab_btn_bg_selector=0x7f020007;
-        public static final int tab_btn_group_selector=0x7f020008;
-        public static final int tab_btn_person_selector=0x7f020009;
-        public static final int tab_btn_task_selector=0x7f02000a;
-        public static final int tab_button_bg_normal=0x7f02000b;
-        public static final int tab_button_bg_selected=0x7f02000c;
+        public static final int bg_reg_login=0x7f020000;
+        public static final int btn_group_normal=0x7f020001;
+        public static final int btn_group_pressed=0x7f020002;
+        public static final int btn_person_normal=0x7f020003;
+        public static final int btn_person_pressed=0x7f020004;
+        public static final int btn_reg_login_normal=0x7f020005;
+        public static final int btn_reg_login_pressed=0x7f020006;
+        public static final int btn_reg_login_style=0x7f020007;
+        public static final int btn_task_normal=0x7f020008;
+        public static final int btn_task_pressed=0x7f020009;
+        public static final int ic_reg_login_mail=0x7f02000a;
+        public static final int ic_reg_login_pwd=0x7f02000b;
+        public static final int ic_reg_username=0x7f02000c;
+        public static final int logo=0x7f02000d;
+        public static final int tab_btn_bg_selector=0x7f02000e;
+        public static final int tab_btn_group_selector=0x7f02000f;
+        public static final int tab_btn_person_selector=0x7f020010;
+        public static final int tab_btn_task_selector=0x7f020011;
+        public static final int tab_button_bg_normal=0x7f020012;
+        public static final int tab_button_bg_selected=0x7f020013;
+        public static final int text_app_name=0x7f020014;
     }
     public static final class id {
-        public static final int action_settings=0x7f09000c;
-        public static final int iv_icon_com=0x7f090007;
+        public static final int action_settings=0x7f090015;
+        public static final int btn_login=0x7f090009;
+        public static final int btn_register=0x7f09000d;
+        public static final int ic_reg_login_mail=0x7f090007;
+        public static final int ic_reg_login_pwd=0x7f090008;
+        public static final int ic_reg_username=0x7f09000c;
+        public static final int img_text=0x7f09000a;
+        public static final int iv_icon_com=0x7f090010;
         public static final int ivbtn_group=0x7f090002;
         public static final int ivbtn_person=0x7f090003;
         public static final int ivbtn_task=0x7f090001;
+        public static final int layout_input=0x7f090006;
         public static final int layout_top=0x7f090004;
-        public static final int ll_container=0x7f090006;
+        public static final int ll_container=0x7f09000f;
         public static final int tab_container=0x7f090000;
-        public static final int text_top_left=0x7f09000a;
-        public static final int text_top_right=0x7f09000b;
-        public static final int text_top_title=0x7f090009;
-        public static final int tv_content_com=0x7f090008;
+        public static final int text_login_link=0x7f09000e;
+        public static final int text_reg_link=0x7f09000b;
+        public static final int text_top_left=0x7f090013;
+        public static final int text_top_right=0x7f090014;
+        public static final int text_top_title=0x7f090012;
+        public static final int tv_content_com=0x7f090011;
         public static final int viewpager_home=0x7f090005;
     }
     public static final class layout {
         public static final int activity_home=0x7f030000;
-        public static final int fragment_group=0x7f030001;
-        public static final int fragment_person=0x7f030002;
-        public static final int fragment_task=0x7f030003;
-        public static final int imageview_button_layout=0x7f030004;
-        public static final int layout_top=0x7f030005;
+        public static final int activity_login=0x7f030001;
+        public static final int activity_register=0x7f030002;
+        public static final int fragment_group=0x7f030003;
+        public static final int fragment_person=0x7f030004;
+        public static final int fragment_task=0x7f030005;
+        public static final int imageview_button_layout=0x7f030006;
+        public static final int layout_top=0x7f030007;
     }
     public static final class menu {
         public static final int main=0x7f080000;
@@ -72,8 +91,17 @@ public final class R {
         public static final int app_name=0x7f060000;
         public static final int back=0x7f060006;
         public static final int hello_world=0x7f060001;
+        public static final int input_email_hint=0x7f060007;
+        public static final int input_password_hint=0x7f060008;
+        public static final int input_username_hint=0x7f060009;
+        public static final int login=0x7f06000a;
+        public static final int register=0x7f06000b;
         public static final int text_group=0x7f060004;
+        public static final int text_login_hint=0x7f06000e;
+        public static final int text_login_link=0x7f06000f;
         public static final int text_person=0x7f060005;
+        public static final int text_reg_hint=0x7f06000c;
+        public static final int text_reg_link=0x7f06000d;
         public static final int text_task=0x7f060003;
     }
     public static final class style {
