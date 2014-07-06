@@ -4,7 +4,6 @@
 	<declare-styleable name="ImageViewButton">
 		<attr name="android:src" />
 		<attr name="android:text" />
-		<attr name="android:enabled" />
 	</declare-styleable>
 
 </resources>

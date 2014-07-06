@@ -151,34 +151,26 @@ public final class R {
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ImageViewButton_android_enabled android:enabled}</code></td><td></td></tr>
            <tr><td><code>{@link #ImageViewButton_android_src android:src}</code></td><td></td></tr>
            <tr><td><code>{@link #ImageViewButton_android_text android:text}</code></td><td></td></tr>
            </table>
-           @see #ImageViewButton_android_enabled
            @see #ImageViewButton_android_src
            @see #ImageViewButton_android_text
          */
         public static final int[] ImageViewButton = {
-            0x0101000e, 0x01010119, 0x0101014f
+            0x01010119, 0x0101014f
         };
-        /**
-          <p>This symbol is the offset where the {@link android.R.attr#enabled}
-          attribute's value can be found in the {@link #ImageViewButton} array.
-          @attr name android:enabled
-        */
-        public static final int ImageViewButton_android_enabled = 0;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#src}
           attribute's value can be found in the {@link #ImageViewButton} array.
           @attr name android:src
         */
-        public static final int ImageViewButton_android_src = 1;
+        public static final int ImageViewButton_android_src = 0;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#text}
           attribute's value can be found in the {@link #ImageViewButton} array.
           @attr name android:text
         */
-        public static final int ImageViewButton_android_text = 2;
+        public static final int ImageViewButton_android_text = 1;
     };
 }
