@@ -8,5 +8,14 @@
     <string name="text_group">群组</string>
     <string name="text_person">我</string>
     <string name="back">&lt;</string>
+    <string name="input_email_hint">请输入邮箱账号</string>
+    <string name="input_password_hint">请输入密码</string>
+    <string name="input_username_hint">请输入用户名（昵称）</string>
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+    <string name="text_reg_hint">没有账号？</string>
+    <string name="text_reg_link"><u>点此注册</u></string>
+    <string name="text_login_hint">已有账号？</string>
+    <string name="text_login_link"><u>点此登录</u></string>
 
 </resources>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_reg_login" >
+
+    <LinearLayout
+        android:id="@+id/layout_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="#ffffff"
+        android:orientation="vertical" >
+        
+		<View 
+		    android:layout_width="match_parent"
+		    android:layout_height="0.5dp"
+		    android:background="#d5d5d5"/>
+		
+		<RelativeLayout 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+        	android:padding="10dip">
+		    
+		    <ImageView
+		        android:id="@+id/ic_reg_login_mail"
+		        android:contentDescription="@string/app_name"
+		        android:layout_width="32dip"
+		        android:layout_height="32dip"
+		        android:layout_alignParentLeft="true"
+		        android:layout_centerVertical="true"
+		        android:src="@drawable/ic_reg_login_mail" />
+		    
+		    <EditText
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_toRightOf="@id/ic_reg_login_mail"
+		        android:layout_centerVertical="true"
+        		android:padding="10dip"
+		        android:hint="@string/input_email_hint"
+		        android:inputType="textEmailAddress"
+		        android:background="#ffffff"/>
+		    
+		</RelativeLayout>
+	        
+		<View 
+		    android:layout_width="match_parent"
+		    android:layout_height="0.5dp"
+		    android:background="#d5d5d5"/>
+		
+		<RelativeLayout 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+        	android:padding="10dip">
+		    
+		    <ImageView
+		        android:id="@+id/ic_reg_login_pwd"
+		        android:contentDescription="@string/app_name"
+		        android:layout_width="32dip"
+		        android:layout_height="32dip"
+		        android:layout_alignParentLeft="true"
+		        android:layout_centerVertical="true"
+		        android:src="@drawable/ic_reg_login_pwd" />
+		    
+		    <EditText
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_toRightOf="@id/ic_reg_login_pwd"
+		        android:layout_centerVertical="true"
+        		android:padding="10dip"
+		        android:hint="@string/input_password_hint"
+		        android:inputType="textPassword"
+		        android:background="#ffffff"/>
+		    
+		</RelativeLayout>
+	        
+		<View 
+		    android:layout_width="match_parent"
+		    android:layout_height="0.5dp"
+		    android:background="#d5d5d5"/>
+		
+		<RelativeLayout 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+        	android:padding="10dip">
+		    
+		    <ImageView
+		        android:id="@+id/ic_reg_username"
+		        android:contentDescription="@string/app_name"
+		        android:layout_width="32dip"
+		        android:layout_height="32dip"
+		        android:layout_alignParentLeft="true"
+		        android:layout_centerVertical="true"
+		        android:src="@drawable/ic_reg_username" />
+		    
+		    <EditText
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_toRightOf="@id/ic_reg_username"
+		        android:layout_centerVertical="true"
+        		android:padding="10dip"
+		        android:hint="@string/input_username_hint"
+		        android:inputType="textPersonName"
+		        android:background="#ffffff"/>
+		    
+		</RelativeLayout>
+	        
+		<View 
+		    android:layout_width="match_parent"
+		    android:layout_height="0.5dp"
+		    android:background="#d5d5d5"/>
+
+    </LinearLayout>
+    
+    <Button 
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_input"
+        android:background="@drawable/btn_reg_login_style"
+        android:layout_margin="10dip"
+        android:text="@string/register"/>
+    
+    <ImageView
+        android:id="@+id/img_text"
+        android:contentDescription="@string/app_name" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/layout_input"
+        android:src="@drawable/text_app_name"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/btn_login"
+        android:layout_marginBottom="10dp" >
+		
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:textSize="20sp"
+            android:text="@string/text_login_hint"/>
+		
+        <TextView 
+            android:id="@+id/text_login_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:textColor="#0d9bde"
+            android:textSize="20sp"
+            android:text="@string/text_login_link"/>
+        
+    </LinearLayout>
+
+</RelativeLayout>
