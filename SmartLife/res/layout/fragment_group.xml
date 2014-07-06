@@ -4,9 +4,9 @@
 	android:layout_height="match_parent"
 	android:orientation="vertical" >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-    </LinearLayout>
+	<com.smartlife.view.GroupHeaderTab
+	    android:id="@+id/tab_group_header"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content" />
 
 </LinearLayout>
