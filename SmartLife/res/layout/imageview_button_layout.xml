@@ -3,7 +3,7 @@
 	android:id="@+id/ll_container"
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
-	android:background="@drawable/tab_btn_bg_selector"
+	android:background="@drawable/tab_bg_selector"
 	android:descendantFocusability="blocksDescendants"
 	android:orientation="vertical"
 	android:padding="4dp" >
@@ -17,7 +17,7 @@
 		android:duplicateParentState="true"
 		android:paddingRight="2dp"
 		android:scaleType="fitCenter"
-		android:src="@drawable/tab_btn_person_selector" />
+		android:src="@drawable/tab_person_selector" />
 
 	<TextView
 		android:id="@+id/tv_content_com"
