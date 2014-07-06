@@ -32,7 +32,7 @@ public class ImageViewButton extends LinearLayout {
 	public ImageViewButton(Context context, AttributeSet attrs) {
 		super(context, attrs);
 
-		LayoutInflater.from(context).inflate(R.layout.imageview_button_layout,
+		LayoutInflater.from(context).inflate(R.layout.view_ivbtn_layout,
 				this, true);
 
 		TypedArray a = context.getTheme().obtainStyledAttributes(attrs,
