@@ -10,6 +10,11 @@ package com.smartlife.activity;
 public final class R {
     public static final class attr {
     }
+    public static final class color {
+        public static final int tab_btn_text_color_selector=0x7f040002;
+        public static final int tab_text_color_normal=0x7f040000;
+        public static final int tab_text_color_selectd=0x7f040001;
+    }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
 
@@ -18,27 +23,58 @@ public final class R {
          would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
     
          */
-        public static final int activity_horizontal_margin=0x7f040000;
-        public static final int activity_vertical_margin=0x7f040001;
+        public static final int activity_horizontal_margin=0x7f050000;
+        public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
+        public static final int btn_group_normal=0x7f020000;
+        public static final int btn_group_pressed=0x7f020001;
+        public static final int btn_person_normal=0x7f020002;
+        public static final int btn_person_pressed=0x7f020003;
+        public static final int btn_task_normal=0x7f020004;
+        public static final int btn_task_pressed=0x7f020005;
+        public static final int ic_launcher=0x7f020006;
+        public static final int tab_btn_bg_selector=0x7f020007;
+        public static final int tab_btn_group_selector=0x7f020008;
+        public static final int tab_btn_person_selector=0x7f020009;
+        public static final int tab_btn_task_selector=0x7f02000a;
+        public static final int tab_button_bg_normal=0x7f02000b;
+        public static final int tab_button_bg_selected=0x7f02000c;
     }
     public static final class id {
-        public static final int action_settings=0x7f080001;
-        public static final int container=0x7f080000;
+        public static final int action_settings=0x7f09000c;
+        public static final int iv_icon_com=0x7f090007;
+        public static final int ivbtn_group=0x7f090002;
+        public static final int ivbtn_person=0x7f090003;
+        public static final int ivbtn_task=0x7f090001;
+        public static final int layout_top=0x7f090004;
+        public static final int ll_container=0x7f090006;
+        public static final int tab_container=0x7f090000;
+        public static final int text_top_left=0x7f09000a;
+        public static final int text_top_right=0x7f09000b;
+        public static final int text_top_title=0x7f090009;
+        public static final int tv_content_com=0x7f090008;
+        public static final int viewpager_home=0x7f090005;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
-        public static final int fragment_main=0x7f030001;
+        public static final int activity_home=0x7f030000;
+        public static final int fragment_group=0x7f030001;
+        public static final int fragment_person=0x7f030002;
+        public static final int fragment_task=0x7f030003;
+        public static final int imageview_button_layout=0x7f030004;
+        public static final int layout_top=0x7f030005;
     }
     public static final class menu {
-        public static final int main=0x7f070000;
+        public static final int main=0x7f080000;
     }
     public static final class string {
-        public static final int action_settings=0x7f050002;
-        public static final int app_name=0x7f050000;
-        public static final int hello_world=0x7f050001;
+        public static final int action_settings=0x7f060002;
+        public static final int app_name=0x7f060000;
+        public static final int back=0x7f060006;
+        public static final int hello_world=0x7f060001;
+        public static final int text_group=0x7f060004;
+        public static final int text_person=0x7f060005;
+        public static final int text_task=0x7f060003;
     }
     public static final class style {
         /** 
@@ -62,10 +98,47 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f060000;
+        public static final int AppBaseTheme=0x7f070000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f060001;
+        public static final int AppTheme=0x7f070001;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a ImageViewButton.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #ImageViewButton_android_enabled android:enabled}</code></td><td></td></tr>
+           <tr><td><code>{@link #ImageViewButton_android_src android:src}</code></td><td></td></tr>
+           <tr><td><code>{@link #ImageViewButton_android_text android:text}</code></td><td></td></tr>
+           </table>
+           @see #ImageViewButton_android_enabled
+           @see #ImageViewButton_android_src
+           @see #ImageViewButton_android_text
+         */
+        public static final int[] ImageViewButton = {
+            0x0101000e, 0x01010119, 0x0101014f
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#enabled}
+          attribute's value can be found in the {@link #ImageViewButton} array.
+          @attr name android:enabled
+        */
+        public static final int ImageViewButton_android_enabled = 0;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#src}
+          attribute's value can be found in the {@link #ImageViewButton} array.
+          @attr name android:src
+        */
+        public static final int ImageViewButton_android_src = 1;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#text}
+          attribute's value can be found in the {@link #ImageViewButton} array.
+          @attr name android:text
+        */
+        public static final int ImageViewButton_android_text = 2;
+    };
 }

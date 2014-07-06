@@ -1,111 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-	
+	android:layout_width="match_parent"
+	android:layout_height="match_parent" >
+
 	<LinearLayout
-	    android:id="@+id/layout_bottom"
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    android:layout_alignParentBottom="true"
-	    android:orientation="horizontal"
-	    android:background="#f7f7f7"
-	    android:baselineAligned="false" >
-	    
-	    <RelativeLayout
-	        android:id="@+id/layout_task"
-	        android:layout_width="0dip"
-	        android:layout_height="match_parent"
-	        android:layout_weight="1">
-	        
-	        <ImageView 
-	            android:id="@+id/img_task"
-	            android:contentDescription="@string/app_name"
-	            android:layout_width="32dip"
-	            android:layout_height="32dip"
-	            android:layout_centerHorizontal="true"
-	            android:src="@drawable/btn_task_normal"/>
-	        
-			<TextView
-			    android:id="@+id/text_task"
-			    android:layout_width="match_parent"
-			    android:layout_height="wrap_content"
-			    android:layout_below="@id/img_task"
-			    android:gravity="center"
-			    android:textColor="#7597b3"
-			    android:text="@string/text_task" />
-	        
-	    </RelativeLayout>
-	    
-	    <RelativeLayout 
-	        android:id="@+id/layout_group"
-	        android:layout_width="0dip"
-	        android:layout_height="match_parent"
-	        android:layout_weight="1">
-	        
-	        <ImageView 
-	            android:id="@+id/img_group"
-	            android:contentDescription="@string/app_name"
-	            android:layout_width="32dip"
-	            android:layout_height="32dip"
-	            android:layout_centerHorizontal="true"
-	            android:src="@drawable/btn_group_normal"/>
-	        
-			<TextView
-			    android:id="@+id/text_group"
-			    android:layout_width="match_parent"
-			    android:layout_height="wrap_content"
-			    android:layout_below="@id/img_group"
-			    android:gravity="center"
-			    android:textColor="#7597b3"
-			    android:text="@string/text_group" />
-	        
-	    </RelativeLayout>
-	    
-	    <RelativeLayout 
-	        android:id="@+id/layout_person"
-	        android:layout_width="0dip"
-	        android:layout_height="match_parent"
-	        android:layout_weight="1">
-	        
-	        <ImageView 
-	            android:id="@+id/img_person"
-	            android:contentDescription="@string/app_name"
-	            android:layout_width="32dip"
-	            android:layout_height="32dip"
-	            android:layout_centerHorizontal="true"
-	            android:src="@drawable/btn_person_normal"/>
-	        
-			<TextView
-			    android:id="@+id/text_person"
-			    android:layout_width="match_parent"
-			    android:layout_height="wrap_content"
-			    android:layout_below="@id/img_person"
-			    android:gravity="center"
-			    android:textColor="#7597b3"
-			    android:text="@string/text_person" />
-	        
-	    </RelativeLayout>
-	    
+		android:id="@+id/tab_container"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:orientation="horizontal" >
+
+		<com.smartlife.view.ImageViewButton
+			android:id="@+id/ivbtn_task"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:src="@drawable/tab_btn_task_selector"
+			android:text="@string/text_task" />
+
+		<com.smartlife.view.ImageViewButton
+			android:id="@+id/ivbtn_group"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:src="@drawable/tab_btn_group_selector"
+			android:text="@string/text_group" />
+
+		<com.smartlife.view.ImageViewButton
+			android:id="@+id/ivbtn_person"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:src="@drawable/tab_btn_person_selector"
+			android:text="@string/text_person" />
 	</LinearLayout>
-	
-	<include layout="@layout/layout_top"
-	    android:id="@+id/layout_top"
-	    android:layout_alignParentTop="true"/>
-    
+
+	<include
+		android:id="@+id/layout_top"
+		android:layout_alignParentTop="true"
+		layout="@layout/layout_top" />
+
 	<android.support.v4.view.ViewPager
-	    android:id="@+id/viewpager_home"
-	    android:layout_width="match_parent"
-	    android:layout_height="match_parent"
-	    android:layout_above="@id/layout_bottom"
-	    android:layout_below="@id/layout_top">
-	    
+		android:id="@+id/viewpager_home"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_above="@id/tab_container"
+		android:layout_below="@id/layout_top" >
 	</android.support.v4.view.ViewPager>
-	
-	<View 
-	    android:layout_width="match_parent"
-	    android:layout_height="0.5dp"
-	    android:layout_below="@id/viewpager_home"
-	    android:background="#c8c8c8"/>
-    
+
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="0.5dp"
+		android:layout_below="@id/viewpager_home"
+		android:background="#c8c8c8" />
+
 </RelativeLayout>
