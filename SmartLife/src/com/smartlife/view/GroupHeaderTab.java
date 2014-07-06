@@ -36,15 +36,15 @@ public class GroupHeaderTab extends LinearLayout implements OnClickListener{
 
 	private void initView() {
 		myGroupText = (TextView)findViewById(R.id.text_my_group);
-		myGroupText.setOnClickListener(this);
 		groupMsgText = (TextView)findViewById(R.id.text_group_msg);
-		groupMsgText.setOnClickListener(this);
 		groupManagerText = (TextView)findViewById(R.id.text_group_manager);
+		myGroupText.setOnClickListener(this);
+		groupMsgText.setOnClickListener(this);
 		groupManagerText.setOnClickListener(this);
 		setSelected(TAB_MYGROUP);
 	}
 	
-	private void setOnChangeTabListener(OnChangeTabListener listener) {
+	public void setOnChangeTabListener(OnChangeTabListener listener) {
 		this.mOnChangeTabListener = listener;
 	}
 	

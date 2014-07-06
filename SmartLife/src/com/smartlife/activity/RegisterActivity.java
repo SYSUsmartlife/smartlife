@@ -38,8 +38,8 @@ public class RegisterActivity extends Activity implements OnClickListener{
 	 */
 	private void initView() {
 		registerButton = (Button)findViewById(R.id.btn_register);
-		registerButton.setOnClickListener(this);
 		loginLinkText = (TextView)findViewById(R.id.text_login_link);
+		registerButton.setOnClickListener(this);
 		loginLinkText.setOnClickListener(this);
 	}
 

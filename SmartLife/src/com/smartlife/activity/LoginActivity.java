@@ -41,8 +41,8 @@ public class LoginActivity extends Activity implements OnClickListener{
 	 */
 	private void initView() {
 		loginButton = (Button)findViewById(R.id.btn_login);
-		loginButton.setOnClickListener(this);
 		registerLinkText = (TextView)findViewById(R.id.text_reg_link);
+		loginButton.setOnClickListener(this);
 		registerLinkText.setOnClickListener(this);
 	}
 
