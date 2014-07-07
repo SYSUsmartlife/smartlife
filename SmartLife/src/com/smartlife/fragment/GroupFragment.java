@@ -17,8 +17,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.Toast;
-
 import com.smartlife.activity.R;
 import com.smartlife.adapter.GroupListAdapter;
 import com.smartlife.adapter.GroupManageAdapter;
@@ -128,7 +126,7 @@ public class GroupFragment extends Fragment implements OnChangeTabListener {
 			@Override
 			public void run() {
 				HashMap<String, Object> hashMap = new HashMap<String, Object>();
-				hashMap.put("groupName", "屌丝要逆袭");
+				hashMap.put("groupName", "屌丝要逆袭" + mGroupListData.size());
 				mGroupListData.add(hashMap);
 				handler.sendEmptyMessage(GroupHeaderTab.TAB_MYGROUP);
 			}
