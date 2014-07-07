@@ -21,10 +21,10 @@ public class GroupHeaderTab extends LinearLayout implements OnClickListener{
 
 	public final static int TAB_MYGROUP = 0;
 	public final static int TAB_GROUPMSG = 1;
-	public final static int TAB_GROUPMANAGER = 2;
+	public final static int TAB_GROUPMANAGE = 2;
 	private TextView myGroupText;
 	private TextView groupMsgText;
-	private TextView groupManagerText;
+	private TextView groupManageText;
 	private OnChangeTabListener mOnChangeTabListener = null;
 
 	public GroupHeaderTab(Context context, AttributeSet attrs) {
@@ -37,10 +37,10 @@ public class GroupHeaderTab extends LinearLayout implements OnClickListener{
 	private void initView() {
 		myGroupText = (TextView)findViewById(R.id.text_my_group);
 		groupMsgText = (TextView)findViewById(R.id.text_group_msg);
-		groupManagerText = (TextView)findViewById(R.id.text_group_manager);
+		groupManageText = (TextView)findViewById(R.id.text_group_manage);
 		myGroupText.setOnClickListener(this);
 		groupMsgText.setOnClickListener(this);
-		groupManagerText.setOnClickListener(this);
+		groupManageText.setOnClickListener(this);
 		setSelected(TAB_MYGROUP);
 	}
 	
@@ -62,8 +62,8 @@ public class GroupHeaderTab extends LinearLayout implements OnClickListener{
 		case TAB_GROUPMSG:
 			groupMsgText.setSelected(true);
 			break;
-		case TAB_GROUPMANAGER:
-			groupManagerText.setSelected(true);
+		case TAB_GROUPMANAGE:
+			groupManageText.setSelected(true);
 			break;
 		default:
 			break;
@@ -79,7 +79,7 @@ public class GroupHeaderTab extends LinearLayout implements OnClickListener{
 	private void resetToNormal() {
 		myGroupText.setSelected(false);
 		groupMsgText.setSelected(false);
-		groupManagerText.setSelected(false);
+		groupManageText.setSelected(false);
 	}
 
 	public interface OnChangeTabListener {
@@ -99,9 +99,9 @@ public class GroupHeaderTab extends LinearLayout implements OnClickListener{
 				setSelected(TAB_GROUPMSG);
 			}
 			break;
-		case R.id.text_group_manager:
-			if (!groupManagerText.isSelected()) {
-				setSelected(TAB_GROUPMANAGER);
+		case R.id.text_group_manage:
+			if (!groupManageText.isSelected()) {
+				setSelected(TAB_GROUPMANAGE);
 			}
 			break;
 		default:
