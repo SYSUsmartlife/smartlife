@@ -19,8 +19,17 @@
     <string name="text_login_link"><u>点此登录</u></string>
     <string name="text_my_group">我的群组</string>
     <string name="text_group_msg">群组消息</string>
+
+    <string name="text_group_manager">群组管理</string>
+    
+    <string name="person_info">个人资料</string>
+    <string name="person_change_password">修改密码</string>
+    <string name="person_about_software">软件相关</string>
+    <string name="person_clock">时钟</string>
+
     <string name="text_group_manage">群组管理</string>
     <string name="text_create_group">创建群组</string>
     <string name="text_search_group">查找群组</string>
+
 
 </resources>
