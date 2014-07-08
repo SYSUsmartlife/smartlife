@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+	<color name="bg_basic_color">#eeeeee</color>
 	<color name="tab_text_color_normal">#7597b3</color>
 	<color name="tab_text_color_selectd">#0cadff</color>
 	<color name="tab_header_text_color_normal">#0079ff</color>

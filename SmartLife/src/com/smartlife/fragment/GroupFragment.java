@@ -88,7 +88,7 @@ public class GroupFragment extends Fragment implements OnChangeTabListener {
 		initData();
 		mGroupHeaderTab = (GroupHeaderTab)rootView.findViewById(R.id.tab_group_header);
 		mGroupHeaderTab.setOnChangeTabListener(this);
-		mListView = (ListView)rootView.findViewById(R.id.mainListView);
+		mListView = (ListView)rootView.findViewById(R.id.list_main);
 		mListView.setAdapter(mGroupListAdapter);
 	}
 
