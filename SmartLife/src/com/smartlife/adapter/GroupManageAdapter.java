@@ -1,45 +1,54 @@
 package com.smartlife.adapter;
 
-import java.util.List;
-import java.util.Map;
+import com.smartlife.activity.R;
 
 import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 public class GroupManageAdapter extends BaseAdapter {
 
 	private Context mContext;
-	private List<Map<String, Object>> mData;
 
-	public GroupManageAdapter(Context context, List<Map<String, Object>> data) {
+	public GroupManageAdapter(Context context) {
 		mContext = context;
-		mData = data;
 	}
 
 	@Override
 	public int getCount() {
-		// TODO Auto-generated method stub
-		return 0;
+		return 1;
 	}
 
 	@Override
 	public Object getItem(int position) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public long getItemId(int position) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		// TODO Auto-generated method stub
-		return null;
+		View rootView = LayoutInflater.from(mContext).inflate(R.layout.list_item_group_manage, null);
+		initView(rootView);
+		return rootView;
+	}
+
+	private void initView(View rootView) {
+		// 阻断ListView的单项点击事件
+		rootView.setOnTouchListener(new OnTouchListener() {
+			
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				return true;
+			}
+		});
 	}
 
 }

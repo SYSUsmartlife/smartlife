@@ -58,9 +58,8 @@ public class GroupFragment extends Fragment implements OnChangeTabListener {
 	 */
 	private List<Map<String, Object>> mGroupMsgData;
 	/**
-	 * 群组管理所对应的数据
+	 * 负责接收线程数据更新的消息
 	 */
-	private List<Map<String, Object>> mGroupManageData;
 	private Handler handler = new Handler() {
 
 		@Override
@@ -96,10 +95,9 @@ public class GroupFragment extends Fragment implements OnChangeTabListener {
 	private void initData() {
 		mGroupListData = new ArrayList<Map<String,Object>>();
 		mGroupMsgData = new ArrayList<Map<String,Object>>();
-		mGroupManageData = new ArrayList<Map<String,Object>>();
 		mGroupListAdapter = new GroupListAdapter(getActivity(), mGroupListData);
 		mGroupMsgAdapter = new GroupMsgAdapter(getActivity(), mGroupMsgData);
-		mGroupManageAdapter = new GroupManageAdapter(getActivity(), mGroupManageData);
+		mGroupManageAdapter = new GroupManageAdapter(getActivity());
 	}
 
 	@Override

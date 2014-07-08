@@ -20,5 +20,7 @@
     <string name="text_my_group">我的群组</string>
     <string name="text_group_msg">群组消息</string>
     <string name="text_group_manage">群组管理</string>
+    <string name="text_create_group">创建群组</string>
+    <string name="text_search_group">查找群组</string>
 
 </resources>

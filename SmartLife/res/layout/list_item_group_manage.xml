@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dip" >
+
+    <TextView
+        android:id="@+id/text_create_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:padding="10dip"
+        android:background="@drawable/bar_create_search_selector"
+        android:drawableLeft="@drawable/ic_create_group"
+        android:drawableRight="@drawable/ic_right_arrow"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:textColor="#727272"
+        android:textSize="15sp"
+        android:text="@string/text_create_group" />
+    
+    <TextView
+        android:id="@+id/text_search_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/text_create_group"
+        android:layout_marginTop="20dip"
+        android:padding="10dip"
+        android:background="@drawable/bar_create_search_selector"
+        android:drawableLeft="@drawable/ic_search_group"
+        android:drawableRight="@drawable/ic_right_arrow"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:textColor="#727272"
+        android:textSize="15sp"
+        android:text="@string/text_search_group" />
+
+</RelativeLayout>
