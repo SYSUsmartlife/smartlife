@@ -54,7 +54,7 @@ public class GroupListAdapter extends BaseAdapter{
 		return convertView;
 	}
 	
-	class ViewHolder {
+	static class ViewHolder {
 		ImageView mGroupIcon;
 		TextView mGroupName;
 		
