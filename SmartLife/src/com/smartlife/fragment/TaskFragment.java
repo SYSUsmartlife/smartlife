@@ -1,6 +1,6 @@
 /**
- * @author 吴湧霖
- * @version 创建时间：2014年7月5日 下午4:00:11
+ * @author Zheng Xinwei
+ * @version 2014-7-5 
  */
 package com.smartlife.fragment;
 
@@ -15,12 +15,18 @@ import android.view.ViewGroup;
 /**
  * 用于呈现用户活动的相关信息的Fragment
  */
-public class TaskFragment extends Fragment{
+public class TaskFragment extends Fragment {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		return inflater.inflate(R.layout.fragment_task, null);
+		View rootView = inflater.inflate(R.layout.fragment_task, null);
+
+		this.getChildFragmentManager().beginTransaction()
+				.replace(R.id.task_content, new TaskDayFragment())
+				.addToBackStack(null).commit();
+		return rootView;
+
 	}
 
 }

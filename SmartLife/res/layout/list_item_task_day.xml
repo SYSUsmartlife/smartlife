@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/task_list_item_ll"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:padding="5dp" >
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@drawable/list_item_shadow"
+		android:padding="6dp" >
+
+		<LinearLayout
+			android:id="@+id/ll_time_range"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:background="#828"
+			android:orientation="vertical"
+			android:paddingBottom="5dp"
+			android:paddingLeft="10dp"
+			android:paddingRight="10dp"
+			android:paddingTop="5dp" >
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:text="07:00"
+				android:textColor="#fff"
+				android:textSize="28dp"
+				android:textStyle="bold" />
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="1dp"
+				android:background="#fff"
+				android:paddingLeft="35dp"
+				android:paddingRight="35dp" />
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="08:00"
+				android:textColor="#fff"
+				android:textSize="28dp"
+				android:textStyle="bold" />
+		</LinearLayout>
+
+		<TextView
+			android:id="@+id/tv_list_item_content"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_centerVertical="true"
+			android:layout_toRightOf="@id/ll_time_range"
+			android:gravity="center_vertical"
+			android:paddingLeft="10dp"
+			android:text="@string/app_name"
+			android:textSize="20sp" />
+	</RelativeLayout>
+
+</LinearLayout>

@@ -1,3 +1,7 @@
+/**
+ * @author Zheng Xinwei
+ * @version 1.0
+ */
 package com.smartlife.view;
 
 import android.content.Context;
