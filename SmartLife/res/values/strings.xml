@@ -31,6 +31,8 @@
     <string name="text_create_group">创建群组</string>
     <string name="text_search_group">查找群组</string>
     <string name="today_s_task">今天的活动</string>
+    
+    <string name="frequence_no_repeat">提醒:否</string>
 
 
 </resources>

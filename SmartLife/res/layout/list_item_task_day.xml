@@ -13,7 +13,7 @@
 		android:padding="6dp" >
 
 		<LinearLayout
-			android:id="@+id/ll_time_range"
+			android:id="@+id/list_item_ll_time_range"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_centerVertical="true"
@@ -50,15 +50,26 @@
 		</LinearLayout>
 
 		<TextView
-			android:id="@+id/tv_list_item_content"
+			android:id="@+id/list_item_tv_content"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
+			android:layout_above="@+id/list_item_tv_is_reminded"
+			android:layout_alignTop="@+id/list_item_ll_time_range"
 			android:layout_centerVertical="true"
-			android:layout_toRightOf="@id/ll_time_range"
+			android:layout_marginLeft="10dp"
+			android:layout_toRightOf="@id/list_item_ll_time_range"
 			android:gravity="center_vertical"
-			android:paddingLeft="10dp"
 			android:text="@string/app_name"
-			android:textSize="20sp" />
+			android:textSize="20dp" />
+
+		<TextView
+			android:id="@+id/list_item_tv_is_reminded"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignBottom="@id/list_item_ll_time_range"
+			android:layout_alignLeft="@id/list_item_tv_content"
+			android:text="@string/frequence_no_repeat"
+			android:textColor="@color/light_gray" />
 	</RelativeLayout>
 
 </LinearLayout>

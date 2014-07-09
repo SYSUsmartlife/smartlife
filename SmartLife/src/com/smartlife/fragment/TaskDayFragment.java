@@ -11,10 +11,12 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.smartlife.activity.R;
+import com.smartlife.adapter.TaskDayAdapter;
 
 public class TaskDayFragment extends Fragment {
 
@@ -23,17 +25,18 @@ public class TaskDayFragment extends Fragment {
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.fragment_task_day, null);
 
-		ArrayAdapter<String> adaper = new ArrayAdapter<>(getActivity(),
-				R.layout.list_item_task_day, R.id.tv_list_item_content,
-				new String[] { "TEST", "TEST", "TEST",
-						"LONGLONGLONG LONGLONGLONG LONGLONGLONG",
-						"LONGLONGLONG LONGLONGLONG LONGLONGLONG",
-						"LONGLONGLONG LONGLONGLONG",
-						"LONGLONGLONG LONGLONGLONG",
-						"LONGLONGLONG LONGLONGLONG" });
+		 ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),
+		 R.layout.list_item_task_day, R.id.list_item_tv_content,
+		 new String[] { "TEST", "TEST", "TEST",
+		 "LONGLONGLONG LONGLONGLONG LONGLONGLONG",
+		 "LONGLONGLONG LONGLONGLONG LONGLONGLONG",
+		 "LONGLONGLONG LONGLONGLONG",
+		 "LONGLONGLONG LONGLONGLONG",
+		 "LONGLONGLONG LONGLONGLONG" });
 
+//		TaskDayAdapter adapter = new TaskDayAdapter(getActivity(), null);
 		ListView lv = (ListView) rootView.findViewById(R.id.lv_person_day_task);
-		lv.setAdapter(adaper);
+		lv.setAdapter(adapter);
 		return rootView;
 	}
 }

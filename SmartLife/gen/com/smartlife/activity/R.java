@@ -13,12 +13,14 @@ public final class R {
     public static final class color {
         public static final int bg_basic_color=0x7f040000;
         public static final int default_blue=0x7f040005;
-        public static final int tab_header_text_color=0x7f040006;
+        public static final int light_blue=0x7f040006;
+        public static final int light_gray=0x7f040007;
+        public static final int tab_header_text_color=0x7f040008;
         public static final int tab_header_text_color_normal=0x7f040003;
         public static final int tab_header_text_color_selectd=0x7f040004;
         public static final int tab_text_color_normal=0x7f040001;
         public static final int tab_text_color_selectd=0x7f040002;
-        public static final int tab_text_color_selector=0x7f040007;
+        public static final int tab_text_color_selector=0x7f040009;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -75,7 +77,7 @@ public final class R {
         public static final int text_app_name=0x7f020028;
     }
     public static final class id {
-        public static final int action_settings=0x7f09002b;
+        public static final int action_settings=0x7f09002c;
         public static final int btn_login=0x7f090009;
         public static final int btn_register=0x7f090010;
         public static final int ic_group=0x7f09001e;
@@ -90,34 +92,35 @@ public final class R {
         public static final int input_email=0x7f09000c;
         public static final int input_name=0x7f09000f;
         public static final int input_password=0x7f09000d;
-        public static final int iv_icon_com=0x7f090026;
+        public static final int iv_icon_com=0x7f090027;
         public static final int ivbtn_group=0x7f090003;
         public static final int ivbtn_person=0x7f090004;
         public static final int ivbtn_task=0x7f090002;
         public static final int layout_input=0x7f090006;
         public static final int layout_top=0x7f090000;
+        public static final int list_item_ll_time_range=0x7f090023;
+        public static final int list_item_tv_content=0x7f090024;
+        public static final int list_item_tv_is_reminded=0x7f090025;
         public static final int list_main=0x7f090013;
-        public static final int ll_container=0x7f090025;
+        public static final int ll_container=0x7f090026;
         public static final int ll_task_day=0x7f090019;
-        public static final int ll_time_range=0x7f090023;
         public static final int lv_person_day_task=0x7f09001a;
         public static final int tab_container=0x7f090001;
         public static final int tab_group_header=0x7f090012;
         public static final int task_content=0x7f090018;
         public static final int task_list_item_ll=0x7f090022;
         public static final int text_create_group=0x7f090020;
-        public static final int text_group_manage=0x7f09002a;
-        public static final int text_group_msg=0x7f090029;
+        public static final int text_group_manage=0x7f09002b;
+        public static final int text_group_msg=0x7f09002a;
         public static final int text_group_name=0x7f09001f;
         public static final int text_login_link=0x7f090011;
-        public static final int text_my_group=0x7f090028;
+        public static final int text_my_group=0x7f090029;
         public static final int text_reg_link=0x7f09000b;
         public static final int text_search_group=0x7f090021;
         public static final int text_top_left=0x7f09001c;
         public static final int text_top_right=0x7f09001d;
         public static final int text_top_title=0x7f09001b;
-        public static final int tv_content_com=0x7f090027;
-        public static final int tv_list_item_content=0x7f090024;
+        public static final int tv_content_com=0x7f090028;
         public static final int viewpager_home=0x7f090005;
     }
     public static final class layout {
@@ -144,6 +147,7 @@ public final class R {
         public static final int action_settings=0x7f060002;
         public static final int app_name=0x7f060000;
         public static final int back=0x7f060006;
+        public static final int frequence_no_repeat=0x7f06001b;
         public static final int hello_world=0x7f060001;
         public static final int input_email_hint=0x7f060007;
         public static final int input_password_hint=0x7f060008;
