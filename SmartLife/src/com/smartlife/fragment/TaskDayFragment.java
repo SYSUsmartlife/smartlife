@@ -15,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.smartlife.activity.R;
+import com.smartlife.adapter.TaskDayAdapter;
 
 public class TaskDayFragment extends Fragment {
 
@@ -32,7 +33,7 @@ public class TaskDayFragment extends Fragment {
 						"LONGLONGLONG LONGLONGLONG",
 						"LONGLONGLONG LONGLONGLONG" });
 
-		// TaskDayAdapter adapter = new TaskDayAdapter(getActivity(), null);
+		TaskDayAdapter taskDayAdapter = new TaskDayAdapter(getActivity(), null);
 		ListView lv = (ListView) rootView.findViewById(R.id.lv_person_day_task);
 		lv.setAdapter(adapter);
 		return rootView;

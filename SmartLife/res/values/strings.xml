@@ -30,8 +30,7 @@
 	<string name="text_create_group">创建群组</string>
 	<string name="text_search_group">查找群组</string>
 	<string name="today_s_task">今天的活动</string>
-	
-	<string name="remind_true">提醒:是</string>
-	<string name="frequence_is_repeat_each_week">频率:每周</string>
+	<string name="remind_true">提醒:{0}</string>
+	<string name="frequence_is_repeat_each_week">频率:{0}</string>
 
 </resources>

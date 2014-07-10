@@ -8,18 +8,21 @@ package com.smartlife.model;
 
 /**
  * 任务的实体类。<br>
- * 由于内部成员存在7个，其中有5个可以为默认，因此使用构造器模式<br>
+ * 由于内部成员存在8个，其中有6个可以为默认，使用构造器模式<br>
+ * 必须提供的参数:<br>
+ * <b>taskTitle</b>, <b>taskStartTime</b><br>
  * 可以为默认的成员有： <br>
  * <b>isFinish</b> 默认为未结束<br>
  * <b>isGroupTask</b> 默认不为小组任务<br>
- * <b>isReminded</b> 默认不提醒<br>
+ * <b>isRemind</b> 默认不提醒<br>
  * <b>frequence</b> 默认频率为不重复<br>
- * <b>taskEndTime</b> 如果未设置默认为startTime</br>
+ * <b>taskEndTime</b> 如果未设置默认为startTime<br>
+ * <b>taskContent</b> 如果未设置则默认为tasktitle</br>
  * */
 public class Task {
 
 	/** 频率的枚举变量 */
-	enum Frequence {
+	public enum Frequence {
 		NONE_REPEAT, EACH_DAY, EACH_WEEK
 	}
 
@@ -28,13 +31,15 @@ public class Task {
 	/** 是否小组任务 */
 	protected boolean isGroupTask;
 	/** 是否提醒 */
-	protected boolean isReminded;
+	protected boolean isRemind;
 	/** 任务的开始时间 */
 	protected String taskStartTime;
 	/** 任务的结束时间 */
 	protected String taskEndTime;
 	/** 任务的频率 */
 	protected Frequence frequence;
+	/** 任务的标题 */
+	protected String taskTitle;
 	/** 任务的内容 */
 	protected String taskContent;
 
@@ -43,26 +48,33 @@ public class Task {
 		this.isGroupTask = builder.isGroupTask;
 		this.taskStartTime = builder.taskStartTime;
 		this.taskEndTime = builder.taskEndTime;
+		this.taskTitle = builder.taskTitle;
 		this.taskContent = builder.taskContent;
-		this.isReminded = builder.isReminded;
+		this.isRemind = builder.isRemind;
 		this.frequence = Frequence.NONE_REPEAT;
 	}
 
 	/** Task的构造器 */
 	public static class Builder {
-		String taskContent;
+		String taskTitle;
 		String taskStartTime;
 
 		// 可选参数
 		Frequence frequence = Frequence.NONE_REPEAT;
 		boolean isGroupTask = false;
-		boolean isReminded = false;
+		boolean isRemind = false;
 		boolean isFinish = false;
 		String taskEndTime;
+		String taskContent;
 
-		public Builder(String taskContent, String taskStartTime) {
-			this.taskContent = taskContent;
+		public Builder(String taskTitle, String taskStartTime) {
+			this.taskTitle = taskTitle;
 			this.taskStartTime = taskStartTime;
+		}
+
+		public Builder taskContent(String content) {
+			this.taskContent = content;
+			return this;
 		}
 
 		public Builder frequence(Frequence frequence) {
@@ -70,8 +82,8 @@ public class Task {
 			return this;
 		}
 
-		public Builder isReminded(boolean isReminded) {
-			this.isReminded = isReminded;
+		public Builder isRemind(boolean isRemind) {
+			this.isRemind = isRemind;
 			return this;
 		}
 
@@ -88,6 +100,8 @@ public class Task {
 		public Task build() {
 			if (taskEndTime == null)
 				taskEndTime = taskStartTime;
+			if (taskContent == null)
+				taskContent = taskTitle;
 			return new Task(this);
 		}
 	}
@@ -100,12 +114,12 @@ public class Task {
 		this.isGroupTask = isGroupTask;
 	}
 
-	public boolean isReminded() {
-		return isReminded;
+	public boolean isRemind() {
+		return isRemind;
 	}
 
-	public void setReminded(boolean isReminded) {
-		this.isReminded = isReminded;
+	public void setRemind(boolean isRemind) {
+		this.isRemind = isRemind;
 	}
 
 	public String getTaskStartTime() {
@@ -146,6 +160,14 @@ public class Task {
 
 	public void setFinish(boolean isFinish) {
 		this.isFinish = isFinish;
+	}
+
+	public String getTaskTitle() {
+		return taskTitle;
+	}
+
+	public void setTaskTitle(String taskTitle) {
+		this.taskTitle = taskTitle;
 	}
 
 	/**

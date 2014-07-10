@@ -51,26 +51,39 @@
 		</LinearLayout>
 
 		<TextView
+			android:id="@+id/list_item_tv_task_title"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_alignTop="@+id/list_item_ll_time_range"
+			android:layout_marginLeft="5dp"
+			android:layout_toRightOf="@+id/list_item_ll_time_range"
+			android:text="活动名称"
+			android:textSize="17dp"
+			android:textStyle="bold" />
+
+		<TextView
 			android:id="@+id/list_item_tv_task_content"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			android:layout_above="@+id/list_item_tv_is_reminded"
-			android:layout_alignTop="@+id/list_item_ll_time_range"
+			android:layout_below="@+id/list_item_tv_task_title"
 			android:layout_centerVertical="true"
 			android:layout_marginLeft="10dp"
 			android:layout_toRightOf="@id/list_item_ll_time_range"
 			android:gravity="center_vertical"
-			android:text="@string/app_name"
-			android:textSize="20dp" />
+			android:text="TEST TSET\n TEST TEST"
+			android:textColor="#888"
+			android:textSize="16dp" />
 
 		<TextView
 			android:id="@+id/list_item_tv_is_reminded"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_alignBottom="@id/list_item_ll_time_range"
-			android:layout_alignLeft="@id/list_item_tv_task_content"
+			android:layout_alignBottom="@+id/list_item_ll_time_range"
+			android:layout_alignLeft="@+id/list_item_tv_task_title"
 			android:text="@string/remind_true"
-			android:textColor="@color/light_gray" />
+			android:textColor="@color/light_gray"
+			android:textSize="13dp" />
 
 		<TextView
 			android:id="@+id/list_item_tv_task_frequence"
@@ -79,11 +92,12 @@
 			android:layout_alignBottom="@+id/list_item_ll_time_range"
 			android:layout_alignRight="@+id/list_item_tv_task_content"
 			android:text="@string/frequence_is_repeat_each_week"
-			android:textColor="@color/light_gray" />
+			android:textColor="@color/light_gray"
+			android:textSize="13dp" />
 	</RelativeLayout>
 
 	<TextView
-		android:id="@+id/list_item_tv_task_type"
+		android:id="@+id/list_item_tv_is_group"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_alignParentRight="true"
