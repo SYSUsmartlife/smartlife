@@ -1,40 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">SmartLife</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
-    <string name="text_task">活动</string>
-    <string name="text_group">群组</string>
-    <string name="text_person">我</string>
-    <string name="back">&lt;</string>
-    <string name="input_email_hint">请输入邮箱账号</string>
-    <string name="input_password_hint">请输入密码</string>
-    <string name="input_username_hint">请输入用户名（昵称）</string>
-    <string name="login">登录</string>
-    <string name="register">注册</string>
-    <string name="text_reg_hint">没有账号？</string>
-    <string name="text_reg_link"><u>点此注册</u></string>
-    <string name="text_login_hint">已有账号？</string>
-    <string name="text_login_link"><u>点此登录</u></string>
-    <string name="text_my_group">我的群组</string>
-    <string name="text_group_msg">群组消息</string>
-
-    <string name="text_group_manager">群组管理</string>
-    <string name="input_group_name_hint">请输入群组名称（20字内）</string>
-    <string name="input_group_description_hint">请输入群组简介（100字内）</string>
-    
-    <string name="person_info">个人资料</string>
-    <string name="person_change_password">修改密码</string>
-    <string name="person_about_software">软件相关</string>
-    <string name="person_clock">时钟</string>
-
-    <string name="text_group_manage">群组管理</string>
-    <string name="text_create_group">创建群组</string>
-    <string name="text_search_group">查找群组</string>
-    <string name="today_s_task">今天的活动</string>
-    
-    <string name="frequence_no_repeat">提醒:否</string>
-
+	<string name="app_name">SmartLife</string>
+	<string name="hello_world">Hello world!</string>
+	<string name="action_settings">Settings</string>
+	<string name="text_task">活动</string>
+	<string name="text_group">群组</string>
+	<string name="text_person">我</string>
+	<string name="back">&lt;</string>
+	<string name="input_email_hint">请输入邮箱账号</string>
+	<string name="input_password_hint">请输入密码</string>
+	<string name="input_username_hint">请输入用户名（昵称）</string>
+	<string name="login">登录</string>
+	<string name="register">注册</string>
+	<string name="text_reg_hint">没有账号？</string>
+	<string name="text_reg_link"><u>点此注册</u></string>
+	<string name="text_login_hint">已有账号？</string>
+	<string name="text_login_link"><u>点此登录</u></string>
+	<string name="text_my_group">我的群组</string>
+	<string name="text_group_msg">群组消息</string>
+	<string name="text_group_manager">群组管理</string>
+	<string name="input_group_name_hint">请输入群组名称（20字内）</string>
+	<string name="input_group_description_hint">请输入群组简介（100字内）</string>
+	<string name="person_info">个人资料</string>
+	<string name="person_change_password">修改密码</string>
+	<string name="person_about_software">软件相关</string>
+	<string name="person_clock">时钟</string>
+	<string name="text_group_manage">群组管理</string>
+	<string name="text_create_group">创建群组</string>
+	<string name="text_search_group">查找群组</string>
+	<string name="today_s_task">今天的活动</string>
+	
+	<string name="remind_true">提醒:是</string>
+	<string name="frequence_is_repeat_each_week">频率:每周</string>
 
 </resources>

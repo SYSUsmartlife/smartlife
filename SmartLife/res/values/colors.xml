@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="light_gray">#CCC</color>
+
+	<color name="light_gray">#CCC</color>
+	<color name="task_is_group_tag">#CC993000</color>
+	<color name="layer_shadow">#d8d8d8</color>
+
 </resources>
