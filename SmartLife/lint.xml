@@ -4,6 +4,8 @@
         <ignore path="res/layout/list_item_task_day.xml" />
     </issue>
     <issue id="SpUsage">
+        <ignore path="res/layout/fragment_task_day.xml" />
         <ignore path="res/layout/list_item_task_day.xml" />
+        <ignore path="res/layout/list_item_task_day_header.xml" />
     </issue>
 </lint>

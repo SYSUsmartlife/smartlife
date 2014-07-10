@@ -20,7 +20,7 @@ public class TaskDayAdapter extends TaskBaseAdapter<Task> {
 
 	private String[] isRemind = { "提醒：是", "提醒：否" };
 	private String[] frequence = { "频率：不重复", "频率：每天", "频率：每周" };
-	private String[] isGroup = { "个人", "小组" };
+	private String[] isGroup = { "小组", "个人" };
 
 	private int getIndex(boolean values) {
 		if (values)

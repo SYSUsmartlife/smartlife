@@ -51,7 +51,7 @@ public class Task {
 		this.taskTitle = builder.taskTitle;
 		this.taskContent = builder.taskContent;
 		this.isRemind = builder.isRemind;
-		this.frequence = Frequence.NONE_REPEAT;
+		this.frequence = builder.frequence;
 	}
 
 	/** Task的构造器 */

@@ -148,8 +148,9 @@ public final class R {
         public static final int list_item_group=0x7f03000a;
         public static final int list_item_group_manage=0x7f03000b;
         public static final int list_item_task_day=0x7f03000c;
-        public static final int view_ivbtn_layout=0x7f03000d;
-        public static final int view_tab_header=0x7f03000e;
+        public static final int list_item_task_day_header=0x7f03000d;
+        public static final int view_ivbtn_layout=0x7f03000e;
+        public static final int view_tab_header=0x7f03000f;
     }
     public static final class menu {
         public static final int main=0x7f080000;
