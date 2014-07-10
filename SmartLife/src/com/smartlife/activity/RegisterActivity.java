@@ -10,7 +10,7 @@ import org.json.JSONObject;
 import com.smartlife.network.NetworkClient;
 import com.smartlife.network.NetworkConfig;
 import com.smartlife.network.NetworkHandler;
-import com.smartlife.network.RegisterParams;
+import com.smartlife.network.params.RegisterParams;
 import com.smartlife.util.StringUtil;
 import com.smartlife.util.UIHelperUtil;
 

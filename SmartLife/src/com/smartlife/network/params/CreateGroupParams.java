@@ -2,13 +2,15 @@
  * @author 吴湧霖
  * @version 创建时间：2014年7月10日 上午12:07:14 
  */
-package com.smartlife.network;
+package com.smartlife.network.params;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
+
+import com.smartlife.network.NetworkConfig;
 
 /**
  * 创建小组请求用的参数类

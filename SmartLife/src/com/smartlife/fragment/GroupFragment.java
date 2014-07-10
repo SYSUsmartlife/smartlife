@@ -17,10 +17,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+
 import com.smartlife.activity.R;
 import com.smartlife.adapter.GroupListAdapter;
 import com.smartlife.adapter.GroupManageAdapter;
 import com.smartlife.adapter.GroupMsgAdapter;
+import com.smartlife.network.NetworkClient;
+import com.smartlife.network.NetworkConfig;
 import com.smartlife.view.GroupHeaderTab;
 import com.smartlife.view.GroupHeaderTab.OnChangeTabListener;
 
@@ -57,24 +60,6 @@ public class GroupFragment extends Fragment implements OnChangeTabListener {
 	 * 群组消息所对应的数据
 	 */
 	private List<Map<String, Object>> mGroupMsgData;
-	/**
-	 * 负责接收线程数据更新的消息
-	 */
-	private Handler handler = new Handler() {
-
-		@Override
-		public void handleMessage(Message msg) {
-			switch (msg.what) {
-			case GroupHeaderTab.TAB_MYGROUP:
-				mGroupListAdapter.notifyDataSetChanged();
-				break;
-
-			default:
-				break;
-			}
-		}
-		
-	};
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -104,7 +89,6 @@ public class GroupFragment extends Fragment implements OnChangeTabListener {
 	public void onChange(int pos) {
 		switch (pos) {
 		case GroupHeaderTab.TAB_MYGROUP:
-			getGroupListDataOnThread();
 			mListView.setAdapter(mGroupListAdapter);
 			requestToGetGroupListData();
 			break;
@@ -121,20 +105,7 @@ public class GroupFragment extends Fragment implements OnChangeTabListener {
 
 	private void requestToGetGroupListData() {
 		mGroupListData.clear();
-	}
-
-	private void getGroupListDataOnThread() {
-		new Thread() {
-
-			@Override
-			public void run() {
-				HashMap<String, Object> hashMap = new HashMap<String, Object>();
-				hashMap.put("groupName", "屌丝要逆袭" + mGroupListData.size());
-				mGroupListData.add(hashMap);
-				handler.sendEmptyMessage(GroupHeaderTab.TAB_MYGROUP);
-			}
-			
-		}.start();
+		//NetworkClient.getInstance().request(NetworkConfig.URL_GET_GROUP_LIST, params, handler);
 	}
 
 }

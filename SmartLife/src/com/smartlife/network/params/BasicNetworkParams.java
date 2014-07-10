@@ -1,4 +1,4 @@
-package com.smartlife.network;
+package com.smartlife.network.params;
 
 import java.util.List;
 
