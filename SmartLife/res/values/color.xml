@@ -6,7 +6,4 @@
 	<color name="tab_text_color_selectd">#0cadff</color>
 	<color name="tab_header_text_color_normal">#0079ff</color>
 	<color name="tab_header_text_color_selectd">#ffffff</color>
-	
-	<color name="default_blue">#0079dd</color>
-	<color name="light_blue">#0079ee</color>
-</resources>
+</resources>

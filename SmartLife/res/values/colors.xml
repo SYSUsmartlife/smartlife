@@ -4,5 +4,9 @@
 	<color name="light_gray">#CCC</color>
 	<color name="task_is_group_tag">#CC993000</color>
 	<color name="layer_shadow">#d8d8d8</color>
+	<color name="default_blue">#0079dd</color>
+	<color name="light_blue">#0079ee</color>
+	<color name="top_text_color">#4897d6</color>
+	<color name="top_text_pressed_color">#3089e0</color>
 
 </resources>

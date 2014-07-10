@@ -9,6 +9,7 @@ package com.smartlife.fragment;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.net.http.AndroidHttpClient;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -24,6 +25,7 @@ import com.smartlife.model.Task.Frequence;
 public class TaskDayFragment extends Fragment {
 
 	private List<Task> list = new ArrayList<Task>();
+	AndroidHttpClient client;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -51,4 +53,5 @@ public class TaskDayFragment extends Fragment {
 				list.add(Task.newInstance());
 		}
 	}
+
 }

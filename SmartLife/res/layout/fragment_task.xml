@@ -5,7 +5,7 @@
 	<include
 		android:id="@+id/layout_top"
 		android:layout_alignParentTop="true"
-		layout="@layout/layout_top" />
+		layout="@layout/layout_task_top" />
 
 	<FrameLayout
 		android:id="@+id/task_content"
