@@ -19,16 +19,20 @@ import android.util.Log;
 
 public class NetworkClient {
 
-	private static NetworkClient mSingleInstance;
+	private static volatile NetworkClient mSingleInstance;
 	private HttpClient mHttpClient;
 	
 	private NetworkClient() {
 		mHttpClient = new DefaultHttpClient();
 	}
 	
-	public static synchronized NetworkClient getInstance() {
+	public static NetworkClient getInstance() {
 		if (mSingleInstance == null) {
-			mSingleInstance = new NetworkClient();
+			synchronized (NetworkClient.class) {
+				if (mSingleInstance == null) {
+					mSingleInstance = new NetworkClient();
+				}
+			}
 		}
 		return mSingleInstance;
 	}

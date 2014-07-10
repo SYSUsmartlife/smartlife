@@ -106,6 +106,7 @@ public class GroupFragment extends Fragment implements OnChangeTabListener {
 		case GroupHeaderTab.TAB_MYGROUP:
 			getGroupListDataOnThread();
 			mListView.setAdapter(mGroupListAdapter);
+			requestToGetGroupListData();
 			break;
 		case GroupHeaderTab.TAB_GROUPMSG:
 			mListView.setAdapter(mGroupMsgAdapter);
@@ -116,6 +117,10 @@ public class GroupFragment extends Fragment implements OnChangeTabListener {
 		default:
 			break;
 		}
+	}
+
+	private void requestToGetGroupListData() {
+		mGroupListData.clear();
 	}
 
 	private void getGroupListDataOnThread() {

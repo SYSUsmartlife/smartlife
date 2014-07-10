@@ -18,15 +18,19 @@ public class UserConfig {
 	/**
 	 * 单例引用
 	 */
-	private static UserConfig mSingleInstance;
+	private static volatile UserConfig mSingleInstance;
 	
 	private UserConfig() {
 		userId = -1;
 	}
 	
-	public static synchronized UserConfig getInstance() {
+	public static UserConfig getInstance() {
 		if (mSingleInstance == null) {
-			mSingleInstance = new UserConfig();
+			synchronized (UserConfig.class) {
+				if (mSingleInstance == null) {
+					mSingleInstance = new UserConfig();
+				}
+			}
 		}
 		return mSingleInstance;
 	}
