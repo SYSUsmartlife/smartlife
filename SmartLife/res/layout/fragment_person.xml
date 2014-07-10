@@ -216,33 +216,6 @@
 	        android:background="@drawable/btn_reg_login_selector"
 	        android:layout_margin="10dip"
 	        android:text="@string/person_change"/>
-    </LinearLayout>
-    
-    
-    <LinearLayout
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_alignParentBottom="true"
-		android:layout_below="@id/btn_login"
-		android:layout_centerHorizontal="true"
-		android:layout_marginBottom="10dp" >
-
-		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_gravity="bottom"
-			android:text="@string/person_suggestion"
-			android:textSize="20sp" />
-
-		<TextView
-			android:id="@+id/text_reg_link"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_gravity="bottom"
-			android:text="@string/person_suggestion_link"
-			android:textColor="#0d9bde"
-			android:textSize="20sp" />
-	</LinearLayout>
-    
+    </LinearLayout> 
     
  </RelativeLayout> 
