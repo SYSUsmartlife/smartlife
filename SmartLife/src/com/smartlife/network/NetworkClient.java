@@ -14,6 +14,8 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.smartlife.network.params.BasicNetworkParams;
+
 import android.os.Message;
 import android.util.Log;
 

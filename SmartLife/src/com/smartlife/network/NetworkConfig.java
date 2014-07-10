@@ -44,4 +44,10 @@ public class NetworkConfig {
 	public final static int CODE_CREATE_GROUP_SUCCESS = 0;
 	public final static int CODE_CREATE_GROUP_FAIL = 1;
 	
+	// 获取群组列表时使用
+	public final static String URL_GET_GROUP_LIST = SERVER + "SmartLife/index.php/Api/getGroupInfoByUserId";
+	public final static String KEY_GET_GROUP_LIST_USER_ID = "userId";
+	public final static int CODE_GET_GROUP_LIST_SUCCESS = 0;
+	public final static int CODE_GET_GROUP_LIST_FAIL = 1;
+	
 }

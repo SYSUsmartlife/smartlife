@@ -7,11 +7,11 @@ package com.smartlife.activity;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.smartlife.network.CreateGroupParams;
 import com.smartlife.network.NetworkClient;
 import com.smartlife.network.NetworkConfig;
 import com.smartlife.network.NetworkHandler;
 import com.smartlife.network.UserConfig;
+import com.smartlife.network.params.CreateGroupParams;
 import com.smartlife.util.StringUtil;
 import com.smartlife.util.UIHelperUtil;
 
