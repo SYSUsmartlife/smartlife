@@ -5,13 +5,12 @@
 package com.smartlife.fragment;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.json.JSONObject;
+
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,6 +23,10 @@ import com.smartlife.adapter.GroupManageAdapter;
 import com.smartlife.adapter.GroupMsgAdapter;
 import com.smartlife.network.NetworkClient;
 import com.smartlife.network.NetworkConfig;
+import com.smartlife.network.NetworkHandler;
+import com.smartlife.network.UserConfig;
+import com.smartlife.network.params.GetGroupListParams;
+import com.smartlife.util.UIHelperUtil;
 import com.smartlife.view.GroupHeaderTab;
 import com.smartlife.view.GroupHeaderTab.OnChangeTabListener;
 
@@ -60,6 +63,27 @@ public class GroupFragment extends Fragment implements OnChangeTabListener {
 	 * 群组消息所对应的数据
 	 */
 	private List<Map<String, Object>> mGroupMsgData;
+	/**
+	 * 请求群组列表后的处理器
+	 */
+	private NetworkHandler mGetGroupListHandler = new NetworkHandler() {
+		
+		@Override
+		public void handleResponseJson(JSONObject obj) {
+//			Log.i("getGroupList", obj.toString());
+			UIHelperUtil.makeToast(getActivity(), obj.toString());
+		}
+		
+		@Override
+		public void handleResponseError(String errorMsg) {
+			//UIHelperUtil.makeToast(getActivity(), errorMsg);
+		}
+		
+		@Override
+		public void handleNetworkError(String errorMsg) {
+			//UIHelperUtil.makeToast(getActivity(), errorMsg);
+		}
+	};
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -75,6 +99,7 @@ public class GroupFragment extends Fragment implements OnChangeTabListener {
 		mGroupHeaderTab.setOnChangeTabListener(this);
 		mListView = (ListView)rootView.findViewById(R.id.list_main);
 		mListView.setAdapter(mGroupListAdapter);
+		requestToGetGroupListData();
 	}
 
 	private void initData() {
@@ -105,7 +130,8 @@ public class GroupFragment extends Fragment implements OnChangeTabListener {
 
 	private void requestToGetGroupListData() {
 		mGroupListData.clear();
-		//NetworkClient.getInstance().request(NetworkConfig.URL_GET_GROUP_LIST, params, handler);
+		GetGroupListParams params = new GetGroupListParams(UserConfig.getInstance(getActivity()).getUserId());
+		NetworkClient.getInstance().request(NetworkConfig.URL_GET_GROUP_LIST, params, mGetGroupListHandler );
 	}
 
 }

@@ -59,7 +59,7 @@ public class LoginActivity extends Activity implements OnClickListener{
 				case NetworkConfig.CODE_LOGIN_SUCCESS:
 					UIHelperUtil.makeToast(LoginActivity.this, "登陆成功！");
 					int userId = obj.getInt(NetworkConfig.KEY_RETURN_USER_ID);
-					UserConfig.getInstance().setUserId(userId);
+					UserConfig.getInstance(LoginActivity.this).setUserId(userId);
 					Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
 					//intent.putExtra(NetworkConfig.KEY_RETURN_USER_ID, userId);
 					startActivity(intent);
@@ -100,6 +100,11 @@ public class LoginActivity extends Activity implements OnClickListener{
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_login);
 		initView();
+		
+		if (UserConfig.getInstance(this).getUserId() != UserConfig.USER_ID_INVALID) {
+			Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+			startActivity(intent);
+		}
 	}
 
 	/**
