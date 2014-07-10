@@ -15,6 +15,7 @@ public class NetworkConfig {
 	
 	public final static String SERVER = "http://114.215.169.24/";
 	public final static String KEY_RETURN_CODE = "returnCode";
+	public final static String KEY_RETURN_USER_ID = "userID";
 	
 	// 用户注册使用
 	public final static String URL_REGISTER = SERVER + "SmartLife/index.php/Api/register";
@@ -26,5 +27,13 @@ public class NetworkConfig {
 	public final static int CODE_RESGISTER_NAME_INVALID = 2;
 	public final static int CODE_RESGISTER_PASSWORD_INVALID = 3;
 	public final static int CODE_RESGISTER_EMAIL_INVALID = 4;
+	
+	// 用户登陆使用
+	public final static String URL_LOGIN = SERVER + "SmartLife/index.php/Api/login";
+	public final static String KEY_LOGIN_USEREMAIL = "email";
+	public final static String KEY_LOGIN_USERPASSWORD = "password";
+	public final static int CODE_LOGIN_SUCCESS = 0;
+	public final static int CODE_LOGIN_EMAIL_UNEXIST = 1;
+	public final static int CODE_LOGIN_PASSWORD_ERROR = 2;
 	
 }

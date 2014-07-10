@@ -39,7 +39,6 @@ public class HomeActivity extends FragmentActivity implements
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_home);
-
 		initView();
 	}
 

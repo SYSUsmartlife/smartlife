@@ -7,10 +7,10 @@ package com.smartlife.activity;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.smartlife.model.RegisterParams;
 import com.smartlife.network.NetworkClient;
 import com.smartlife.network.NetworkConfig;
 import com.smartlife.network.NetworkHandler;
+import com.smartlife.network.RegisterParams;
 import com.smartlife.util.StringUtil;
 import com.smartlife.util.UIHelperUtil;
 
@@ -79,16 +79,19 @@ public class RegisterActivity extends Activity implements OnClickListener{
 				UIHelperUtil.makeToast(RegisterActivity.this, obj.toString());
 				e.printStackTrace();
 			}
+			registerButton.setEnabled(true);
 		}
 		
 		@Override
 		public void handleResponseError(String errorMsg) {
 			UIHelperUtil.makeToast(RegisterActivity.this, errorMsg);
+			registerButton.setEnabled(true);
 		}
 		
 		@Override
 		public void handleNetworkError(String errorMsg) {
 			UIHelperUtil.makeToast(RegisterActivity.this, errorMsg);
+			registerButton.setEnabled(true);
 		}
 	};
 
@@ -137,13 +140,20 @@ public class RegisterActivity extends Activity implements OnClickListener{
 		String userName = userNameEditText.getText().toString();
 		if (StringUtil.isEmpty(userEmail)) {
 			UIHelperUtil.makeToast(this, "注册邮箱不允许为空！请重新输入！");
+		} else if (StringUtil.isEmail(userEmail)) {
+			UIHelperUtil.makeToast(this, "邮箱格式非法！请重新输入！");
 		} else if (StringUtil.isEmpty(userPassword)) {
 			UIHelperUtil.makeToast(this, "密码不允许为空！请重新输入！");
+		} else if (StringUtil.isValidUserNameOrPassword(userPassword)) {
+			UIHelperUtil.makeToast(this, "密码只允许字母，数字和下划线！请重新输入！");
 		} else if (StringUtil.isEmpty(userName)) {
 			UIHelperUtil.makeToast(this, "用户昵称不允许为空！请重新输入！");
+		} else if (StringUtil.isValidUserNameOrPassword(userName)) {
+			UIHelperUtil.makeToast(this, "用户昵称只允许字母，数字和下划线！请重新输入！");
 		} else {
 			RegisterParams params = new RegisterParams(userEmail, userPassword, userName);
 			NetworkClient.getInstance().request(NetworkConfig.URL_REGISTER, params, mNetworkHandler );
+			registerButton.setEnabled(false);
 		}
 	}
 

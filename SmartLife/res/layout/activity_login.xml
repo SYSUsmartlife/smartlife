@@ -33,6 +33,7 @@
 				android:src="@drawable/ic_reg_login_mail" />
 
 			<EditText
+		        android:id="@+id/input_email"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_centerVertical="true"
@@ -63,6 +64,7 @@
 				android:src="@drawable/ic_reg_login_pwd" />
 
 			<EditText
+		        android:id="@+id/input_password"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_centerVertical="true"

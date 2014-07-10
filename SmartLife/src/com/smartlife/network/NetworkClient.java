@@ -2,6 +2,7 @@ package com.smartlife.network;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
@@ -15,8 +16,6 @@ import org.json.JSONObject;
 
 import android.os.Message;
 import android.util.Log;
-
-import com.smartlife.model.BasicNetworkParams;
 
 public class NetworkClient {
 
@@ -60,10 +59,12 @@ public class NetworkClient {
 					msg.obj = NetworkConfig.MSG_ENCODING_ERROR;
 				} catch (ClientProtocolException e) {
 					e.printStackTrace();
+					Log.i("SmartLife-Network", e.getMessage());
 					msg.what = NetworkConfig.CODE_NETWORK_ERROR;
 					msg.obj = NetworkConfig.MSG_NETWORK_ERROR;
 				} catch (IOException e) {
 					e.printStackTrace();
+					Log.i("SmartLife-Network", e.getMessage());
 					msg.what = NetworkConfig.CODE_NETWORK_ERROR;
 					msg.obj = NetworkConfig.MSG_NETWORK_ERROR;
 				} catch (JSONException e) {
