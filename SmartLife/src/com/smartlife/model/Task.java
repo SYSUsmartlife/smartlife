@@ -72,7 +72,7 @@ public class Task {
 			this.taskStartTime = taskStartTime;
 		}
 
-		public Builder taskContent(String content) {
+		public Builder content(String content) {
 			this.taskContent = content;
 			return this;
 		}
@@ -92,7 +92,7 @@ public class Task {
 			return this;
 		}
 
-		public Builder taskEndTime(String taskEndTime) {
+		public Builder endTime(String taskEndTime) {
 			this.taskEndTime = taskEndTime;
 			return this;
 		}

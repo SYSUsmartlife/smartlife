@@ -18,8 +18,8 @@ import com.smartlife.model.Task;
 
 public class TaskDayAdapter extends TaskBaseAdapter<Task> {
 
-	private String[] isRemind = { "是", "否" };
-	private String[] frequence = { "不重复", "每天", "每周" };
+	private String[] isRemind = { "提醒：是", "提醒：否" };
+	private String[] frequence = { "频率：不重复", "频率：每天", "频率：每周" };
 	private String[] isGroup = { "个人", "小组" };
 
 	private int getIndex(boolean values) {
@@ -56,6 +56,8 @@ public class TaskDayAdapter extends TaskBaseAdapter<Task> {
 					.findViewById(R.id.list_item_tv_is_reminded);
 			holder.mIsGroupTv = (TextView) convertView
 					.findViewById(R.id.list_item_tv_is_group);
+			holder.mFrequenceTv = (TextView) convertView
+					.findViewById(R.id.list_item_tv_task_frequence);
 			convertView.setTag(holder);
 		} else
 			holder = (ViewHolder) convertView.getTag();

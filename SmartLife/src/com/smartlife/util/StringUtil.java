@@ -1,6 +1,5 @@
 package com.smartlife.util;
 
-import java.text.MessageFormat;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -55,9 +54,4 @@ public class StringUtil {
 			return false;
 		}
 	}
-
-	public static String stringReplace(String content, String result) {
-		return MessageFormat.format(content, result);
-	}
-
 }

@@ -33,14 +33,12 @@ public abstract class TaskBaseAdapter<T extends Task> extends BaseAdapter {
 
 	@Override
 	public int getCount() {
-//		return mTaskList.size();
-		return 0;
+		return mTaskList.size();
 	}
 
 	@Override
 	public T getItem(int position) {
-//		return mTaskList.get(position);
-		return null;
+		return mTaskList.get(position);
 	}
 
 	@Override
