@@ -11,6 +11,7 @@ import com.smartlife.network.LoginParams;
 import com.smartlife.network.NetworkClient;
 import com.smartlife.network.NetworkConfig;
 import com.smartlife.network.NetworkHandler;
+import com.smartlife.network.UserConfig;
 import com.smartlife.util.StringUtil;
 import com.smartlife.util.UIHelperUtil;
 
@@ -58,8 +59,9 @@ public class LoginActivity extends Activity implements OnClickListener{
 				case NetworkConfig.CODE_LOGIN_SUCCESS:
 					UIHelperUtil.makeToast(LoginActivity.this, "登陆成功！");
 					int userId = obj.getInt(NetworkConfig.KEY_RETURN_USER_ID);
+					UserConfig.getInstance().setUserId(userId);
 					Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-					intent.putExtra(NetworkConfig.KEY_RETURN_USER_ID, userId);
+					//intent.putExtra(NetworkConfig.KEY_RETURN_USER_ID, userId);
 					startActivity(intent);
 					break;
 				case NetworkConfig.CODE_LOGIN_EMAIL_UNEXIST:

@@ -36,4 +36,12 @@ public class NetworkConfig {
 	public final static int CODE_LOGIN_EMAIL_UNEXIST = 1;
 	public final static int CODE_LOGIN_PASSWORD_ERROR = 2;
 	
+	// 创建群组时使用
+	public final static String URL_CREATE_GROUP = SERVER + "SmartLife/index.php/Api/createGroup";
+	public final static String KEY_CREATE_GROUP_NAME = "groupName";
+	public final static String KEY_CREATE_GROUP_USER_ID = "userId";
+	public final static String KEY_CREATE_GROUP_DESCRIPTION = "announcement";
+	public final static int CODE_CREATE_GROUP_SUCCESS = 0;
+	public final static int CODE_CREATE_GROUP_FAIL = 1;
+	
 }
