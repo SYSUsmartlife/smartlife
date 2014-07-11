@@ -71,7 +71,7 @@ public class GroupFragment extends Fragment implements OnChangeTabListener {
 		@Override
 		public void handleResponseJson(JSONObject obj) {
 //			Log.i("getGroupList", obj.toString());
-			UIHelperUtil.makeToast(getActivity(), obj.toString());
+			//UIHelperUtil.makeToast(getActivity(), obj.toString());
 		}
 		
 		@Override

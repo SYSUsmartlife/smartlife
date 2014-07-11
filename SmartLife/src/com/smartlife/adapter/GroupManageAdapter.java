@@ -2,6 +2,7 @@ package com.smartlife.adapter;
 
 import com.smartlife.activity.CreateGroupActivity;
 import com.smartlife.activity.R;
+import com.smartlife.activity.SearchGroupActivity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -89,8 +90,8 @@ public class GroupManageAdapter extends BaseAdapter implements OnClickListener {
 	 * 跳转到搜索群组页面
 	 */
 	private void ToSearchGroup() {
-		// TODO Auto-generated method stub
-		
+		Intent intent = new Intent(mContext, SearchGroupActivity.class);
+		mContext.startActivity(intent);
 	}
 
 }
