@@ -4,6 +4,14 @@
  */
 package com.smartlife.activity;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.smartlife.network.NetworkClient;
+import com.smartlife.network.NetworkConfig;
+import com.smartlife.network.NetworkHandler;
+import com.smartlife.network.UserConfig;
+import com.smartlife.network.params.CreateGroupParams;
 import com.smartlife.util.StringUtil;
 import com.smartlife.util.UIHelperUtil;
 
@@ -20,6 +28,42 @@ public class CreateGroupActivity extends Activity implements OnClickListener {
 	private EditText groupNameEditText;
 	private EditText groupDescriptionEditText;
 	private Button createGroupButton;
+	private NetworkHandler mNetworkHandler = new NetworkHandler() {
+		
+		@Override
+		public void handleResponseJson(JSONObject obj) {
+			try {
+				int returnCode = obj.getInt(NetworkConfig.KEY_RETURN_CODE);
+				switch (returnCode) {
+				case NetworkConfig.CODE_CREATE_GROUP_SUCCESS:
+					UIHelperUtil.makeToast(CreateGroupActivity.this, "创建群组成功！");
+					break;
+				case NetworkConfig.CODE_CREATE_GROUP_FAIL:
+					UIHelperUtil.makeToast(CreateGroupActivity.this, "创建群组失败！");
+					break;
+				default:
+					UIHelperUtil.makeToast(CreateGroupActivity.this, "returnCode:" + returnCode);
+					break;
+				}
+				createGroupButton.setEnabled(true);
+			} catch (JSONException e) {
+				UIHelperUtil.makeToast(CreateGroupActivity.this, obj.toString());
+				e.printStackTrace();
+			}
+		}
+		
+		@Override
+		public void handleResponseError(String errorMsg) {
+			UIHelperUtil.makeToast(CreateGroupActivity.this, errorMsg);
+			createGroupButton.setEnabled(true);
+		}
+		
+		@Override
+		public void handleNetworkError(String errorMsg) {
+			UIHelperUtil.makeToast(CreateGroupActivity.this, errorMsg);
+			createGroupButton.setEnabled(true);
+		}
+	};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +97,9 @@ public class CreateGroupActivity extends Activity implements OnClickListener {
 		if (StringUtil.isEmpty(groupName)) {
 			UIHelperUtil.makeToast(CreateGroupActivity.this, "群组名称不允许为空！");
 		} else {
-			
+			CreateGroupParams params = new CreateGroupParams(UserConfig.getInstance(this).getUserId(), groupName, groupDescription);
+			createGroupButton.setEnabled(false);
+			NetworkClient.getInstance().request(NetworkConfig.URL_CREATE_GROUP, params, mNetworkHandler);
 		}
 	}
 

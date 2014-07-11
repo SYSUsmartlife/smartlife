@@ -5,22 +5,28 @@
 package com.smartlife.fragment;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.json.JSONObject;
+
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+
 import com.smartlife.activity.R;
 import com.smartlife.adapter.GroupListAdapter;
 import com.smartlife.adapter.GroupManageAdapter;
 import com.smartlife.adapter.GroupMsgAdapter;
+import com.smartlife.network.NetworkClient;
+import com.smartlife.network.NetworkConfig;
+import com.smartlife.network.NetworkHandler;
+import com.smartlife.network.UserConfig;
+import com.smartlife.network.params.GetGroupListParams;
+import com.smartlife.util.UIHelperUtil;
 import com.smartlife.view.GroupHeaderTab;
 import com.smartlife.view.GroupHeaderTab.OnChangeTabListener;
 
@@ -58,22 +64,25 @@ public class GroupFragment extends Fragment implements OnChangeTabListener {
 	 */
 	private List<Map<String, Object>> mGroupMsgData;
 	/**
-	 * 负责接收线程数据更新的消息
+	 * 请求群组列表后的处理器
 	 */
-	private Handler handler = new Handler() {
-
+	private NetworkHandler mGetGroupListHandler = new NetworkHandler() {
+		
 		@Override
-		public void handleMessage(Message msg) {
-			switch (msg.what) {
-			case GroupHeaderTab.TAB_MYGROUP:
-				mGroupListAdapter.notifyDataSetChanged();
-				break;
-
-			default:
-				break;
-			}
+		public void handleResponseJson(JSONObject obj) {
+//			Log.i("getGroupList", obj.toString());
+			UIHelperUtil.makeToast(getActivity(), obj.toString());
 		}
 		
+		@Override
+		public void handleResponseError(String errorMsg) {
+			//UIHelperUtil.makeToast(getActivity(), errorMsg);
+		}
+		
+		@Override
+		public void handleNetworkError(String errorMsg) {
+			//UIHelperUtil.makeToast(getActivity(), errorMsg);
+		}
 	};
 
 	@Override
@@ -90,6 +99,7 @@ public class GroupFragment extends Fragment implements OnChangeTabListener {
 		mGroupHeaderTab.setOnChangeTabListener(this);
 		mListView = (ListView)rootView.findViewById(R.id.list_main);
 		mListView.setAdapter(mGroupListAdapter);
+		requestToGetGroupListData();
 	}
 
 	private void initData() {
@@ -104,8 +114,8 @@ public class GroupFragment extends Fragment implements OnChangeTabListener {
 	public void onChange(int pos) {
 		switch (pos) {
 		case GroupHeaderTab.TAB_MYGROUP:
-			getGroupListDataOnThread();
 			mListView.setAdapter(mGroupListAdapter);
+			requestToGetGroupListData();
 			break;
 		case GroupHeaderTab.TAB_GROUPMSG:
 			mListView.setAdapter(mGroupMsgAdapter);
@@ -118,18 +128,10 @@ public class GroupFragment extends Fragment implements OnChangeTabListener {
 		}
 	}
 
-	private void getGroupListDataOnThread() {
-		new Thread() {
-
-			@Override
-			public void run() {
-				HashMap<String, Object> hashMap = new HashMap<String, Object>();
-				hashMap.put("groupName", "屌丝要逆袭" + mGroupListData.size());
-				mGroupListData.add(hashMap);
-				handler.sendEmptyMessage(GroupHeaderTab.TAB_MYGROUP);
-			}
-			
-		}.start();
+	private void requestToGetGroupListData() {
+		mGroupListData.clear();
+		GetGroupListParams params = new GetGroupListParams(UserConfig.getInstance(getActivity()).getUserId());
+		NetworkClient.getInstance().request(NetworkConfig.URL_GET_GROUP_LIST, params, mGetGroupListHandler );
 	}
 
 }

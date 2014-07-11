@@ -25,7 +25,6 @@ import com.smartlife.model.Task.Frequence;
 public class TaskDayFragment extends Fragment {
 
 	private List<Task> list = new ArrayList<Task>();
-	AndroidHttpClient client;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,13 +34,14 @@ public class TaskDayFragment extends Fragment {
 		initData();
 		TaskDayAdapter taskDayAdapter = new TaskDayAdapter(getActivity(), list);
 		ListView lv = (ListView) rootView.findViewById(R.id.lv_person_day_task);
-		View v = LayoutInflater.from(getActivity()).inflate(
+		View haderView = LayoutInflater.from(getActivity()).inflate(
 				R.layout.list_item_task_day_header, null);
-		lv.addHeaderView(v);
+		lv.addHeaderView(haderView, null, false);
 		lv.setAdapter(taskDayAdapter);
 		return rootView;
 	}
 
+	// TODO 初始化数据
 	private void initData() {
 		Task task = new Task.Builder("活动名称", "11:00").endTime("22:00")
 				.frequence(Frequence.EACH_DAY).isGroupTask(true)

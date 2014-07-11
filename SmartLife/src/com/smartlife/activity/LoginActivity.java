@@ -7,13 +7,6 @@ package com.smartlife.activity;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.smartlife.network.LoginParams;
-import com.smartlife.network.NetworkClient;
-import com.smartlife.network.NetworkConfig;
-import com.smartlife.network.NetworkHandler;
-import com.smartlife.util.StringUtil;
-import com.smartlife.util.UIHelperUtil;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,6 +16,14 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.smartlife.network.NetworkClient;
+import com.smartlife.network.NetworkConfig;
+import com.smartlife.network.NetworkHandler;
+import com.smartlife.network.UserConfig;
+import com.smartlife.network.params.LoginParams;
+import com.smartlife.util.StringUtil;
+import com.smartlife.util.UIHelperUtil;
 
 /**
  * 应用程序登录界面
@@ -58,9 +59,11 @@ public class LoginActivity extends Activity implements OnClickListener{
 				case NetworkConfig.CODE_LOGIN_SUCCESS:
 					UIHelperUtil.makeToast(LoginActivity.this, "登陆成功！");
 					int userId = obj.getInt(NetworkConfig.KEY_RETURN_USER_ID);
+					UserConfig.getInstance(LoginActivity.this).setUserId(userId);
 					Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-					intent.putExtra(NetworkConfig.KEY_RETURN_USER_ID, userId);
+					//intent.putExtra(NetworkConfig.KEY_RETURN_USER_ID, userId);
 					startActivity(intent);
+					LoginActivity.this.finish();
 					break;
 				case NetworkConfig.CODE_LOGIN_EMAIL_UNEXIST:
 					UIHelperUtil.makeToast(LoginActivity.this, "该用户不存在！");
@@ -98,6 +101,12 @@ public class LoginActivity extends Activity implements OnClickListener{
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_login);
 		initView();
+		
+		if (UserConfig.getInstance(this).getUserId() != UserConfig.USER_ID_INVALID) {
+			Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+			startActivity(intent);
+			LoginActivity.this.finish();
+		}
 	}
 
 	/**
@@ -111,7 +120,7 @@ public class LoginActivity extends Activity implements OnClickListener{
 		loginButton.setOnClickListener(this);
 		registerLinkText.setOnClickListener(this);
 		
-		// 测试期间代码，开发完成后记得删除
+		// TODO 测试期间代码，开发完成后记得删除
 		userEmailEditText.setText("wyl@163.com");
 		userPasswordEditText.setText("wyl");
 	}

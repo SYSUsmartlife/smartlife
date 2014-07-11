@@ -14,21 +14,27 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.smartlife.network.params.BasicNetworkParams;
+
 import android.os.Message;
 import android.util.Log;
 
 public class NetworkClient {
 
-	private static NetworkClient mSingleInstance;
+	private static volatile NetworkClient mSingleInstance;
 	private HttpClient mHttpClient;
 	
 	private NetworkClient() {
 		mHttpClient = new DefaultHttpClient();
 	}
 	
-	public static synchronized NetworkClient getInstance() {
+	public static NetworkClient getInstance() {
 		if (mSingleInstance == null) {
-			mSingleInstance = new NetworkClient();
+			synchronized (NetworkClient.class) {
+				if (mSingleInstance == null) {
+					mSingleInstance = new NetworkClient();
+				}
+			}
 		}
 		return mSingleInstance;
 	}
@@ -71,7 +77,8 @@ public class NetworkClient {
 					e.printStackTrace();
 					msg.what = NetworkConfig.CODE_RESPONSE_ERROR;
 					msg.obj = NetworkConfig.MSG_RESPONSE_ERROR;
-					Log.i("json", returnString);
+					Log.i("json", "json" + returnString);
+					Log.i("url", url);
 				} finally {
 					handler.sendMessage(msg);
 				}
