@@ -97,7 +97,7 @@ public class CreateGroupActivity extends Activity implements OnClickListener {
 		if (StringUtil.isEmpty(groupName)) {
 			UIHelperUtil.makeToast(CreateGroupActivity.this, "群组名称不允许为空！");
 		} else {
-			CreateGroupParams params = new CreateGroupParams(UserConfig.getInstance().getUserId(), groupName, groupDescription);
+			CreateGroupParams params = new CreateGroupParams(UserConfig.getInstance(this).getUserId(), groupName, groupDescription);
 			createGroupButton.setEnabled(false);
 			NetworkClient.getInstance().request(NetworkConfig.URL_CREATE_GROUP, params, mNetworkHandler);
 		}

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content" >
+
+	<RelativeLayout
+		android:id="@+id/layout_top"
+		android:layout_width="match_parent"
+		android:layout_height="48dp"
+		android:background="#f7f7f7" >
+
+		<TextView
+			android:id="@+id/text_top_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:padding="10dp"
+			android:textSize="20dp"
+			android:text="@string/today"
+			android:textColor="#3089e0" />
+
+		<TextView
+			android:id="@+id/task_top_tv_change_view"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignBaseline="@+id/text_top_title"
+			android:layout_alignBottom="@+id/text_top_title"
+			android:layout_alignParentLeft="true"
+			android:padding="10dp"
+			android:text="日/周"
+			android:textColor="@color/top_text_color"
+			android:textSize="16dp" />
+
+		<ImageView
+			android:id="@+id/task_top_iv_add_task"
+			android:layout_width="50dp"
+			android:layout_height="match_parent"
+			android:layout_alignParentRight="true"
+			android:scaleType="fitCenter"
+			android:src="@drawable/ic_task_new" />
+	</RelativeLayout>
+
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="0.5dip"
+		android:layout_below="@id/layout_top"
+		android:background="#d9d9d9" />
+
+</RelativeLayout>

@@ -77,7 +77,8 @@ public class NetworkClient {
 					e.printStackTrace();
 					msg.what = NetworkConfig.CODE_RESPONSE_ERROR;
 					msg.obj = NetworkConfig.MSG_RESPONSE_ERROR;
-					Log.i("json", returnString);
+					Log.i("json", "json" + returnString);
+					Log.i("url", url);
 				} finally {
 					handler.sendMessage(msg);
 				}

@@ -9,25 +9,6 @@
 	android:paddingLeft="10dp"
 	android:paddingRight="10dp" >
 
-	<TextView
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="10dp"
-		android:gravity="center_vertical"
-		android:paddingBottom="5dp"
-		android:paddingLeft="15dp"
-		android:paddingTop="5dp"
-		android:text="@string/today_s_task"
-		android:textColor="@color/default_blue"
-		android:textSize="18dp"
-		android:textStyle="bold" />
-
-	<View
-		android:layout_width="match_parent"
-		android:layout_height="1dp"
-		android:layout_marginLeft="10dp"
-		android:layout_marginRight="10dp"
-		android:background="#DDD" />
 
 	<ListView
 		android:id="@+id/lv_person_day_task"
@@ -36,6 +17,7 @@
 		android:background="@android:color/transparent"
 		android:divider="@null"
 		android:scrollbars="none"
+		tools:listheader="@layout/list_item_task_day_header"
 		tools:listitem="@layout/list_item_task_day" />
 
 </LinearLayout>

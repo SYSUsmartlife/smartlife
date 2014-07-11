@@ -5,7 +5,10 @@
 	android:layout_height="match_parent"
 	android:padding="5dp" >
 
+	<!-- android:layout_height="match_parent" -->
+
 	<RelativeLayout
+		android:id="@+id/list_item_rl_content"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:background="@drawable/list_item_shadow"
@@ -71,7 +74,7 @@
 			android:layout_marginLeft="10dp"
 			android:layout_toRightOf="@id/list_item_ll_time_range"
 			android:gravity="center_vertical"
-			android:text="TEST TSET\n TEST TEST"
+			android:text="TEST TSET TEST TEST \n TEST TEST TEST TEST"
 			android:textColor="#888"
 			android:textSize="16dp" />
 
@@ -90,7 +93,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_alignBottom="@+id/list_item_ll_time_range"
-			android:layout_alignRight="@+id/list_item_tv_task_content"
+			android:layout_alignParentRight="true"
 			android:text="@string/frequence_is_repeat_each_week"
 			android:textColor="@color/light_gray"
 			android:textSize="13dp" />

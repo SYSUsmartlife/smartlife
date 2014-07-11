@@ -8,7 +8,7 @@ package com.smartlife.model;
 
 /**
  * 任务的实体类。<br>
- * 由于内部成员存在8个，其中有6个可以为默认，使用构造器模式<br>
+ * 由于内部成员存在10个，其中有8个可以为默认，使用构造器模式<br>
  * 必须提供的参数:<br>
  * <b>taskTitle</b>, <b>taskStartTime</b><br>
  * 可以为默认的成员有： <br>
@@ -16,7 +16,8 @@ package com.smartlife.model;
  * <b>isGroupTask</b> 默认不为小组任务<br>
  * <b>isRemind</b> 默认不提醒<br>
  * <b>frequence</b> 默认频率为不重复<br>
- * <b>taskEndTime</b> 如果未设置默认为startTime<br>
+ * <b>taskStartDate</b> 默认为当天 <b>taskEndDate</b> 默认为当天 <b>taskEndTime</b>
+ * 如果未设置默认为startTime<br>
  * <b>taskContent</b> 如果未设置则默认为tasktitle</br>
  * */
 public class Task {
@@ -32,6 +33,10 @@ public class Task {
 	protected boolean isGroupTask;
 	/** 是否提醒 */
 	protected boolean isRemind;
+	/** 任务的开始日期 */
+	protected String taskStartDate;
+	/** 任务的结束日期 */
+	protected String taskEndDate;
 	/** 任务的开始时间 */
 	protected String taskStartTime;
 	/** 任务的结束时间 */
@@ -46,12 +51,14 @@ public class Task {
 	private Task(Builder builder) {
 		this.isFinish = builder.isFinish;
 		this.isGroupTask = builder.isGroupTask;
+		this.taskStartDate = builder.taskStartDate;
+		this.taskEndDate = builder.taskEndDate;
 		this.taskStartTime = builder.taskStartTime;
 		this.taskEndTime = builder.taskEndTime;
 		this.taskTitle = builder.taskTitle;
 		this.taskContent = builder.taskContent;
 		this.isRemind = builder.isRemind;
-		this.frequence = Frequence.NONE_REPEAT;
+		this.frequence = builder.frequence;
 	}
 
 	/** Task的构造器 */
@@ -64,6 +71,8 @@ public class Task {
 		boolean isGroupTask = false;
 		boolean isRemind = false;
 		boolean isFinish = false;
+		String taskStartDate;
+		String taskEndDate;
 		String taskEndTime;
 		String taskContent;
 
@@ -79,6 +88,16 @@ public class Task {
 
 		public Builder frequence(Frequence frequence) {
 			this.frequence = frequence;
+			return this;
+		}
+
+		public Builder startDate(String startDate) {
+			this.taskStartDate = startDate;
+			return this;
+		}
+
+		public Builder endDate(String endDate) {
+			this.taskEndDate = endDate;
 			return this;
 		}
 
@@ -102,8 +121,21 @@ public class Task {
 				taskEndTime = taskStartTime;
 			if (taskContent == null)
 				taskContent = taskTitle;
+			// TODO 获取当前日期
+			if (taskStartDate == null)
+				taskStartDate = "2014-12-3";
+			if (taskEndDate == null)
+				taskEndDate = "2014-12-3";
 			return new Task(this);
 		}
+	}
+
+	public boolean isFinish() {
+		return isFinish;
+	}
+
+	public void setFinish(boolean isFinish) {
+		this.isFinish = isFinish;
 	}
 
 	public boolean isGroupTask() {
@@ -120,6 +152,22 @@ public class Task {
 
 	public void setRemind(boolean isRemind) {
 		this.isRemind = isRemind;
+	}
+
+	public String getTaskStartDate() {
+		return taskStartDate;
+	}
+
+	public void setTaskStartDate(String taskStartDate) {
+		this.taskStartDate = taskStartDate;
+	}
+
+	public String getTaskEndDate() {
+		return taskEndDate;
+	}
+
+	public void setTaskEndDate(String taskEndDate) {
+		this.taskEndDate = taskEndDate;
 	}
 
 	public String getTaskStartTime() {
@@ -146,28 +194,20 @@ public class Task {
 		this.frequence = frequence;
 	}
 
-	public String getTaskContent() {
-		return taskContent;
-	}
-
-	public void setTaskContent(String taskContent) {
-		this.taskContent = taskContent;
-	}
-
-	public boolean isFinish() {
-		return isFinish;
-	}
-
-	public void setFinish(boolean isFinish) {
-		this.isFinish = isFinish;
-	}
-
 	public String getTaskTitle() {
 		return taskTitle;
 	}
 
 	public void setTaskTitle(String taskTitle) {
 		this.taskTitle = taskTitle;
+	}
+
+	public String getTaskContent() {
+		return taskContent;
+	}
+
+	public void setTaskContent(String taskContent) {
+		this.taskContent = taskContent;
 	}
 
 	/**

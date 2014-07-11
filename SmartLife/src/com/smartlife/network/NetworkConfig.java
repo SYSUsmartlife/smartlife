@@ -16,6 +16,10 @@ public class NetworkConfig {
 	public final static String SERVER = "http://114.215.169.24/";
 	public final static String KEY_RETURN_CODE = "returnCode";
 	public final static String KEY_RETURN_USER_ID = "userID";
+	public final static String KEY_RETURN_GROUP_INFO = "groupInfo";
+	public final static String KEY_RETURN_GROUP_ID = "groupId";
+	public final static String KEY_RETURN_GROUP_NAME = "groupName";
+	public final static String KEY_RETURN_GROUP_DESCRIPTION = "groupAnnouncement";
 	
 	// 用户注册使用
 	public final static String URL_REGISTER = SERVER + "SmartLife/index.php/Api/register";
@@ -49,5 +53,11 @@ public class NetworkConfig {
 	public final static String KEY_GET_GROUP_LIST_USER_ID = "userId";
 	public final static int CODE_GET_GROUP_LIST_SUCCESS = 0;
 	public final static int CODE_GET_GROUP_LIST_FAIL = 1;
+	
+	// 获取群组列表时使用
+	public final static String URL_SEARCH_GROUP = SERVER + "SmartLife/index.php/Api/searchGroupByName";
+	public final static String KEY_SEARCH_GROUP_NAME = "groupName";
+	public final static int CODE_SEARCH_GROUP_SUCCESS = 0;
+	public final static int CODE_SEARCH_GROUP_FAIL = 1;
 	
 }

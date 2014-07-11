@@ -20,10 +20,8 @@ import com.smartlife.activity.R;
 public class GroupHeaderTab extends LinearLayout implements OnClickListener{
 
 	public final static int TAB_MYGROUP = 0;
-	public final static int TAB_GROUPMSG = 1;
-	public final static int TAB_GROUPMANAGE = 2;
+	public final static int TAB_GROUPMANAGE = 1;
 	private TextView myGroupText;
-	private TextView groupMsgText;
 	private TextView groupManageText;
 	private OnChangeTabListener mOnChangeTabListener = null;
 
@@ -36,10 +34,8 @@ public class GroupHeaderTab extends LinearLayout implements OnClickListener{
 
 	private void initView() {
 		myGroupText = (TextView)findViewById(R.id.text_my_group);
-		groupMsgText = (TextView)findViewById(R.id.text_group_msg);
 		groupManageText = (TextView)findViewById(R.id.text_group_manage);
 		myGroupText.setOnClickListener(this);
-		groupMsgText.setOnClickListener(this);
 		groupManageText.setOnClickListener(this);
 		setSelected(TAB_MYGROUP);
 	}
@@ -59,9 +55,6 @@ public class GroupHeaderTab extends LinearLayout implements OnClickListener{
 		case TAB_MYGROUP:
 			myGroupText.setSelected(true);
 			break;
-		case TAB_GROUPMSG:
-			groupMsgText.setSelected(true);
-			break;
 		case TAB_GROUPMANAGE:
 			groupManageText.setSelected(true);
 			break;
@@ -78,7 +71,6 @@ public class GroupHeaderTab extends LinearLayout implements OnClickListener{
 	 */
 	private void resetToNormal() {
 		myGroupText.setSelected(false);
-		groupMsgText.setSelected(false);
 		groupManageText.setSelected(false);
 	}
 
@@ -94,11 +86,6 @@ public class GroupHeaderTab extends LinearLayout implements OnClickListener{
 				setSelected(TAB_MYGROUP);
 			}
 			break;
-		case R.id.text_group_msg:
-			if (!groupMsgText.isSelected()) {
-				setSelected(TAB_GROUPMSG);
-			}
-			break;
 		case R.id.text_group_manage:
 			if (!groupManageText.isSelected()) {
 				setSelected(TAB_GROUPMANAGE);
@@ -106,6 +93,16 @@ public class GroupHeaderTab extends LinearLayout implements OnClickListener{
 			break;
 		default:
 			break;
+		}
+	}
+	
+	public int getCurrentPos() {
+		if (myGroupText.isSelected()) {
+			return TAB_MYGROUP;
+		} else if (groupManageText.isSelected()) {
+			return TAB_GROUPMANAGE;
+		} else {
+			return -1;
 		}
 	}
 
