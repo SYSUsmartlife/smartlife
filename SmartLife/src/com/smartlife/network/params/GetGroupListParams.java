@@ -21,6 +21,7 @@ public class GetGroupListParams extends BasicNetworkParams{
 	
 
 	public GetGroupListParams(int userId) {
+		super();
 		this.userId = userId;
 	}
 

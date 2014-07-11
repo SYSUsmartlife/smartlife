@@ -54,4 +54,10 @@ public class NetworkConfig {
 	public final static int CODE_GET_GROUP_LIST_SUCCESS = 0;
 	public final static int CODE_GET_GROUP_LIST_FAIL = 1;
 	
+	// 获取群组列表时使用
+	public final static String URL_SEARCH_GROUP = SERVER + "SmartLife/index.php/Api/searchGroupByName";
+	public final static String KEY_SEARCH_GROUP_NAME = "groupName";
+	public final static int CODE_SEARCH_GROUP_SUCCESS = 0;
+	public final static int CODE_SEARCH_GROUP_FAIL = 1;
+	
 }

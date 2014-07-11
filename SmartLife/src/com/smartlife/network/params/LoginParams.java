@@ -22,6 +22,7 @@ public class LoginParams extends BasicNetworkParams{
 	
 	
 	public LoginParams(String userEmail, String userPassword) {
+		super();
 		this.userEmail = userEmail;
 		this.userPassword = userPassword;
 	}

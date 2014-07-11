@@ -18,6 +18,7 @@ public class RegisterParams extends BasicNetworkParams {
 	private String userName;
 
 	public RegisterParams(String userEmail, String userPassword, String userName) {
+		super();
 		this.userEmail = userEmail;
 		this.userPassword = userPassword;
 		this.userName = userName;
