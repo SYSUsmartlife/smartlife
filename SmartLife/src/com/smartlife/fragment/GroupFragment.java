@@ -5,13 +5,17 @@
 package com.smartlife.fragment;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,18 +74,46 @@ public class GroupFragment extends Fragment implements OnChangeTabListener {
 		
 		@Override
 		public void handleResponseJson(JSONObject obj) {
-//			Log.i("getGroupList", obj.toString());
-			//UIHelperUtil.makeToast(getActivity(), obj.toString());
+			Log.i("getGroupList", obj.toString());
+			try {
+				int returnCode = obj.getInt(NetworkConfig.KEY_RETURN_CODE);
+				switch (returnCode) {
+				case NetworkConfig.CODE_GET_GROUP_LIST_SUCCESS:
+					JSONArray groupArray = obj.getJSONArray(NetworkConfig.KEY_RETURN_GROUP_INFO);
+					for (int i = 0; i < groupArray.length(); i++) {
+						JSONObject group = groupArray.getJSONObject(i);
+						int groupId = group.getInt(NetworkConfig.KEY_RETURN_GROUP_ID);
+						String groupName = group.getString(NetworkConfig.KEY_RETURN_GROUP_NAME);
+						String groupDescription = group.getString(NetworkConfig.KEY_RETURN_GROUP_DESCRIPTION);
+						HashMap<String, Object> hashMap = new HashMap<String, Object>();
+						hashMap.put(NetworkConfig.KEY_RETURN_GROUP_ID, groupId);
+						hashMap.put(NetworkConfig.KEY_RETURN_GROUP_NAME, groupName);
+						hashMap.put(NetworkConfig.KEY_RETURN_GROUP_DESCRIPTION, groupDescription);
+						mGroupListData.add(hashMap);
+					}
+					mGroupListAdapter.notifyDataSetChanged();
+					break;
+				case NetworkConfig.CODE_GET_GROUP_LIST_FAIL:
+					UIHelperUtil.makeToast(getActivity(), "请求群组列表失败！");
+					break;
+				default:
+					UIHelperUtil.makeToast(getActivity(), "returnCode:" + returnCode);
+					break;
+				}
+			} catch (JSONException e) {
+				UIHelperUtil.makeToast(getActivity(), obj.toString());
+				e.printStackTrace();
+			}
 		}
 		
 		@Override
 		public void handleResponseError(String errorMsg) {
-			//UIHelperUtil.makeToast(getActivity(), errorMsg);
+			UIHelperUtil.makeToast(getActivity(), errorMsg);
 		}
 		
 		@Override
 		public void handleNetworkError(String errorMsg) {
-			//UIHelperUtil.makeToast(getActivity(), errorMsg);
+			UIHelperUtil.makeToast(getActivity(), errorMsg);
 		}
 	};
 
