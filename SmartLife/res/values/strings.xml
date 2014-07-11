@@ -22,7 +22,6 @@
 	<string name="text_group_manager">群组管理</string>
 	<string name="input_group_name_hint">请输入群组名称（20字内）</string>
 	<string name="input_group_description_hint">请输入群组简介（100字内）</string>
-	
 	<string name="person_info">个人资料</string>
     <string name="person_change_username">修改用户名</string>
     <string name="person_change_password">修改密码</string>
@@ -30,11 +29,6 @@
     <string name="person_exit">退出</string>
     <string name="person_change">切换账号</string>
     <string name="person_software">软件相关</string>
-    <string name="person_info_email">邮箱</string>
-	<string name="person_info_username">用户名</string>
-	<string name="person_info_totalGroups">组数</string>
-    
-	
 	<string name="text_group_manage">群组管理</string>
 	<string name="text_create_group">创建群组</string>
 	<string name="text_search_group">查找群组</string>
