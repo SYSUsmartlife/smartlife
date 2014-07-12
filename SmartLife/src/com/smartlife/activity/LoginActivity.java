@@ -63,7 +63,7 @@ public class LoginActivity extends Activity implements OnClickListener{
 					Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
 					//intent.putExtra(NetworkConfig.KEY_RETURN_USER_ID, userId);
 					startActivity(intent);
-					LoginActivity.this.finish();
+					//LoginActivity.this.finish();
 					break;
 				case NetworkConfig.CODE_LOGIN_EMAIL_UNEXIST:
 					UIHelperUtil.makeToast(LoginActivity.this, "该用户不存在！");
@@ -105,7 +105,7 @@ public class LoginActivity extends Activity implements OnClickListener{
 		if (UserConfig.getInstance(this).getUserId() != UserConfig.USER_ID_INVALID) {
 			Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
 			startActivity(intent);
-			LoginActivity.this.finish();
+			//LoginActivity.this.finish();
 		}
 	}
 

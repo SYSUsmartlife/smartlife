@@ -36,6 +36,10 @@
 	<string name="text_search_group">查找群组</string>
 	<string name="text_search">查找</string>
 	<string name="text_join">申请加入</string>
+	<string name="text_view_request">查看群组申请</string>
+	<string name="text_invite">邀请用户加入</string>
+	<string name="text_view_group_member">查看群组成员</string>
+	<string name="text_view_group_task">查看群组活动</string>
 	<string name="today_s_task">今天的活动</string>
 	<string name="remind_true">提醒:是</string>
 	<string name="frequence_is_repeat_each_week">频率:不重复</string>
