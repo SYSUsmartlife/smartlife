@@ -16,6 +16,8 @@ public class NetworkConfig {
 	public final static String SERVER = "http://114.215.169.24/";
 	public final static String KEY_RETURN_CODE = "returnCode";
 	public final static String KEY_RETURN_USER_ID = "userID";
+	public final static String KEY_RETURN_USER_NAME = "userName";
+	public final static String KEY_RETURN_EMAIL = "email";
 	public final static String KEY_RETURN_GROUP_INFO = "groupInfo";
 	public final static String KEY_RETURN_GROUP_ID = "groupId";
 	public final static String KEY_RETURN_GROUP_NAME = "groupName";
@@ -60,4 +62,16 @@ public class NetworkConfig {
 	public final static int CODE_SEARCH_GROUP_SUCCESS = 0;
 	public final static int CODE_SEARCH_GROUP_FAIL = 1;
 	
+	//更改用户名时使用
+	public final static String URL_CHANGE_NAME =SERVER + "SmartLife/index.php/Api/changeUserName";
+	public final static String KEY_CHANGE_NAME_USER_ID = "userId";
+	public final static String KEY_CHANGE_NAME_NEW_NAME = "newName";
+	public final static int CODE_CHANGE_NAME_SUCCESS = 0;
+	public final static int CODE_CHANGE_NAME_FAIL = 1;
+	
+	//获取用户信息时使用
+	public final static String URL_GET_USER = SERVER + "SmartLife/index.php/Api/getUserById";
+	public final static String 	KEY_GET_USER_USER_ID = "userId";
+	public final static int CODE_GET_USER_SUCCESS = 0;
+	public final static int CODE_GET_USER_FAIL = 1;
 }
