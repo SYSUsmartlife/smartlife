@@ -4,13 +4,13 @@
  */
 package com.smartlife.adapter;
 
-import com.smartlife.fragment.GroupFragment;
-import com.smartlife.fragment.PersonFragment;
-import com.smartlife.fragment.TaskFragment;
-
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+
+import com.smartlife.fragment.GroupFragment;
+import com.smartlife.fragment.PersonFragment;
+import com.smartlife.fragment.TaskFragment;
 
 /**
  * 主页ViewPager的适配器

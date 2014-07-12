@@ -20,7 +20,7 @@ public class TaskCreateFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.fragment_task_create, null);
-		
+
 		return rootView;
 	}
 }
