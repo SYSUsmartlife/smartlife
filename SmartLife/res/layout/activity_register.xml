@@ -123,6 +123,7 @@
         android:layout_below="@id/layout_input"
         android:background="@drawable/btn_reg_login_selector"
         android:layout_margin="10dip"
+        android:textColor="#FFFFFF"
         android:text="@string/register"/>
     
     <ImageView

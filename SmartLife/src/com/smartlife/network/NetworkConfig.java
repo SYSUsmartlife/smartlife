@@ -56,7 +56,7 @@ public class NetworkConfig {
 	public final static int CODE_GET_GROUP_LIST_SUCCESS = 0;
 	public final static int CODE_GET_GROUP_LIST_FAIL = 1;
 	
-	// 获取群组列表时使用
+	// 搜索小组时使用
 	public final static String URL_SEARCH_GROUP = SERVER + "SmartLife/index.php/Api/searchGroupByName";
 	public final static String KEY_SEARCH_GROUP_NAME = "groupName";
 	public final static int CODE_SEARCH_GROUP_SUCCESS = 0;
@@ -74,4 +74,21 @@ public class NetworkConfig {
 	public final static String 	KEY_GET_USER_USER_ID = "userId";
 	public final static int CODE_GET_USER_SUCCESS = 0;
 	public final static int CODE_GET_USER_FAIL = 1;
+	
+	//修改密码时使用
+	public final static String URL_CHANGE_PASSWORD = SERVER+ "SmartLife/index.php/Api/changePassword";
+	public final static String CHAGNE_PASSWORD_USER_ID = "userId";
+	public final static String CHANGE_PASSWORD_PREPASSWORD = "prePassword";
+	public final static String CHANGE_PASSWORD_NEWPASSWORD = "newPassword";
+	public final static int CODE_CHANGE_PASSWORD_SUCCESS = 0;
+	public final static int CODE_CHANGE_PASSWORD_FAIL = 1;
+
+	// 申请加入小组时使用
+	public final static String URL_JOIN_GROUP = SERVER + "SmartLife/index.php/Api/joinGroupRequest";
+	public final static String KEY_JOIN_GROUP_USER_ID = "userId";
+	public final static String KEY_JOIN_GROUP_ID = "groupId";
+	public final static int CODE_JOIN_GROUP_SUCCESS = 0;
+	public final static int CODE_JOIN_GROUP_ERROR = 1;
+	public final static int CODE_JOIN_GROUP_EXIST = 2;
+	
 }

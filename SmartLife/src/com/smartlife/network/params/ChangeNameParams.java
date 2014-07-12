@@ -24,6 +24,4 @@ public class ChangeNameParams extends BasicNetworkParams {
 		params.add(new BasicNameValuePair(NetworkConfig.KEY_CHANGE_NAME_NEW_NAME, userName));
 		return params;
 	}
-	
-
 }

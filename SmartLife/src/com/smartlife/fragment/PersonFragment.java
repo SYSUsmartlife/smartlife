@@ -7,6 +7,7 @@ package com.smartlife.fragment;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.smartlife.activity.ChangePasswordActivity;
 import com.smartlife.activity.CreateGroupActivity;
 import com.smartlife.activity.HomeActivity;
 import com.smartlife.activity.LoginActivity;
@@ -20,6 +21,7 @@ import com.smartlife.network.params.GetUserParams;
 import com.smartlife.network.params.LoginParams;
 import com.smartlife.util.StringUtil;
 import com.smartlife.util.UIHelperUtil;
+import com.smartlife.view.GroupHeaderTab;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -174,6 +176,11 @@ public class PersonFragment extends Fragment implements OnClickListener{
 		}
 	};
 	
+	/**
+	 * 更改密码
+	 * 网络请求完成后的处理器
+	 */
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -181,7 +188,11 @@ public class PersonFragment extends Fragment implements OnClickListener{
 		initView(view);
 		return view;
 	}
-
+	
+	/**
+	 * 初始化各个控件
+	 * @param view
+	 */
 	private void initView(View view) {
 		userId = UserConfig.getInstance(this.getActivity()).getUserId();
 		
@@ -203,9 +214,16 @@ public class PersonFragment extends Fragment implements OnClickListener{
 		editUserNameButton.setText("edit");
 		userNameEditText.setEnabled(false);
 		
-		getUserInfo();
 	}
 
+	@Override
+	public void setUserVisibleHint(boolean isVisibleToUser) {
+		super.setUserVisibleHint(isVisibleToUser);
+		if (isVisibleToUser) {
+			getUserInfo();
+		}
+	}
+	
 	public void getUserInfo()
 	{
 		GetUserParams params = new GetUserParams(userId);
@@ -231,6 +249,7 @@ public class PersonFragment extends Fragment implements OnClickListener{
 			aboutSoftware();
 			break;
 		case R.id.btn_exit:
+			getActivity().finish();
 			exit();
 			break;
 		case R.id.btn_exchange:
@@ -268,7 +287,9 @@ public class PersonFragment extends Fragment implements OnClickListener{
 	}
 	
     private void changePassword(){
-    	
+    	Intent intent = new Intent(getActivity(), ChangePasswordActivity.class);
+    	startActivity(intent);
+    	this.getActivity().finish();
     }
     
     private void createActivity(){

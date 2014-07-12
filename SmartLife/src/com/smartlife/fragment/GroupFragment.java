@@ -166,7 +166,9 @@ public class GroupFragment extends Fragment implements OnChangeTabListener, OnIt
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
-		// TODO Auto-generated method stub
+		Map<String, Object> group = mGroupListData.get(position);
+		int groupId = (int) group.get(NetworkConfig.KEY_RETURN_GROUP_ID);
+		String groupName = (String) group.get(NetworkConfig.KEY_RETURN_GROUP_NAME);
 		
 	}
 
