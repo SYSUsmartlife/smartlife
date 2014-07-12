@@ -24,33 +24,33 @@
         android:background="#ffffff"
         android:orientation="vertical" >
         
-		<!-- 查看个人资料 -->
+		<!-- 邮箱 -->
     	<RelativeLayout 
 		    android:layout_width="match_parent"
 		    android:layout_height="wrap_content"
         	android:padding="10dip">
 		    
 		    <ImageView
-		        android:id="@+id/ic_person_head_pic"
+		        android:id="@+id/ic_person_info_email_pic"
 		        android:contentDescription="@string/app_name"
 		        android:layout_width="32dip"
 		        android:layout_height="32dip"
 		        android:layout_alignParentLeft="true"
 		        android:layout_centerVertical="true"
-		        android:src="@drawable/ic_person_head_default" />
+		        android:src="@drawable/ic_reg_login_mail" />
 		    
 		    
 		    <TextView 
-            	android:id="@+id/ic_person_head_text"
+            	android:id="@+id/ic_person_info_email_text"
 	            android:layout_width="match_parent"
 	            android:layout_height="wrap_content"
-	            android:layout_toRightOf="@id/ic_person_head_pic"
+	            android:layout_toRightOf="@id/ic_person_info_email_pic"
 	            android:layout_centerVertical="true"
 	            android:padding="10dip"
 	            android:textColor="#0d9bde"
 	            android:textSize="15sp"
-	            android:text="@string/person_info" /> 
-	
+	            android:text="@string/person_info_email" /> 
+	            
 		</RelativeLayout>
 	
     	 <View 
@@ -58,14 +58,14 @@
 		    	android:layout_height="0.5dp"
 		    	android:background="#d5d5d5"/>
     
-    	<!-- 修改用户名 -->
+    	<!-- 用户名 -->
     	<RelativeLayout 
 		    android:layout_width="match_parent"
 		    android:layout_height="wrap_content"
         	android:padding="10dip">
 		    
 		    <ImageView
-		        android:id="@+id/ic_person_change_username_pic"
+		        android:id="@+id/ic_person_info_username_pic"
 		        android:contentDescription="@string/app_name"
 		        android:layout_width="32dip"
 		        android:layout_height="32dip"
@@ -74,16 +74,23 @@
 		        android:src="@drawable/ic_reg_username" />
 		    
 		    <TextView 
-            	android:id="@+id/ic_person_change_username_text"
+            	android:id="@+id/ic_person_info_username_text"
 	            android:layout_width="match_parent"
 	            android:layout_height="wrap_content"
-	            android:layout_toRightOf="@id/ic_person_change_username_pic"
+	            android:layout_toRightOf="@id/ic_person_info_username_pic"
 	            android:layout_centerVertical="true"
 	            android:padding="10dip"
 	            android:textColor="#0d9bde"
 	            android:textSize="15sp"
-	            android:text="@string/person_change_username" />
+	            android:text="@string/person_info_username" />
 		    
+		    <Button 
+		       android:id="@+id/person_edit_username"
+		       android:layout_width="32dip"
+	        	android:layout_height="32dip"
+	        	android:layout_alignParentRight="true"
+	        	android:background="@drawable/edit"
+	        	android:layout_margin="10dip"/>
 		</RelativeLayout>
     	
     	 <View 
@@ -164,6 +171,7 @@
 		    	android:background="#d5d5d5"/>
      
         <RelativeLayout 
+            android:id="@+id/software_lay_out"
 		    android:layout_width="match_parent"
 		    android:layout_height="wrap_content"
         	android:padding="10dip">
@@ -192,7 +200,7 @@
 		</RelativeLayout>
     </LinearLayout>
     
-    <!-- 退出 -->
+    <!-- 退出 和 切换账号-->
     <LinearLayout 
         android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
@@ -202,20 +210,22 @@
 	        style="?android:attr/buttonBarButtonStyle"
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
+	        android:gravity="center"
 	        android:layout_weight="1"
 	        android:background="@drawable/btn_reg_login_selector"
 	        android:layout_margin="10dip"
 	        android:text="@string/person_exit"/>
 	
 	    <Button 
-	        android:id="@+id/btn_change"
+	        android:id="@+id/btn_exchange"
 	        style="?android:attr/buttonBarButtonStyle"
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
+	        android:gravity="center"
 	         android:layout_weight="1"
 	        android:background="@drawable/btn_reg_login_selector"
 	        android:layout_margin="10dip"
 	        android:text="@string/person_change"/>
-    </LinearLayout> 
+    </LinearLayout>
     
  </RelativeLayout> 
