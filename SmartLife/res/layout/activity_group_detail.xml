@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_basic_color" >
+    
+    <include 
+        android:id="@+id/layout_top"
+        android:layout_alignParentTop="true"
+        layout="@layout/layout_top" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layout_top"
+        android:layout_centerHorizontal="true"
+    	android:padding="10dp" >
+
+	    <TextView
+	        android:id="@+id/text_group_name"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_centerHorizontal="true"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginBottom="5dp"
+			android:textColor="#000000"
+	        android:text="@string/app_name"
+	        android:textAppearance="?android:attr/textAppearanceLarge"  />
+	    
+	    <View 
+	        android:id="@+id/view_divider_group_name"
+	        android:layout_width="match_parent"
+	        android:layout_height="0.5dp"
+	        android:layout_below="@+id/text_group_name"
+	        android:background="#a5a5a5"/>
+
+	    <TextView
+	        android:id="@+id/text_group_description"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/view_divider_group_name"
+	        android:layout_marginTop="5dp"
+	        android:layout_marginBottom="5dp"
+	        android:text="@string/app_name"
+	        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+	    <TextView
+	        android:id="@+id/text_view_request"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/text_group_description"
+	        android:layout_centerHorizontal="true"
+	        android:padding="10dip"
+	        android:background="@drawable/bar_create_search_selector"
+	        android:drawableLeft="@drawable/ic_view_request"
+	        android:drawableRight="@drawable/ic_right_arrow"
+	        android:clickable="true"
+	        android:gravity="center_vertical"
+	        android:textColor="#727272"
+	        android:textSize="15sp"
+	        android:text="@string/text_view_request"
+	        android:visibility="gone" />
+	    
+	    <TextView
+	        android:id="@+id/text_invite"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_centerHorizontal="true"
+	        android:layout_below="@+id/text_view_request"
+	        android:layout_marginTop="5dip"
+	        android:padding="10dip"
+	        android:background="@drawable/bar_create_search_selector"
+	        android:drawableLeft="@drawable/ic_invite"
+	        android:drawableRight="@drawable/ic_right_arrow"
+	        android:clickable="true"
+	        android:gravity="center_vertical"
+	        android:textColor="#727272"
+	        android:textSize="15sp"
+	        android:text="@string/text_invite"
+	        android:visibility="gone" />
+	    
+	    <TextView
+	        android:id="@+id/text_view_group_member"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_centerHorizontal="true"
+	        android:layout_below="@+id/text_invite"
+	        android:layout_marginTop="5dip"
+	        android:padding="10dip"
+	        android:background="@drawable/bar_create_search_selector"
+	        android:drawableLeft="@drawable/ic_view_group_member"
+	        android:drawableRight="@drawable/ic_right_arrow"
+	        android:clickable="true"
+	        android:gravity="center_vertical"
+	        android:textColor="#727272"
+	        android:textSize="15sp"
+	        android:text="@string/text_view_group_member" />
+	    
+	    <TextView
+	        android:id="@+id/text_view_group_task"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_centerHorizontal="true"
+	        android:layout_below="@+id/text_view_group_member"
+	        android:layout_marginTop="5dip"
+	        android:padding="10dip"
+	        android:background="@drawable/bar_create_search_selector"
+	        android:drawableLeft="@drawable/btn_task_normal"
+	        android:drawableRight="@drawable/ic_right_arrow"
+	        android:clickable="true"
+	        android:gravity="center_vertical"
+	        android:textColor="#727272"
+	        android:textSize="15sp"
+	        android:text="@string/text_view_group_task" />
+        
+    </RelativeLayout>
+
+</RelativeLayout>

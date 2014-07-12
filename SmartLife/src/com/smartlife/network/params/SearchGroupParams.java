@@ -1,6 +1,6 @@
 /**
  * @author 吴湧霖
- * @version 创建时间：2014年7月10日 下午10:38:46 
+ * @version 创建时间：2014年7月11日 下午9:58:14 
  */
 package com.smartlife.network.params;
 
@@ -12,24 +12,19 @@ import org.apache.http.message.BasicNameValuePair;
 
 import com.smartlife.network.NetworkConfig;
 
-/**
- * 获取小组列表时使用的参数类
- */
-public class GetGroupListParams extends BasicNetworkParams{
-	
-	private int userId;
-	
+public class SearchGroupParams extends BasicNetworkParams{
 
-	public GetGroupListParams(int userId) {
+	private String groupName;
+
+	public SearchGroupParams(String groupName) {
 		super();
-		this.userId = userId;
+		this.groupName = groupName;
 	}
-
-
+	
 	@Override
 	public List<NameValuePair> toNetworkParams() {
 		List<NameValuePair> params = new ArrayList<NameValuePair>();
-		params.add(new BasicNameValuePair(NetworkConfig.KEY_CREATE_GROUP_USER_ID, Integer.toString(userId)));
+		params.add(new BasicNameValuePair(NetworkConfig.KEY_SEARCH_GROUP_NAME, groupName));
 		return params;
 	}
 

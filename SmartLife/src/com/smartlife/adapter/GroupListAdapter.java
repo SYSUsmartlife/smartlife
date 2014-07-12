@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.smartlife.activity.R;
+import com.smartlife.network.NetworkConfig;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -49,7 +50,7 @@ public class GroupListAdapter extends BaseAdapter{
 		else {
 			viewHolder = (ViewHolder)convertView.getTag();
 		}
-		String groupName = (String) mData.get(position).get("groupName");
+		String groupName = (String) mData.get(position).get(NetworkConfig.KEY_RETURN_GROUP_NAME);
 		viewHolder.mGroupName.setText(groupName);
 		return convertView;
 	}

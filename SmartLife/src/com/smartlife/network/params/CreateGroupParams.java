@@ -23,6 +23,7 @@ public class CreateGroupParams extends BasicNetworkParams{
 
 	public CreateGroupParams(int userId, String groupName,
 			String groupDescription) {
+		super();
 		this.userId = userId;
 		this.groupName = groupName;
 		this.groupDescription = groupDescription;

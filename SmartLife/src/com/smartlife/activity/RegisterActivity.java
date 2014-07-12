@@ -140,15 +140,15 @@ public class RegisterActivity extends Activity implements OnClickListener{
 		String userName = userNameEditText.getText().toString();
 		if (StringUtil.isEmpty(userEmail)) {
 			UIHelperUtil.makeToast(this, "注册邮箱不允许为空！请重新输入！");
-		} else if (StringUtil.isEmail(userEmail)) {
+		} else if (!StringUtil.isEmail(userEmail)) {
 			UIHelperUtil.makeToast(this, "邮箱格式非法！请重新输入！");
 		} else if (StringUtil.isEmpty(userPassword)) {
 			UIHelperUtil.makeToast(this, "密码不允许为空！请重新输入！");
-		} else if (StringUtil.isValidUserNameOrPassword(userPassword)) {
+		} else if (!StringUtil.isValidUserNameOrPassword(userPassword)) {
 			UIHelperUtil.makeToast(this, "密码只允许字母，数字和下划线！请重新输入！");
 		} else if (StringUtil.isEmpty(userName)) {
 			UIHelperUtil.makeToast(this, "用户昵称不允许为空！请重新输入！");
-		} else if (StringUtil.isValidUserNameOrPassword(userName)) {
+		} else if (!StringUtil.isValidUserNameOrPassword(userName)) {
 			UIHelperUtil.makeToast(this, "用户昵称只允许字母，数字和下划线！请重新输入！");
 		} else {
 			RegisterParams params = new RegisterParams(userEmail, userPassword, userName);
