@@ -9,13 +9,13 @@
 	android:paddingLeft="10dp"
 	android:paddingRight="10dp" >
 
-
 	<ListView
 		android:id="@+id/lv_person_day_task"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:background="@android:color/transparent"
 		android:divider="@null"
+		android:listSelector="@android:color/transparent"
 		android:scrollbars="none"
 		tools:listheader="@layout/list_item_task_day_header"
 		tools:listitem="@layout/list_item_task_day" />

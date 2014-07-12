@@ -250,7 +250,6 @@ public class PersonFragment extends Fragment implements OnClickListener{
 			break;
 		case R.id.btn_exit:
 			getActivity().finish();
-			exit();
 			break;
 		case R.id.btn_exchange:
 			exchange();
@@ -303,7 +302,7 @@ public class PersonFragment extends Fragment implements OnClickListener{
     }
     
     private void exit(){
-    	System.exit(0);
+    	getActivity().finish();
     }
     
     private void exchange(){
