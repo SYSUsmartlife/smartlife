@@ -38,6 +38,7 @@
 	<string name="text_join">申请加入</string>
 	<string name="text_view_request">查看群组申请</string>
 	<string name="text_invite">邀请用户加入</string>
+	<string name="text_group_member">群组成员</string>
 	<string name="text_view_group_member">查看群组成员</string>
 	<string name="text_view_group_task">查看群组活动</string>
 	<string name="today_s_task">今天的活动</string>

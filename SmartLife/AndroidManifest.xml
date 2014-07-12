@@ -39,6 +39,10 @@
             android:name="com.smartlife.activity.SearchGroupActivity"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name="com.smartlife.activity.GroupDetailActivity"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 
 </manifest>
