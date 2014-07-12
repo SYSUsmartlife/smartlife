@@ -5,13 +5,11 @@
 	android:layout_height="match_parent"
 	android:padding="5dp" >
 
-	<!-- android:layout_height="match_parent" -->
-
 	<RelativeLayout
 		android:id="@+id/list_item_rl_content"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		android:background="@drawable/list_item_shadow"
+		android:background="@drawable/list_item_selector"
 		android:padding="6dp" >
 
 		<LinearLayout
