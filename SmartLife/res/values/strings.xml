@@ -41,6 +41,9 @@
 	<string name="text_group_member">群组成员</string>
 	<string name="text_view_group_member">查看群组成员</string>
 	<string name="text_view_group_task">查看群组活动</string>
+	<string name="text_join_request_list">申请列表</string>
+	<string name="btn_agree">同意</string>
+	<string name="btn_refuse">拒绝</string>
 	<string name="today_s_task">今天的活动</string>
 	<string name="remind_true">提醒:是</string>
 	<string name="frequence_is_repeat_each_week">频率:不重复</string>

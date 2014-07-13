@@ -21,19 +21,24 @@ import com.smartlife.network.params.GetGroupMemberParams;
 import com.smartlife.util.UIHelperUtil;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class GroupDetailActivity extends Activity{
+public class GroupDetailActivity extends Activity implements OnClickListener{
 
 	private int groupId;
 	private String groupName;
 	private String groupDescription;
 	private TextView groupNameText;
 	private TextView groupDescriptionText;
+	private TextView viewRequestText;
+	private TextView inviteText;
 	private ListView groupMemberList;
 	private GroupMemberAdapter groupMemberAdapter;
 	private List<Map<String, Object>> groupMemberData;
@@ -98,7 +103,11 @@ public class GroupDetailActivity extends Activity{
 		groupDescription = getIntent().getStringExtra(NetworkConfig.KEY_RETURN_GROUP_DESCRIPTION);
 		groupNameText = (TextView)findViewById(R.id.text_group_name);
 		groupDescriptionText = (TextView)findViewById(R.id.text_group_description);
+		viewRequestText = (TextView)findViewById(R.id.text_view_request);
+		inviteText = (TextView)findViewById(R.id.text_invite);
 		groupMemberList = (ListView)findViewById(R.id.list_group_member);
+		viewRequestText.setOnClickListener(this);
+		inviteText.setOnClickListener(this);
 		groupMemberData = new ArrayList<Map<String, Object>>();
 		groupMemberAdapter = new GroupMemberAdapter(this, groupMemberData);
 		groupNameText.setText(groupName);
@@ -109,5 +118,31 @@ public class GroupDetailActivity extends Activity{
 	private void requestToGetGroupMemberData() {
 		GetGroupMemberParams params = new GetGroupMemberParams(groupId);
 		NetworkClient.getInstance().request(NetworkConfig.URL_GET_GROUP_MEMBER, params, mNetworkHandler );
+	}
+
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.text_view_request:
+			toViewRequest();
+			break;
+		case R.id.text_invite:
+			toInvite();
+			break;
+
+		default:
+			break;
+		}
+	}
+
+	private void toViewRequest() {
+		Intent intent = new Intent(this, ViewJoinRequestActivity.class);
+		intent.putExtra(NetworkConfig.KEY_RETURN_GROUP_ID, groupId);
+		startActivity(intent);
+	}
+
+	private void toInvite() {
+		// TODO Auto-generated method stub
+		
 	}
 }
