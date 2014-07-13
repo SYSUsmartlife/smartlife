@@ -4,6 +4,7 @@
  */
 package com.smartlife.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.smartlife.activity.R;
+import com.smartlife.activity.TaskActivity;
 
 /**
  * 用于呈现用户活动相关信息的Fragment
@@ -46,6 +48,7 @@ public class TaskFragment extends Fragment implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.task_top_iv_add_task:
+			startActivity(new Intent(getActivity(), TaskActivity.class));
 			break;
 		case R.id.task_top_tv_change_view:
 

@@ -6,6 +6,8 @@
 	<color name="layer_shadow">#d8d8d8</color>
 	<color name="default_blue">#0079dd</color>
 	<color name="light_blue">#0079ee</color>
+	<color name="light_blue_disable">#440079DD</color>
+	<color name="light_light_blue">#990079DD</color>
 	<color name="top_text_color">#4897d6</color>
 	<color name="top_text_pressed_color">#3089e0</color>
 

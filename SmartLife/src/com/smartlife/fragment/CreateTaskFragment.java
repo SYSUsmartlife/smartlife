@@ -31,7 +31,7 @@ public class CreateTaskFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View rootView = inflater.inflate(R.layout.fragment_task_content, null);
+		View rootView = inflater.inflate(R.layout.fragment_create_task, null);
 
 		return rootView;
 	}
