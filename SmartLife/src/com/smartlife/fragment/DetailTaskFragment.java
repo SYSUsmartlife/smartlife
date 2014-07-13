@@ -8,14 +8,11 @@ package com.smartlife.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Switch;
 import android.widget.TextView;
-import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 import com.smartlife.activity.R;
 import com.smartlife.model.Task;
@@ -23,21 +20,13 @@ import com.smartlife.model.Task;
 public class DetailTaskFragment extends Fragment {
 	protected static final String TAG = DetailTaskFragment.class
 			.getSimpleName();
-	@InjectView(R.id.create_task_tv_task_title)
 	TextView mTaskTitle;
-	@InjectView(R.id.create_task_tv_task_content)
 	TextView mTaskContent;
-	@InjectView(R.id.create_task_tv_start_date)
 	TextView mStartDateTv;
-	@InjectView(R.id.create_task_tv_end_date)
 	TextView mEndDateTv;
-	@InjectView(R.id.create_task_tv_start_time)
 	TextView mStartTimeTv;
-	@InjectView(R.id.create_task_tv_end_time)
 	TextView mEndTimeTv;
-	@InjectView(R.id.create_task_sw_is_remind)
 	Switch mIsRemindSwitch;
-	@InjectView(R.id.create_task_tv_frequence)
 	TextView mFrequenceTv;
 
 	public static DetailTaskFragment newInstance(Task task) {
@@ -53,22 +42,22 @@ public class DetailTaskFragment extends Fragment {
 			Bundle savedInstanceState) {
 
 		View rootView = inflater.inflate(R.layout.fragment_task_content, null);
-		// 设置监听返回事件
-		rootView.setFocusableInTouchMode(true);
-		rootView.requestFocus();
-		rootView.setOnKeyListener(new View.OnKeyListener() {
-			@Override
-			public boolean onKey(View v, int keyCode, KeyEvent event) {
-				if (keyCode == KeyEvent.KEYCODE_BACK) {
-					getFragmentManager().popBackStack();
-					return true;
-				} else {
-					return false;
-				}
-			}
-		});
-		// 注入
-		ButterKnife.inject(this, rootView);
+		mTaskTitle = (TextView) rootView
+				.findViewById(R.id.create_task_tv_task_title);
+		mTaskContent = (TextView) rootView
+				.findViewById(R.id.create_task_tv_task_content);
+		mStartDateTv = (TextView) rootView
+				.findViewById(R.id.create_task_tv_start_date);
+		mEndDateTv = (TextView) rootView
+				.findViewById(R.id.create_task_tv_end_date);
+		mStartTimeTv = (TextView) rootView
+				.findViewById(R.id.create_task_tv_start_time);
+		mEndTimeTv = (TextView) rootView
+				.findViewById(R.id.create_task_tv_end_time);
+		mIsRemindSwitch = (Switch) rootView
+				.findViewById(R.id.create_task_sw_is_remind);
+		mFrequenceTv = (TextView) rootView
+				.findViewById(R.id.create_task_frequence);
 		Task task = (Task) getArguments().get(Task.TAG);
 
 		mTaskTitle.setText(task.getTaskTitle());
@@ -83,9 +72,4 @@ public class DetailTaskFragment extends Fragment {
 		return rootView;
 	}
 
-	@Override
-	public void onDestroyView() {
-		super.onDestroyView();
-		ButterKnife.reset(this);
-	}
 }

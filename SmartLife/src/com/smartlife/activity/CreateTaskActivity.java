@@ -4,8 +4,6 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.Window;
 
-import com.smartlife.fragment.CreateTaskFragment;
-
 public class CreateTaskActivity extends FragmentActivity {
 
 	@Override
@@ -13,9 +11,9 @@ public class CreateTaskActivity extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.activity_create_task);
+		setContentView(R.layout.activity_task);
 
-		getSupportFragmentManager().beginTransaction()
-				.add(R.id.container, new CreateTaskFragment()).commit();
+//		getSupportFragmentManager().beginTransaction()
+//				.add(R.id.container, new CreateTaskFragment()).commit();
 	}
 }
