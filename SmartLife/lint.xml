@@ -4,6 +4,8 @@
         <ignore path="res/layout/layout_task_top.xml" />
     </issue>
     <issue id="HardcodedText">
+        <ignore path="res/layout/fragment_create_task.xml" />
+        <ignore path="res/layout/fragment_task_create.xml" />
         <ignore path="res/layout/layout_task_top.xml" />
         <ignore path="res/layout/list_item_task_day.xml" />
     </issue>
@@ -13,5 +15,9 @@
         <ignore path="res/layout/layout_task_top.xml" />
         <ignore path="res/layout/list_item_task_day.xml" />
         <ignore path="res/layout/list_item_task_day_header.xml" />
+    </issue>
+    <issue id="TextFields">
+        <ignore path="res/layout/fragment_create_task.xml" />
+        <ignore path="res/layout/fragment_task_create.xml" />
     </issue>
 </lint>

@@ -13,6 +13,7 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 
 import com.smartlife.adapter.HomeViewPagerAdapter;
+import com.smartlife.util.UIHelperUtil;
 import com.smartlife.view.ImageViewButton;
 
 /**
@@ -21,6 +22,8 @@ import com.smartlife.view.ImageViewButton;
 public class HomeActivity extends FragmentActivity implements
 		OnPageChangeListener, OnClickListener {
 
+	private long lastPressedTime = 0L;
+	public static final int TIME_INTERVER = 1500;
 	/**
 	 * 主页的滑动切换浏览控件
 	 */
@@ -123,6 +126,21 @@ public class HomeActivity extends FragmentActivity implements
 		default:
 			break;
 		}
+	}
+
+	@Override
+	public void onBackPressed() {
+		long pressedTime = System.currentTimeMillis();
+		if (pressedTime - lastPressedTime < TIME_INTERVER) {
+			// 内部实现是判断是否能弹出的fragmentManager中栈中的fragment
+			// 如果栈中没有fragment则结束当前Activity
+			// 没有再判断fragment中childFragmentManager中的栈的情况
+			// 所以在childFragment中需要额外的设置才能允许返回，这真的是个bug
+			super.onBackPressed();
+		} else {
+			UIHelperUtil.makeToast(getApplicationContext(), "再按我就退出啦>_<");
+		}
+		lastPressedTime = pressedTime;
 	}
 
 }

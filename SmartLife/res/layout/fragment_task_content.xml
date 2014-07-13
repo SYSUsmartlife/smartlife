@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#EEE"
+	android:padding="15dp" >
+
+	<TextView
+		android:id="@+id/task_info_title"
+		style="@style/create_task_tv_title"
+		android:text="@string/task_info" />
+
+	<View
+		android:id="@+id/task_info_line"
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:layout_below="@+id/task_info_title"
+		android:background="@color/default_blue" />
+
+	<TextView
+		android:id="@+id/create_task_title"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/task_info_line"
+		android:layout_marginBottom="10dp"
+		android:layout_marginTop="10dp"
+		android:text="@string/task_title"
+		android:textSize="@dimen/create_task_text_size" />
+
+	<TextView
+		android:id="@+id/create_task_content"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/create_task_title"
+		android:layout_marginBottom="10dp"
+		android:text="@string/task_content"
+		android:textSize="@dimen/create_task_text_size" />
+
+	<TextView
+		android:id="@+id/create_task_time"
+		style="@style/create_task_tv_title"
+		android:layout_below="@+id/create_task_content"
+		android:text="@string/time_setting" />
+
+	<View
+		android:id="@+id/create_task_time_line"
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:layout_alignParentLeft="true"
+		android:layout_below="@+id/create_task_time"
+		android:background="@color/default_blue" />
+
+	<TextView
+		android:id="@+id/create_task_start_date"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/create_task_time_line"
+		android:layout_marginBottom="10dp"
+		android:layout_marginTop="10dp"
+		android:text="@string/start_date"
+		android:textSize="@dimen/create_task_text_size" />
+
+	<TextView
+		android:id="@+id/task_end_date"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignLeft="@+id/create_task_start_date"
+		android:layout_below="@+id/create_task_start_date"
+		android:layout_marginBottom="10dp"
+		android:text="@string/end_date"
+		android:textSize="@dimen/create_task_text_size" />
+
+	<TextView
+		android:id="@+id/task_start_time"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignLeft="@+id/task_end_date"
+		android:layout_below="@+id/task_end_date"
+		android:layout_marginBottom="10dp"
+		android:text="@string/start_time"
+		android:textSize="@dimen/create_task_text_size" />
+
+	<TextView
+		android:id="@+id/task_end_time"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignLeft="@+id/task_start_time"
+		android:layout_below="@+id/task_start_time"
+		android:layout_marginBottom="10dp"
+		android:text="@string/end_time"
+		android:textSize="@dimen/create_task_text_size" />
+
+	<TextView
+		android:id="@+id/task_remind_title"
+		style="@style/create_task_tv_title"
+		android:layout_below="@+id/task_end_time"
+		android:text="@string/remind_setting" />
+
+	<View
+		android:id="@+id/create_task_remind_title"
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:layout_below="@+id/task_remind_title"
+		android:background="@color/default_blue" />
+
+	<TextView
+		android:id="@+id/create_task_is_remind"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/create_task_remind_title"
+		android:layout_marginTop="10dp"
+		android:text="@string/is_remind"
+		android:textSize="@dimen/create_task_text_size" />
+
+	<TextView
+		android:id="@+id/create_task_frequence"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignLeft="@+id/create_task_is_remind"
+		android:layout_below="@+id/create_task_is_remind"
+		android:layout_marginTop="10dp"
+		android:text="@string/remind_frequence"
+		android:textSize="@dimen/create_task_text_size" />
+
+	<TextView
+		android:id="@+id/create_task_tv_task_content"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignBaseline="@+id/create_task_content"
+		android:layout_alignBottom="@+id/create_task_content"
+		android:layout_alignLeft="@+id/create_task_tv_task_title"
+		android:layout_centerHorizontal="true"
+		android:text="TEXT TExt"
+		android:textSize="@dimen/create_task_text_size" />
+
+	<TextView
+		android:id="@+id/create_task_tv_start_date"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignBottom="@+id/create_task_start_date"
+		android:layout_centerHorizontal="true"
+		android:text="2014-4-1"
+		android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	<TextView
+		android:id="@+id/create_task_tv_end_date"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignBaseline="@+id/task_end_date"
+		android:layout_alignBottom="@+id/task_end_date"
+		android:layout_centerHorizontal="true"
+		android:text="2014-4-2"
+		android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	<TextView
+		android:id="@+id/create_task_tv_start_time"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignBaseline="@+id/task_start_time"
+		android:layout_alignBottom="@+id/task_start_time"
+		android:layout_centerHorizontal="true"
+		android:text="22:00"
+		android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	<TextView
+		android:id="@+id/create_task_tv_end_time"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignBaseline="@+id/task_end_time"
+		android:layout_alignBottom="@+id/task_end_time"
+		android:layout_centerHorizontal="true"
+		android:text="23:00"
+		android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	<Switch
+		android:id="@+id/create_task_sw_is_remind"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignBottom="@+id/create_task_is_remind"
+		android:layout_centerHorizontal="true" />
+
+	<TextView
+		android:id="@+id/create_task_tv_frequence"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignBaseline="@+id/create_task_frequence"
+		android:layout_alignBottom="@+id/create_task_frequence"
+		android:layout_alignRight="@+id/create_task_tv_end_date"
+		android:text="不重复"
+		android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	<TextView
+		android:id="@+id/create_task_tv_task_title"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignBaseline="@+id/create_task_title"
+		android:layout_alignBottom="@+id/create_task_title"
+		android:layout_alignLeft="@+id/create_task_tv_start_date"
+		android:text="TEXT TExt"
+		android:textSize="@dimen/create_task_text_size" />
+
+</RelativeLayout>

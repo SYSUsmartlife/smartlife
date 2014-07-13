@@ -9,12 +9,14 @@ package com.smartlife.fragment;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.net.http.AndroidHttpClient;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
 import com.smartlife.activity.R;
@@ -22,8 +24,9 @@ import com.smartlife.adapter.TaskDayAdapter;
 import com.smartlife.model.Task;
 import com.smartlife.model.Task.Frequence;
 
-public class TaskDayFragment extends Fragment {
+public class TaskDayFragment extends Fragment implements OnItemClickListener {
 
+	protected static final String TAG = "TAG";
 	private List<Task> list = new ArrayList<Task>();
 
 	@Override
@@ -38,6 +41,7 @@ public class TaskDayFragment extends Fragment {
 				R.layout.list_item_task_day_header, null);
 		lv.addHeaderView(haderView, null, false);
 		lv.setAdapter(taskDayAdapter);
+		lv.setOnItemClickListener(this);
 		return rootView;
 	}
 
@@ -52,6 +56,18 @@ public class TaskDayFragment extends Fragment {
 			else
 				list.add(Task.newInstance());
 		}
+	}
+
+	@Override
+	public void onItemClick(AdapterView<?> parent, View view, int position,
+			long id) {
+		Task task = (Task) parent.getItemAtPosition(position);
+		Log.i(Task.TAG, "" + task.getTaskTitle());
+		getFragmentManager()
+				.beginTransaction()
+				.replace(R.id.task_content,
+						DetailTaskFragment.newInstance(task))
+				.addToBackStack(null).commit();
 	}
 
 }

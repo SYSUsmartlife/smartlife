@@ -20,6 +20,7 @@ import com.smartlife.activity.R;
  */
 public class TaskFragment extends Fragment implements OnClickListener {
 
+	protected static final String TAG = "TAG";
 	private ImageView createTaskIv;
 	private TextView toggleShowTv;
 

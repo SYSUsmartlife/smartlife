@@ -56,5 +56,6 @@
 	<string name="is_remind">是否提醒</string>
 	<string name="remind_frequence">提醒频率</string>
 	<string name="today">2014年6月20日</string>
+	<string name="title_activity_create_task">CreateTaskActivity</string>
 
 </resources>
