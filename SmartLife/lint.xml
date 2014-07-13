@@ -3,7 +3,7 @@
     <issue id="ContentDescription">
         <ignore path="res/layout/layout_task_top.xml" />
     </issue>
-    <issue id="HardcodedText">
+    <issue id="HardcodedText" severity="ignore">
         <ignore path="res/layout/fragment_create_task.xml" />
         <ignore path="res/layout/fragment_task_create.xml" />
         <ignore path="res/layout/layout_task_top.xml" />

@@ -62,4 +62,10 @@
 	<string name="today">2014年6月20日</string>
 	<string name="title_activity_create_task">CreateTaskActivity</string>
 
+	<string-array name="frequence">
+		<item>不重复</item>
+		<item>每天</item>
+		<item>每周</item>
+	</string-array>
+
 </resources>

@@ -27,15 +27,26 @@
 		android:text="@string/task_title"
 		android:textSize="@dimen/task_text_size" />
 
-	<TextView
-		android:id="@+id/task_tv_task_title"
-		android:layout_width="wrap_content"
+	<EditText
+		android:id="@+id/task_et_task_title"
+		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_alignBaseline="@+id/task_title"
 		android:layout_alignBottom="@+id/task_title"
-		android:layout_alignLeft="@+id/task_tv_start_date"
-		android:text="TEXT TEXT"
-		android:textSize="@dimen/task_text_size" />
+		android:layout_marginLeft="20dp"
+		android:layout_toRightOf="@+id/task_title"
+		android:hint="活动标题，不能为空"
+		android:textSize="@dimen/task_et_text_size" />
+
+	<EditText
+		android:id="@+id/task_et_task_content"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignBaseline="@+id/task_content"
+		android:layout_alignBottom="@+id/task_content"
+		android:layout_alignLeft="@+id/task_et_task_title"
+		android:hint="活动内容"
+		android:textSize="@dimen/task_et_text_size" />
 
 	<TextView
 		android:id="@+id/task_content"
@@ -70,6 +81,16 @@
 		android:text="@string/start_date"
 		android:textSize="@dimen/task_text_size" />
 
+	<EditText
+		android:id="@+id/task_tv_start_date"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignBaseline="@+id/task_start_date"
+		android:layout_alignBottom="@+id/task_start_date"
+		android:layout_alignLeft="@+id/task_et_task_title"
+		android:hint="今天的日期"
+		android:textSize="@dimen/task_et_text_size" />
+
 	<TextView
 		android:id="@+id/task_end_date"
 		android:layout_width="wrap_content"
@@ -79,6 +100,16 @@
 		android:layout_marginBottom="10dp"
 		android:text="@string/end_date"
 		android:textSize="@dimen/task_text_size" />
+
+	<EditText
+		android:id="@+id/task_et_end_date"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignBaseline="@+id/task_end_date"
+		android:layout_alignBottom="@+id/task_end_date"
+		android:layout_alignLeft="@+id/task_et_task_title"
+		android:hint="今天的日期"
+		android:textSize="@dimen/task_et_text_size" />
 
 	<TextView
 		android:id="@+id/task_start_time"
@@ -90,6 +121,16 @@
 		android:text="@string/start_time"
 		android:textSize="@dimen/task_text_size" />
 
+	<EditText
+		android:id="@+id/task_et_start_time"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignBaseline="@+id/task_start_time"
+		android:layout_alignBottom="@+id/task_start_time"
+		android:layout_alignLeft="@+id/task_et_task_title"
+		android:hint="开始时间"
+		android:textSize="@dimen/task_et_text_size" />
+
 	<TextView
 		android:id="@+id/task_end_time"
 		android:layout_width="wrap_content"
@@ -100,71 +141,21 @@
 		android:text="@string/end_time"
 		android:textSize="@dimen/task_text_size" />
 
+	<EditText
+		android:id="@+id/task_et_end_time"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignBaseline="@+id/task_end_time"
+		android:layout_alignBottom="@+id/task_end_time"
+		android:layout_alignLeft="@+id/task_et_task_title"
+		android:hint="结束时间"
+		android:textSize="@dimen/task_et_text_size" />
+
 	<TextView
 		android:id="@+id/task_is_remind_title"
 		style="@style/task_tv_title"
 		android:layout_below="@+id/task_end_time"
 		android:text="@string/remind_setting" />
-
-	<TextView
-		android:id="@+id/task_tv_task_content"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_alignBaseline="@+id/task_content"
-		android:layout_alignBottom="@+id/task_content"
-		android:layout_alignLeft="@+id/task_tv_task_title"
-		android:layout_centerHorizontal="true"
-		android:text="TEXT TEXT"
-		android:textSize="@dimen/task_text_size" />
-
-	<TextView
-		android:id="@+id/task_tv_start_date"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_alignBottom="@+id/task_start_date"
-		android:layout_centerHorizontal="true"
-		android:text="2014-4-1"
-		android:textAppearance="?android:attr/textAppearanceMedium" />
-
-	<TextView
-		android:id="@+id/task_tv_end_date"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_alignBaseline="@+id/task_end_date"
-		android:layout_alignBottom="@+id/task_end_date"
-		android:layout_centerHorizontal="true"
-		android:text="2014-4-2"
-		android:textAppearance="?android:attr/textAppearanceMedium" />
-
-	<TextView
-		android:id="@+id/task_tv_start_time"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_alignBaseline="@+id/task_start_time"
-		android:layout_alignBottom="@+id/task_start_time"
-		android:layout_centerHorizontal="true"
-		android:text="22:00"
-		android:textAppearance="?android:attr/textAppearanceMedium" />
-
-	<TextView
-		android:id="@+id/task_tv_end_time"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_alignBaseline="@+id/task_end_time"
-		android:layout_alignBottom="@+id/task_end_time"
-		android:layout_centerHorizontal="true"
-		android:text="23:00"
-		android:textAppearance="?android:attr/textAppearanceMedium" />
-
-	<TextView
-		android:id="@+id/task_tv_frequence"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_alignBaseline="@+id/task_frequence"
-		android:layout_alignBottom="@+id/task_frequence"
-		android:layout_alignRight="@+id/task_tv_end_date"
-		android:text="不重复"
-		android:textAppearance="?android:attr/textAppearanceMedium" />
 
 	<View
 		android:id="@+id/task_is_remind_title_line"
@@ -175,7 +166,7 @@
 		android:background="@color/default_blue" />
 
 	<TextView
-		android:id="@+id/task_is_remind_title_tv"
+		android:id="@+id/task_is_remind"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_alignParentLeft="true"
@@ -185,20 +176,40 @@
 		android:text="@string/is_remind"
 		android:textSize="@dimen/task_text_size" />
 
+	<CheckBox
+		android:id="@+id/task_cb_is_remind"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignBaseline="@+id/task_is_remind"
+		android:layout_centerHorizontal="true" />
+
 	<TextView
 		android:id="@+id/task_frequence"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_alignLeft="@+id/task_is_remind_title_tv"
-		android:layout_below="@+id/task_is_remind_title_tv"
+		android:layout_alignLeft="@+id/task_is_remind"
+		android:layout_below="@+id/task_is_remind"
+		android:layout_marginBottom="10dp"
 		android:text="@string/remind_frequence"
 		android:textSize="@dimen/task_text_size" />
 
-	<Switch
-		android:id="@+id/task_sw_is_remind"
+	<Spinner
+		android:id="@+id/task_spinner_frequence"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_alignBottom="@+id/task_is_remind_title_tv"
-		android:layout_alignRight="@+id/task_tv_task_content" />
+		android:layout_alignBaseline="@+id/task_frequence"
+		android:layout_centerHorizontal="true"
+		android:entries="@array/frequence"
+		android:paddingLeft="5dp"
+		android:paddingRight="5dp"
+		android:textSize="@dimen/task_et_text_size" />
+
+	<Button
+		android:id="@+id/task_btn_confirm"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/task_frequence"
+		android:background="@drawable/btn_default_blue_selector"
+		android:text="创建活动" />
 
 </RelativeLayout>
