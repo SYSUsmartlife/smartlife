@@ -6,7 +6,7 @@ package com.smartlife.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.smartlife.fragment.GroupFragment;
 import com.smartlife.fragment.PersonFragment;
@@ -15,8 +15,8 @@ import com.smartlife.fragment.TaskFragment;
 /**
  * 主页ViewPager的适配器
  */
-public class HomeViewPagerAdapter extends FragmentPagerAdapter{
-	
+public class HomeViewPagerAdapter extends FragmentStatePagerAdapter {
+
 	public static final int NUM_PAGES = 3;
 	public static final int PAGE_TASK = 0;
 	public static final int PAGE_GROUP = 1;

@@ -6,6 +6,8 @@
  */
 package com.smartlife.model;
 
+import java.io.Serializable;
+
 /**
  * 任务的实体类。<br>
  * 由于内部成员存在10个，其中有8个可以为默认，使用构造器模式<br>
@@ -20,7 +22,10 @@ package com.smartlife.model;
  * 如果未设置默认为startTime<br>
  * <b>taskContent</b> 如果未设置则默认为tasktitle</br>
  * */
-public class Task {
+public class Task implements Serializable {
+
+	private static final long serialVersionUID = 20L;
+	public static final String TAG = Task.class.getSimpleName();
 
 	/** 频率的枚举变量 */
 	public enum Frequence {
