@@ -53,6 +53,11 @@
 			android:name="com.smartlife.activity.TaskActivity"
 			android:label="@string/app_name"
 			android:screenOrientation="portrait" />
+		<activity
+			android:name="com.smartlife.activity.ViewJoinRequestActivity"
+			android:label="@string/app_name"
+			android:screenOrientation="portrait" >
+		</activity>
 	</application>
 
 </manifest>

@@ -79,4 +79,10 @@ public class NetworkConfig {
 	public final static int CODE_IDENTITY_LEADER = 1;
 	public final static int CODE_IDENTITY_MEMBER = 2;
 	
+	// 获取申请列表时使用
+	public final static String URL_GET_JOIN_REQUEST = SERVER + "SmartLife/index.php/Api/getJoinRequest";
+	public final static String KEY_GET_JOIN_REQUEST_GROUP_ID = "groupId";
+	public final static int CODE_GET_JOIN_REQUEST_SUCCESS = 0;
+	public final static int CODE_GET_JOIN_REQUEST_FAIL = 1;
+	
 }
