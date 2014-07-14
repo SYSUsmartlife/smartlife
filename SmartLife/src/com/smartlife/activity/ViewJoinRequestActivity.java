@@ -4,8 +4,14 @@
  */
 package com.smartlife.activity;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.smartlife.adapter.RequestListAdapter;
 import com.smartlife.network.NetworkClient;
 import com.smartlife.network.NetworkConfig;
 import com.smartlife.network.NetworkHandler;
@@ -21,12 +27,20 @@ import android.widget.ListView;
 public class ViewJoinRequestActivity extends Activity{
 	
 	int groupId;
-	private ListView requestList;
+	private ListView mRequestList;
+	private RequestListAdapter mAdapter;
+	private List<Map<String, Object>> mRequestData;
 	private NetworkHandler mNetworkHandler = new NetworkHandler() {
 		
 		@Override
 		public void handleResponseJson(JSONObject obj) {
 			Log.i("SmartLife-ViewJoinRequestActivity", obj.toString());
+			try {
+				int returnCode = obj.getInt(NetworkConfig.KEY_RETURN_CODE);
+				
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
 		}
 		
 		@Override
@@ -51,8 +65,10 @@ public class ViewJoinRequestActivity extends Activity{
 
 	private void initView() {
 		groupId = getIntent().getIntExtra(NetworkConfig.KEY_RETURN_GROUP_ID, -1);
-		requestList = (ListView)findViewById(R.id.list_request);
-		
+		mRequestList = (ListView)findViewById(R.id.list_request);
+		mRequestData = new ArrayList<Map<String, Object>>();
+		mAdapter = new RequestListAdapter(this, mRequestData);
+		mRequestList.setAdapter(mAdapter);
 	}
 
 	private void requestToGetRequestList() {

@@ -115,11 +115,12 @@ public final class R {
         public static final int text_app_name=0x7f020043;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0072;
+        public static final int action_settings=0x7f0a0073;
+        public static final int btn_agree=0x7f0a0060;
         public static final int btn_create_group=0x7f0a0002;
         public static final int btn_exchange=0x7f0a004c;
         public static final int btn_exit=0x7f0a004b;
-        public static final int btn_join=0x7f0a0060;
+        public static final int btn_join=0x7f0a0063;
         public static final int btn_login=0x7f0a0016;
         public static final int btn_refuse=0x7f0a0061;
         public static final int btn_register=0x7f0a001b;
@@ -144,7 +145,7 @@ public final class R {
         public static final int input_group_name=0x7f0a0001;
         public static final int input_name=0x7f0a001a;
         public static final int input_password=0x7f0a0015;
-        public static final int iv_icon_com=0x7f0a006e;
+        public static final int iv_icon_com=0x7f0a006f;
         public static final int ivbtn_group=0x7f0a000e;
         public static final int ivbtn_person=0x7f0a000f;
         public static final int ivbtn_task=0x7f0a000d;
@@ -152,18 +153,18 @@ public final class R {
         public static final int layout_top=0x7f0a0000;
         public static final int list_group=0x7f0a001f;
         public static final int list_group_member=0x7f0a000b;
-        public static final int list_item_ll_time_range=0x7f0a0065;
-        public static final int list_item_rl_content=0x7f0a0064;
-        public static final int list_item_tv_is_group=0x7f0a006c;
-        public static final int list_item_tv_is_reminded=0x7f0a006a;
-        public static final int list_item_tv_task_content=0x7f0a0069;
-        public static final int list_item_tv_task_end_time=0x7f0a0067;
-        public static final int list_item_tv_task_frequence=0x7f0a006b;
-        public static final int list_item_tv_task_start_time=0x7f0a0066;
-        public static final int list_item_tv_task_title=0x7f0a0068;
+        public static final int list_item_ll_time_range=0x7f0a0066;
+        public static final int list_item_rl_content=0x7f0a0065;
+        public static final int list_item_tv_is_group=0x7f0a006d;
+        public static final int list_item_tv_is_reminded=0x7f0a006b;
+        public static final int list_item_tv_task_content=0x7f0a006a;
+        public static final int list_item_tv_task_end_time=0x7f0a0068;
+        public static final int list_item_tv_task_frequence=0x7f0a006c;
+        public static final int list_item_tv_task_start_time=0x7f0a0067;
+        public static final int list_item_tv_task_title=0x7f0a0069;
         public static final int list_main=0x7f0a003d;
         public static final int list_request=0x7f0a0024;
-        public static final int ll_container=0x7f0a006d;
+        public static final int ll_container=0x7f0a006e;
         public static final int ll_task_day=0x7f0a0055;
         public static final int lv_person_day_task=0x7f0a0056;
         public static final int person_edit_username=0x7f0a0043;
@@ -189,7 +190,7 @@ public final class R {
         public static final int task_is_remind_title=0x7f0a0035;
         public static final int task_is_remind_title_line=0x7f0a0036;
         public static final int task_is_remind_title_tv=0x7f0a0053;
-        public static final int task_list_item_rl=0x7f0a0063;
+        public static final int task_list_item_rl=0x7f0a0064;
         public static final int task_spinner_frequence=0x7f0a003a;
         public static final int task_start_date=0x7f0a002d;
         public static final int task_start_time=0x7f0a0031;
@@ -209,14 +210,14 @@ public final class R {
         public static final int task_tv_task_title=0x7f0a004d;
         public static final int text_create_group=0x7f0a005d;
         public static final int text_group_description=0x7f0a0006;
-        public static final int text_group_manage=0x7f0a0071;
+        public static final int text_group_manage=0x7f0a0072;
         public static final int text_group_member=0x7f0a0009;
         public static final int text_group_name=0x7f0a0004;
         public static final int text_invite=0x7f0a0008;
         public static final int text_join_request_list=0x7f0a0022;
         public static final int text_login_link=0x7f0a001c;
         public static final int text_member_name=0x7f0a005f;
-        public static final int text_my_group=0x7f0a0070;
+        public static final int text_my_group=0x7f0a0071;
         public static final int text_reg_link=0x7f0a0018;
         public static final int text_search_group=0x7f0a005e;
         public static final int text_top_left=0x7f0a005a;
@@ -224,7 +225,7 @@ public final class R {
         public static final int text_top_title=0x7f0a0057;
         public static final int text_user_name=0x7f0a0062;
         public static final int text_view_request=0x7f0a0007;
-        public static final int tv_content_com=0x7f0a006f;
+        public static final int tv_content_com=0x7f0a0070;
         public static final int view_divider=0x7f0a001e;
         public static final int view_divider_group_member=0x7f0a000a;
         public static final int view_divider_group_name=0x7f0a0005;
