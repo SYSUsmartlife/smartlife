@@ -16,7 +16,6 @@ public class NetworkConfig {
 	public final static String SERVER = "http://114.215.169.24/";
 	public final static String KEY_RETURN_CODE = "returnCode";
 	public final static String KEY_RETURN_USER_ID = "userID";
-	public final static String KEY_RETURN_USER_NAME = "userName";
 	public final static String KEY_RETURN_EMAIL = "email";
 	public final static String KEY_RETURN_GROUP_INFO = "groupInfo";
 	public final static String KEY_RETURN_GROUP_ID = "groupId";
