@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.smartlife.activity.R;
+import com.smartlife.network.NetworkConfig;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -53,6 +54,8 @@ public class RequestListAdapter extends BaseAdapter{
 		} else {
 			viewHolder = (ViewHolder) convertView.getTag();
 		}
+		String userName = (String) mData.get(position).get(NetworkConfig.KEY_RETURN_USER_NAME);
+		viewHolder.userNameText.setText(userName);
 		return convertView;
 	}
 	
