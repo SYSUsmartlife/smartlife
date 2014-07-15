@@ -15,7 +15,6 @@ import android.app.TimePickerDialog.OnTimeSetListener;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
-import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,6 +33,7 @@ import android.widget.TimePicker;
 import com.smartlife.activity.R;
 import com.smartlife.model.Task;
 import com.smartlife.model.Task.Frequence;
+import com.smartlife.util.StringUtil;
 import com.smartlife.util.UIHelperUtil;
 
 public class CreateTaskFragment extends Fragment implements OnClickListener,
@@ -72,7 +72,7 @@ public class CreateTaskFragment extends Fragment implements OnClickListener,
 	private void initCurrentTimeAndDate() {
 		Calendar calendar = Calendar.getInstance();
 		currentYear = calendar.get(Calendar.YEAR);
-		currentMonth = calendar.get(Calendar.MONTH);
+		currentMonth = calendar.get(Calendar.MONTH) + 1;
 		currentDay = calendar.get(Calendar.DAY_OF_MONTH);
 
 		currentHour = calendar.get(Calendar.HOUR_OF_DAY);
@@ -88,7 +88,7 @@ public class CreateTaskFragment extends Fragment implements OnClickListener,
 		if (month < 10)
 			sb.append(0).append(month);
 		else
-			sb.append(currentMonth);
+			sb.append(month);
 		sb.append("-");
 		if (day < 10)
 			sb.append(0).append(day);
@@ -161,11 +161,11 @@ public class CreateTaskFragment extends Fragment implements OnClickListener,
 		switch (currentClickItem) {
 		case R.id.task_et_start_date:
 			new DatePickerDialog(getActivity(), this, currentYear,
-					currentMonth, currentDay).show();
+					currentMonth - 1, currentDay).show();
 			break;
 		case R.id.task_et_end_date:
 			new DatePickerDialog(getActivity(), this, currentYear,
-					currentMonth, currentDay).show();
+					currentMonth - 1, currentDay).show();
 			break;
 		case R.id.task_et_start_time:
 			new TimePickerDialog(getActivity(), this, currentHour,
@@ -186,9 +186,6 @@ public class CreateTaskFragment extends Fragment implements OnClickListener,
 		}
 	}
 
-	/**
-	 * 
-	 */
 	private void createTask() {
 		String taskTitle = mTaskTitleEt.getText().toString();
 		String taskStartTime = mStartTimeEt.getText().toString();
@@ -223,9 +220,11 @@ public class CreateTaskFragment extends Fragment implements OnClickListener,
 	public void onDateSet(DatePicker view, int year, int monthOfYear,
 			int dayOfMonth) {
 		if (currentClickItem == R.id.task_et_start_date)
-			mStartDateEt.setText(formalizeDate(year, monthOfYear, dayOfMonth));
+			mStartDateEt.setText(formalizeDate(year, monthOfYear + 1,
+					dayOfMonth));
 		else {
-			mEndDateEt.setText(formalizeDate(year, monthOfYear, dayOfMonth));
+			mEndDateEt
+					.setText(formalizeDate(year, monthOfYear + 1, dayOfMonth));
 		}
 	}
 
@@ -236,7 +235,7 @@ public class CreateTaskFragment extends Fragment implements OnClickListener,
 
 	@Override
 	public void onTextChanged(CharSequence s, int start, int before, int count) {
-		if (!TextUtils.isEmpty(mTaskTitleEt.getText())) {
+		if (!StringUtil.isEmpty(mTaskTitleEt.getText().toString())) {
 			mConfirmBtn.setEnabled(true);
 		} else
 			mConfirmBtn.setEnabled(false);

@@ -54,6 +54,7 @@
 				android:layout_marginLeft="20dp"
 				android:layout_toRightOf="@+id/task_title"
 				android:hint="活动标题，不能为空"
+				android:maxLines="1"
 				android:textSize="@dimen/task_et_text_size" />
 
 			<EditText
@@ -64,6 +65,7 @@
 				android:layout_alignBottom="@+id/task_content"
 				android:layout_alignLeft="@+id/task_et_task_title"
 				android:hint="活动内容"
+				android:maxLines="1"
 				android:textSize="@dimen/task_et_text_size" />
 
 			<TextView
@@ -108,6 +110,7 @@
 				android:layout_alignLeft="@+id/task_et_task_title"
 				android:focusable="false"
 				android:hint="今天的日期"
+				android:maxLines="1"
 				android:textSize="@dimen/task_et_text_size" />
 
 			<TextView
@@ -129,6 +132,7 @@
 				android:layout_alignLeft="@+id/task_et_task_title"
 				android:focusable="false"
 				android:hint="今天的日期"
+				android:maxLines="1"
 				android:textSize="@dimen/task_et_text_size" />
 
 			<TextView
@@ -150,6 +154,7 @@
 				android:layout_alignLeft="@+id/task_et_task_title"
 				android:focusable="false"
 				android:hint="开始时间"
+				android:maxLines="1"
 				android:textSize="@dimen/task_et_text_size" />
 
 			<TextView
@@ -171,6 +176,7 @@
 				android:layout_alignLeft="@+id/task_et_task_title"
 				android:focusable="false"
 				android:hint="结束时间"
+				android:maxLines="1"
 				android:textSize="@dimen/task_et_text_size" />
 
 			<TextView
