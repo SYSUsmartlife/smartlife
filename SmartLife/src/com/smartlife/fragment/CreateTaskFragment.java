@@ -195,6 +195,7 @@ public class CreateTaskFragment extends Fragment implements OnClickListener,
 				.endDate(getEtContent(mEndDateEt))
 				.endTime(getEtContent(mEndTimeEt)).frequence(checkFrequence())
 				.isRemind(mIsRemindCb.isChecked()).isGroupTask(false).build();
+
 		mProgressBar.setVisibility(View.VISIBLE);
 		mTopTitleTv.setText("正在创建中...");
 	}
