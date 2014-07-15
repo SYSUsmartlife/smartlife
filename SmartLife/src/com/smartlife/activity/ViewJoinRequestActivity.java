@@ -5,9 +5,11 @@
 package com.smartlife.activity;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -37,8 +39,30 @@ public class ViewJoinRequestActivity extends Activity{
 			Log.i("SmartLife-ViewJoinRequestActivity", obj.toString());
 			try {
 				int returnCode = obj.getInt(NetworkConfig.KEY_RETURN_CODE);
-				
+				switch (returnCode) {
+				case NetworkConfig.CODE_GET_JOIN_REQUEST_SUCCESS:
+					mRequestData.clear();
+					JSONArray userArray = obj.getJSONArray(NetworkConfig.KEY_RETURN_USER_INFO);
+					for (int i = 0; i < userArray.length(); i++) {
+						JSONObject user = userArray.getJSONObject(i);
+						String userName = user.getString(NetworkConfig.KEY_RETURN_USER_NAME);
+						int userId = user.getInt(NetworkConfig.KEY_RETURN_REQUEST_USER_ID);
+						HashMap<String, Object> hashMap = new HashMap<String, Object>();
+						hashMap.put(NetworkConfig.KEY_RETURN_USER_NAME, userName);
+						hashMap.put(NetworkConfig.KEY_RETURN_REQUEST_USER_ID, userId);
+						mRequestData.add(hashMap);
+					}
+					mAdapter.notifyDataSetChanged();
+					break;
+				case NetworkConfig.CODE_GET_JOIN_REQUEST_FAIL:
+					UIHelperUtil.makeToast(ViewJoinRequestActivity.this, "当前无人申请！");
+					break;
+				default:
+					UIHelperUtil.makeToast(ViewJoinRequestActivity.this, obj.toString());
+					break;
+				}
 			} catch (JSONException e) {
+				UIHelperUtil.makeToast(ViewJoinRequestActivity.this, obj.toString());
 				e.printStackTrace();
 			}
 		}

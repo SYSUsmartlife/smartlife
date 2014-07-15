@@ -23,6 +23,9 @@ public class NetworkConfig {
 	public final static String KEY_RETURN_MEMBER_INFO = "mateInfo";
 	public final static String KEY_RETURN_MEMBER_IDENTITY = "identity";
 	public final static String KEY_RETURN_MEMBER_NAME = "userName";
+	public final static String KEY_RETURN_REQUEST_USER_ID = "userId";
+	public final static String KEY_RETURN_USER_INFO = "userInfo";
+	public final static String KEY_RETURN_USER_NAME = "userName";
 	
 	// 用户注册使用
 	public final static String URL_REGISTER = SERVER + "SmartLife/index.php/Api/register";
