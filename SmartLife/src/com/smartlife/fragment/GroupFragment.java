@@ -13,6 +13,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -23,6 +24,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
+import com.smartlife.activity.GroupDetailActivity;
 import com.smartlife.activity.R;
 import com.smartlife.adapter.GroupListAdapter;
 import com.smartlife.adapter.GroupManageAdapter;
@@ -72,6 +74,7 @@ public class GroupFragment extends Fragment implements OnChangeTabListener, OnIt
 				int returnCode = obj.getInt(NetworkConfig.KEY_RETURN_CODE);
 				switch (returnCode) {
 				case NetworkConfig.CODE_GET_GROUP_LIST_SUCCESS:
+					mGroupListData.clear();
 					JSONArray groupArray = obj.getJSONArray(NetworkConfig.KEY_RETURN_GROUP_INFO);
 					for (int i = 0; i < groupArray.length(); i++) {
 						JSONObject group = groupArray.getJSONObject(i);
@@ -124,6 +127,7 @@ public class GroupFragment extends Fragment implements OnChangeTabListener, OnIt
 		mGroupHeaderTab.setOnChangeTabListener(this);
 		mListView = (ListView)rootView.findViewById(R.id.list_main);
 		mListView.setAdapter(mGroupListAdapter);
+		mListView.setOnItemClickListener(this);
 	}
 
 	@Override
@@ -158,7 +162,6 @@ public class GroupFragment extends Fragment implements OnChangeTabListener, OnIt
 	}
 
 	private void requestToGetGroupListData() {
-		mGroupListData.clear();
 		GetGroupListParams params = new GetGroupListParams(UserConfig.getInstance(getActivity()).getUserId());
 		NetworkClient.getInstance().request(NetworkConfig.URL_GET_GROUP_LIST, params, mGetGroupListHandler );
 	}
@@ -169,7 +172,12 @@ public class GroupFragment extends Fragment implements OnChangeTabListener, OnIt
 		Map<String, Object> group = mGroupListData.get(position);
 		int groupId = (int) group.get(NetworkConfig.KEY_RETURN_GROUP_ID);
 		String groupName = (String) group.get(NetworkConfig.KEY_RETURN_GROUP_NAME);
-		
+		String groupDescripton = (String)group.get(NetworkConfig.KEY_RETURN_GROUP_DESCRIPTION);
+		Intent intent = new Intent(getActivity(), GroupDetailActivity.class);
+		intent.putExtra(NetworkConfig.KEY_RETURN_GROUP_ID, groupId);
+		intent.putExtra(NetworkConfig.KEY_RETURN_GROUP_NAME, groupName);
+		intent.putExtra(NetworkConfig.KEY_RETURN_GROUP_DESCRIPTION, groupDescripton);
+		startActivity(intent);
 	}
 
 }

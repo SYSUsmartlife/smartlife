@@ -22,6 +22,9 @@ public class NetworkConfig {
 	public final static String KEY_RETURN_GROUP_ID = "groupId";
 	public final static String KEY_RETURN_GROUP_NAME = "groupName";
 	public final static String KEY_RETURN_GROUP_DESCRIPTION = "groupAnnouncement";
+	public final static String KEY_RETURN_MEMBER_INFO = "mateInfo";
+	public final static String KEY_RETURN_MEMBER_IDENTITY = "identity";
+	public final static String KEY_RETURN_MEMBER_NAME = "userName";
 	
 	// 用户注册使用
 	public final static String URL_REGISTER = SERVER + "SmartLife/index.php/Api/register";
@@ -56,7 +59,7 @@ public class NetworkConfig {
 	public final static int CODE_GET_GROUP_LIST_SUCCESS = 0;
 	public final static int CODE_GET_GROUP_LIST_FAIL = 1;
 	
-	// 搜索小组时使用
+	// 搜索群组时使用
 	public final static String URL_SEARCH_GROUP = SERVER + "SmartLife/index.php/Api/searchGroupByName";
 	public final static String KEY_SEARCH_GROUP_NAME = "groupName";
 	public final static int CODE_SEARCH_GROUP_SUCCESS = 0;
@@ -83,12 +86,26 @@ public class NetworkConfig {
 	public final static int CODE_CHANGE_PASSWORD_SUCCESS = 0;
 	public final static int CODE_CHANGE_PASSWORD_FAIL = 1;
 
-	// 申请加入小组时使用
+	// 申请加入群组时使用
 	public final static String URL_JOIN_GROUP = SERVER + "SmartLife/index.php/Api/joinGroupRequest";
 	public final static String KEY_JOIN_GROUP_USER_ID = "userId";
 	public final static String KEY_JOIN_GROUP_ID = "groupId";
 	public final static int CODE_JOIN_GROUP_SUCCESS = 0;
-	public final static int CODE_JOIN_GROUP_ERROR = 1;
+	public final static int CODE_JOIN_GROUP_FAIL = 1;
 	public final static int CODE_JOIN_GROUP_EXIST = 2;
+	
+	// 获取群组成员时使用
+	public final static String URL_GET_GROUP_MEMBER = SERVER + "SmartLife/index.php/Api/getGroupMates";
+	public final static String KEY_GET_GROUP_MEMBER_ID = "groupId";
+	public final static int CODE_GET_GROUP_MEMBER_SUCCESS = 0;
+	public final static int CODE_GET_GROUP_MEMBER_FAIL = 1;
+	public final static int CODE_IDENTITY_LEADER = 1;
+	public final static int CODE_IDENTITY_MEMBER = 2;
+	
+	// 获取申请列表时使用
+	public final static String URL_GET_JOIN_REQUEST = SERVER + "SmartLife/index.php/Api/getJoinRequest";
+	public final static String KEY_GET_JOIN_REQUEST_GROUP_ID = "groupId";
+	public final static int CODE_GET_JOIN_REQUEST_SUCCESS = 0;
+	public final static int CODE_GET_JOIN_REQUEST_FAIL = 1;
 	
 }

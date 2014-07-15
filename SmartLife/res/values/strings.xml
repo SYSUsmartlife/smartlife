@@ -41,8 +41,12 @@
 	<string name="text_join">申请加入</string>
 	<string name="text_view_request">查看群组申请</string>
 	<string name="text_invite">邀请用户加入</string>
+	<string name="text_group_member">群组成员</string>
 	<string name="text_view_group_member">查看群组成员</string>
 	<string name="text_view_group_task">查看群组活动</string>
+	<string name="text_join_request_list">申请列表</string>
+	<string name="btn_agree">同意</string>
+	<string name="btn_refuse">拒绝</string>
 	<string name="today_s_task">今天的活动</string>
 	<string name="remind_true">提醒:是</string>
 	<string name="frequence_is_repeat_each_week">频率:不重复</string>
@@ -59,5 +63,12 @@
 	<string name="is_remind">是否提醒</string>
 	<string name="remind_frequence">提醒频率</string>
 	<string name="today">2014年6月20日</string>
+	<string name="title_activity_create_task">CreateTaskActivity</string>
+
+	<string-array name="frequence">
+		<item>不重复</item>
+		<item>每天</item>
+		<item>每周</item>
+	</string-array>
 
 </resources>

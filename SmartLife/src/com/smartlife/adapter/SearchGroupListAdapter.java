@@ -45,7 +45,7 @@ public class SearchGroupListAdapter extends BaseAdapter implements
 				case NetworkConfig.CODE_JOIN_GROUP_SUCCESS:
 					UIHelperUtil.makeToast(mContext, "已申请加入该群组！");
 					break;
-				case NetworkConfig.CODE_JOIN_GROUP_ERROR:
+				case NetworkConfig.CODE_JOIN_GROUP_FAIL:
 					UIHelperUtil.makeToast(mContext, "申请加入该群组失败！");
 					break;
 				case NetworkConfig.CODE_JOIN_GROUP_EXIST:

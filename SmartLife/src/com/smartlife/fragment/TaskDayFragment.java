@@ -9,22 +9,28 @@ package com.smartlife.fragment;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.net.http.AndroidHttpClient;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
 import com.smartlife.activity.R;
+import com.smartlife.activity.TaskActivity;
 import com.smartlife.adapter.TaskDayAdapter;
 import com.smartlife.model.Task;
 import com.smartlife.model.Task.Frequence;
 
-public class TaskDayFragment extends Fragment {
+public class TaskDayFragment extends Fragment implements OnItemClickListener {
+
+	public static final String TAG = TaskDayFragment.class.getSimpleName();
 
 	private List<Task> list = new ArrayList<Task>();
+	TaskDayAdapter adapter;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,6 +44,7 @@ public class TaskDayFragment extends Fragment {
 				R.layout.list_item_task_day_header, null);
 		lv.addHeaderView(haderView, null, false);
 		lv.setAdapter(taskDayAdapter);
+		lv.setOnItemClickListener(this);
 		return rootView;
 	}
 
@@ -54,4 +61,12 @@ public class TaskDayFragment extends Fragment {
 		}
 	}
 
+	@Override
+	public void onItemClick(AdapterView<?> parent, View view, int position,
+			long id) {
+		Task task = (Task) parent.getItemAtPosition(position);
+		Intent intent = new Intent(getActivity(), TaskActivity.class);
+		intent.putExtra(Task.TAG, task);
+		startActivity(intent);
+	}
 }
