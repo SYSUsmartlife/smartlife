@@ -65,7 +65,7 @@ public class GroupMemberAdapter extends BaseAdapter {
 			viewHolder = (ViewHolder) convertView.getTag();
 		}
 		Map<String, Object> map = getItem(position);
-		int identity = (int) map.get(NetworkConfig.KEY_RETURN_MEMBER_IDENTITY);
+		int identity = (Integer) map.get(NetworkConfig.KEY_RETURN_MEMBER_IDENTITY);
 		String memberName = (String) map
 				.get(NetworkConfig.KEY_RETURN_MEMBER_NAME);
 		viewHolder.memberNameText.setText(memberName);

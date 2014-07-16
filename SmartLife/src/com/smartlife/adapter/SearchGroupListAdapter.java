@@ -29,12 +29,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class SearchGroupListAdapter extends BaseAdapter implements OnClickListener{
+public class SearchGroupListAdapter extends BaseAdapter implements
+		OnClickListener {
 
 	private Context mContext;
 	private List<Map<String, Object>> mData;
 	private NetworkHandler mNetworkHandler = new NetworkHandler() {
-		
+
 		@Override
 		public void handleResponseJson(JSONObject obj) {
 			Log.i("SmartLife-SearchGroupListAdapter", obj.toString());
@@ -51,7 +52,8 @@ public class SearchGroupListAdapter extends BaseAdapter implements OnClickListen
 					UIHelperUtil.makeToast(mContext, "您已在该群组中！");
 					break;
 				default:
-					UIHelperUtil.makeToast(mContext, "returnCode:" + returnCode);
+					UIHelperUtil
+							.makeToast(mContext, "returnCode:" + returnCode);
 					break;
 				}
 			} catch (JSONException e) {
@@ -59,19 +61,20 @@ public class SearchGroupListAdapter extends BaseAdapter implements OnClickListen
 				e.printStackTrace();
 			}
 		}
-		
+
 		@Override
 		public void handleResponseError(String errorMsg) {
 			UIHelperUtil.makeToast(mContext, errorMsg);
 		}
-		
+
 		@Override
 		public void handleNetworkError(String errorMsg) {
 			UIHelperUtil.makeToast(mContext, errorMsg);
 		}
 	};
 
-	public SearchGroupListAdapter(Context context, List<Map<String, Object>> data) {
+	public SearchGroupListAdapter(Context context,
+			List<Map<String, Object>> data) {
 		mContext = context;
 		mData = data;
 	}
@@ -95,15 +98,17 @@ public class SearchGroupListAdapter extends BaseAdapter implements OnClickListen
 	public View getView(int position, View convertView, ViewGroup parent) {
 		ViewHolder viewHolder = null;
 		if (convertView == null) {
-			convertView = LayoutInflater.from(mContext).inflate(R.layout.list_item_search_group, null);
+			convertView = LayoutInflater.from(mContext).inflate(
+					R.layout.list_item_search_group, null);
 			viewHolder = new ViewHolder(convertView);
 			convertView.setTag(viewHolder);
+		} else {
+			viewHolder = (ViewHolder) convertView.getTag();
 		}
-		else {
-			viewHolder = (ViewHolder)convertView.getTag();
-		}
-		String groupName = (String) mData.get(position).get(NetworkConfig.KEY_RETURN_GROUP_NAME);
-		int groupId = (int)mData.get(position).get(NetworkConfig.KEY_RETURN_GROUP_ID);
+		String groupName = (String) mData.get(position).get(
+				NetworkConfig.KEY_RETURN_GROUP_NAME);
+		int groupId = (Integer) mData.get(position).get(
+				NetworkConfig.KEY_RETURN_GROUP_ID);
 		viewHolder.mGroupName.setText(groupName);
 		viewHolder.joinButton.setTag(groupId);
 		viewHolder.joinButton.setOnClickListener(this);
@@ -113,20 +118,21 @@ public class SearchGroupListAdapter extends BaseAdapter implements OnClickListen
 	@Override
 	public void onClick(View v) {
 		int userId = UserConfig.getInstance(mContext).getUserId();
-		int groupId = (int) v.getTag();
+		int groupId = (Integer) v.getTag();
 		JoinGroupParams params = new JoinGroupParams(userId, groupId);
-		NetworkClient.getInstance().request(NetworkConfig.URL_JOIN_GROUP, params, mNetworkHandler);
+		NetworkClient.getInstance().request(NetworkConfig.URL_JOIN_GROUP,
+				params, mNetworkHandler);
 	}
-	
+
 	static class ViewHolder {
 		ImageView mGroupIcon;
 		TextView mGroupName;
 		Button joinButton;
-		
+
 		public ViewHolder(View v) {
-			mGroupIcon = (ImageView)v.findViewById(R.id.ic_group);
-			mGroupName = (TextView)v.findViewById(R.id.text_group_name);
-			joinButton = (Button)v.findViewById(R.id.btn_join);
+			mGroupIcon = (ImageView) v.findViewById(R.id.ic_group);
+			mGroupName = (TextView) v.findViewById(R.id.text_group_name);
+			joinButton = (Button) v.findViewById(R.id.btn_join);
 		}
 	}
 

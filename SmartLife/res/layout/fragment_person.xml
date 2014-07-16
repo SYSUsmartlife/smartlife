@@ -2,230 +2,227 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
-    android:background="@color/bg_basic_color" >
-    
-    <include 
-		android:id="@+id/layout_top"
-		layout="@layout/layout_top" />
-    
-	<!-- <TextView 
+    android:background="@color/bg_basic_color"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/layout_top"
+        layout="@layout/layout_top" />
+
+    <!--
+         <TextView 
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
 	    android:gravity="center"
 	    android:text="@string/text_person"
-	    /> -->
-	    
-	<LinearLayout
+	    />
+    -->
+
+    <LinearLayout
         android:id="@+id/person_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/layout_top"
         android:background="#ffffff"
         android:orientation="vertical" >
-        
-		<!-- 邮箱 -->
-    	<RelativeLayout 
-		    android:layout_width="match_parent"
-		    android:layout_height="wrap_content"
-        	android:padding="10dip">
-		    
-		    <ImageView
-		        android:id="@+id/ic_person_info_email_pic"
-		        android:contentDescription="@string/app_name"
-		        android:layout_width="32dip"
-		        android:layout_height="32dip"
-		        android:layout_alignParentLeft="true"
-		        android:layout_centerVertical="true"
-		        android:src="@drawable/ic_reg_login_mail" />
-		    
-		    
-		    <TextView 
-            	android:id="@+id/ic_person_info_email_text"
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
-	            android:layout_toRightOf="@id/ic_person_info_email_pic"
-	            android:layout_centerVertical="true"
-	            android:padding="10dip"
-	            android:textColor="#0d9bde"
-	            android:textSize="15sp"
-	            android:text="@string/person_info_email" /> 
-	            
-		</RelativeLayout>
-	
-    	 <View 
-		    	android:layout_width="match_parent"
-		    	android:layout_height="0.5dp"
-		    	android:background="#d5d5d5"/>
-    
-    	<!-- 用户名 -->
-    	<RelativeLayout 
-		    android:layout_width="match_parent"
-		    android:layout_height="wrap_content"
-        	android:padding="10dip">
-		    
-		    <ImageView
-		        android:id="@+id/ic_person_info_username_pic"
-		        android:contentDescription="@string/app_name"
-		        android:layout_width="32dip"
-		        android:layout_height="32dip"
-		        android:layout_alignParentLeft="true"
-		        android:layout_centerVertical="true"
-		        android:src="@drawable/ic_reg_username" />
-		    
-		    <TextView 
-            	android:id="@+id/ic_person_info_username_text"
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
-	            android:layout_toRightOf="@id/ic_person_info_username_pic"
-	            android:layout_centerVertical="true"
-	            android:padding="10dip"
-	            android:textColor="#0d9bde"
-	            android:textSize="15sp"
-	            android:text="@string/person_info_username" />
-		    
-		    <Button 
-		       android:id="@+id/person_edit_username"
-		       android:layout_width="32dip"
-	        	android:layout_height="32dip"
-	        	android:layout_alignParentRight="true"
-	        	android:background="@drawable/edit"
-	        	android:layout_margin="10dip"/>
-		</RelativeLayout>
-    	
-    	 <View 
-		    android:layout_width="match_parent"
-		    android:layout_height="0.5dp"
-		    android:background="#d5d5d5"/>
-    
-    	<!-- 修改密码 -->
-    	<RelativeLayout 
-		    android:layout_width="match_parent"
-		    android:layout_height="wrap_content"
-        	android:padding="10dip">
-		    
-		    <ImageView
-		        android:id="@+id/ic_person_change_password_pic"
-		        android:contentDescription="@string/app_name"
-		        android:layout_width="32dip"
-		        android:layout_height="32dip"
-		        android:layout_alignParentLeft="true"
-		        android:layout_centerVertical="true"
-		        android:src="@drawable/ic_reg_login_pwd" />
-		    
-		    <TextView 
-            	android:id="@+id/ic_person_change_password_text"
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
-	            android:layout_toRightOf="@id/ic_person_change_password_pic"
-	            android:layout_centerVertical="true"
-	            android:padding="10dip"
-	            android:textColor="#0d9bde"
-	            android:textSize="15sp"
-	            android:text="@string/person_change_password" />
-		    
-		</RelativeLayout>
-        
-    	<View 
-		    	android:layout_width="match_parent"
-		    	android:layout_height="0.5dp"
-		    	android:background="#d5d5d5"/>
-    	
-    	<RelativeLayout 
-		    android:layout_width="match_parent"
-		    android:layout_height="wrap_content"
-        	android:padding="10dip">
-		    
-		    <ImageView
-		        android:id="@+id/ic_person_create_activity_pic"
-		        android:contentDescription="@string/app_name"
-		        android:layout_width="32dip"
-		        android:layout_height="32dip"
-		        android:layout_alignParentLeft="true"
-		        android:layout_centerVertical="true"
-		        android:src="@drawable/btn_task_normal" />
-		    
-		    <TextView 
-            	android:id="@+id/ic_person_create_activity_text"
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
-	            android:layout_toRightOf="@id/ic_person_create_activity_pic"
-	            android:layout_centerVertical="true"
-	            android:padding="10dip"
-	            android:textColor="#0d9bde"
-	            android:textSize="15sp"
-	            android:text="@string/person_create_activity" />
-		    
-		</RelativeLayout>
-    	
-        <View 
-		    	android:layout_width="match_parent"
-		    	android:layout_height="0.5dp"
-		    	android:background="#d5d5d5"/>
-		
-        
-	
-    <View 
-		    	android:layout_width="match_parent"
-		    	android:layout_height="0.5dp"
-		    	android:background="#d5d5d5"/>
-     
-        <RelativeLayout 
+
+        <!-- 邮箱 -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dip" >
+
+            <ImageView
+                android:id="@+id/ic_person_info_email_pic"
+                android:layout_width="32dip"
+                android:layout_height="32dip"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_reg_login_mail" />
+
+            <TextView
+                android:id="@+id/ic_person_info_email_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/ic_person_info_email_pic"
+                android:padding="10dip"
+                android:text="@string/person_info_email"
+                android:textColor="#0d9bde"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#d5d5d5" />
+
+        <!-- 用户名 -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dip" >
+
+            <ImageView
+                android:id="@+id/ic_person_info_username_pic"
+                android:layout_width="32dip"
+                android:layout_height="32dip"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_reg_username" />
+
+            <Button
+                android:id="@+id/btn_edit_username"
+                android:layout_width="32dip"
+                android:layout_height="32dip"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dip"
+                android:background="@drawable/edit"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/ic_person_info_username_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/btn_edit_username"
+                android:layout_toRightOf="@id/ic_person_info_username_pic"
+                android:hint="@string/person_info_username"
+                android:padding="10dip"
+                android:textColor="#0d9bde"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#d5d5d5" />
+
+        <!-- 修改密码 -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dip" >
+
+            <ImageView
+                android:id="@+id/ic_person_change_password_pic"
+                android:layout_width="32dip"
+                android:layout_height="32dip"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_reg_login_pwd" />
+
+            <TextView
+                android:id="@+id/ic_person_change_password_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/ic_person_change_password_pic"
+                android:padding="10dip"
+                android:text="@string/person_change_password"
+                android:textColor="#0d9bde"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#d5d5d5" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dip" >
+
+            <ImageView
+                android:id="@+id/ic_person_create_activity_pic"
+                android:layout_width="32dip"
+                android:layout_height="32dip"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/btn_task_normal" />
+
+            <TextView
+                android:id="@+id/ic_person_create_activity_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/ic_person_create_activity_pic"
+                android:padding="10dip"
+                android:text="@string/person_create_activity"
+                android:textColor="#0d9bde"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#d5d5d5" />
+
+        <RelativeLayout
             android:id="@+id/software_lay_out"
-		    android:layout_width="match_parent"
-		    android:layout_height="wrap_content"
-        	android:padding="10dip">
-		    
-		    <ImageView
-		        android:id="@+id/ic_person_software_pic"
-		        android:contentDescription="@string/app_name"
-		        android:layout_width="32dip"
-		        android:layout_height="32dip"
-		        android:layout_alignParentLeft="true"
-		        android:layout_centerVertical="true"
-		        android:src="@drawable/ic_person_software" />
-		    
-		    
-		    <TextView 
-            	android:id="@+id/ic_person_software"
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
-	            android:layout_toRightOf="@id/ic_person_software_pic"
-	            android:layout_centerVertical="true"
-	            android:padding="10dip"
-	            android:textColor="#0d9bde"
-	            android:textSize="15sp"
-	            android:text="@string/person_software" /> 
-	
-		</RelativeLayout>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dip" >
+
+            <ImageView
+                android:id="@+id/ic_person_software_pic"
+                android:layout_width="32dip"
+                android:layout_height="32dip"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_person_software" />
+
+            <TextView
+                android:id="@+id/ic_person_software"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/ic_person_software_pic"
+                android:padding="10dip"
+                android:text="@string/person_software"
+                android:textColor="#0d9bde"
+                android:textSize="15sp" />
+        </RelativeLayout>
     </LinearLayout>
-    
-    <!-- 退出 和 切换账号-->
-    <LinearLayout 
-        android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-        android:layout_below="@id/person_layout">
-	    <Button 
-	        android:id="@+id/btn_exit"
-	        style="?android:attr/buttonBarButtonStyle"
-	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:gravity="center"
-	        android:layout_weight="1"
-	        android:background="@drawable/btn_reg_login_selector"
-	        android:layout_margin="10dip"
-	        android:text="@string/person_exit"/>
-	
-	    <Button 
-	        android:id="@+id/btn_exchange"
-	        style="?android:attr/buttonBarButtonStyle"
-	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:gravity="center"
-	         android:layout_weight="1"
-	        android:background="@drawable/btn_reg_login_selector"
-	        android:layout_margin="10dip"
-	        android:text="@string/person_change"/>
+
+    <!-- 退出 和 切换账号 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/person_layout"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_exit"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip"
+            android:layout_weight="1"
+            android:background="@drawable/btn_reg_login_selector"
+            android:gravity="center"
+            android:text="@string/person_exit" />
+
+        <Button
+            android:id="@+id/btn_exchange"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip"
+            android:layout_weight="1"
+            android:background="@drawable/btn_reg_login_selector"
+            android:gravity="center"
+            android:text="@string/person_change" />
     </LinearLayout>
-    
- </RelativeLayout> 
+
+</RelativeLayout>
