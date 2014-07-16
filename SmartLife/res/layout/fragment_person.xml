@@ -9,15 +9,6 @@
         android:id="@+id/layout_top"
         layout="@layout/layout_top" />
 
-    <!--
-         <TextView 
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    android:gravity="center"
-	    android:text="@string/text_person"
-	    />
-    -->
-
     <LinearLayout
         android:id="@+id/person_layout"
         android:layout_width="match_parent"
@@ -89,6 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:layout_marginLeft="2dp"
                 android:layout_toLeftOf="@id/btn_edit_username"
                 android:layout_toRightOf="@id/ic_person_info_username_pic"
                 android:hint="@string/person_info_username"
