@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <lint>
-    <issue id="ContentDescription">
+    <issue id="ContentDescription" severity="ignore">
         <ignore path="res/layout/layout_task_top.xml" />
     </issue>
     <issue id="HardcodedText" severity="ignore">
@@ -9,7 +9,7 @@
         <ignore path="res/layout/layout_task_top.xml" />
         <ignore path="res/layout/list_item_task_day.xml" />
     </issue>
-    <issue id="SpUsage">
+    <issue id="SpUsage" severity="ignore">
         <ignore path="res/layout/fragment_task_create.xml" />
         <ignore path="res/layout/fragment_task_day.xml" />
         <ignore path="res/layout/layout_task_top.xml" />

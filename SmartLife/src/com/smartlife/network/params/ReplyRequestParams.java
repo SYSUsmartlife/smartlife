@@ -8,20 +8,23 @@ import org.apache.http.message.BasicNameValuePair;
 
 import com.smartlife.network.NetworkConfig;
 
-public class ChangeNameParams extends BasicNetworkParams {
+public class ReplyRequestParams extends BasicNetworkParams {
+
 	private int userId;
-	private String userName;
+	private boolean reply;
 	
-	public ChangeNameParams(int userId, String userName) {
+	public ReplyRequestParams(int userId, boolean reply) {
 		super();
 		this.userId = userId;
-		this.userName = userName;
+		this.reply = reply;
 	}
+
 	@Override
 	public List<NameValuePair> toNetworkParams() {
 		List<NameValuePair> params = new ArrayList<NameValuePair>();
-		params.add(new BasicNameValuePair(NetworkConfig.KEY_CHANGE_NAME_USER_ID, Integer.toString(userId)));
-		params.add(new BasicNameValuePair(NetworkConfig.KEY_CHANGE_NAME_NEW_NAME, userName));
+		params.add(new BasicNameValuePair(NetworkConfig.KEY_REPLY_REQUEST_USER_ID, Integer.toString(userId)));
+		params.add(new BasicNameValuePair(NetworkConfig.KEY_REPLY_REQUEST_REPLY, Boolean.toString(reply)));
 		return params;
 	}
+
 }

@@ -107,7 +107,7 @@ public class SearchGroupListAdapter extends BaseAdapter implements
 		}
 		String groupName = (String) mData.get(position).get(
 				NetworkConfig.KEY_RETURN_GROUP_NAME);
-		int groupId = (int) mData.get(position).get(
+		int groupId = (Integer) mData.get(position).get(
 				NetworkConfig.KEY_RETURN_GROUP_ID);
 		viewHolder.mGroupName.setText(groupName);
 		viewHolder.joinButton.setTag(groupId);
@@ -118,7 +118,7 @@ public class SearchGroupListAdapter extends BaseAdapter implements
 	@Override
 	public void onClick(View v) {
 		int userId = UserConfig.getInstance(mContext).getUserId();
-		int groupId = (int) v.getTag();
+		int groupId = (Integer) v.getTag();
 		JoinGroupParams params = new JoinGroupParams(userId, groupId);
 		NetworkClient.getInstance().request(NetworkConfig.URL_JOIN_GROUP,
 				params, mNetworkHandler);

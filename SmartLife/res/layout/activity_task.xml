@@ -3,18 +3,10 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent" >
 
-	<include
-		android:id="@+id/task_top"
-		android:layout_width="match_parent"
-		android:layout_alignParentTop="true"
-		layout="@layout/layout_task_top" />
-
 	<FrameLayout
 		android:id="@+id/task_container"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		android:layout_below="@+id/task_top"
-		tools:context="com.smartlife.activity.CreateTaskActivity"
 		tools:ignore="MergeRootFrame" />
 
 </RelativeLayout>
