@@ -170,7 +170,7 @@ public class GroupFragment extends Fragment implements OnChangeTabListener, OnIt
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
 		Map<String, Object> group = mGroupListData.get(position);
-		int groupId = (int) group.get(NetworkConfig.KEY_RETURN_GROUP_ID);
+		int groupId = (Integer) group.get(NetworkConfig.KEY_RETURN_GROUP_ID);
 		String groupName = (String) group.get(NetworkConfig.KEY_RETURN_GROUP_NAME);
 		String groupDescripton = (String)group.get(NetworkConfig.KEY_RETURN_GROUP_DESCRIPTION);
 		Intent intent = new Intent(getActivity(), GroupDetailActivity.class);
