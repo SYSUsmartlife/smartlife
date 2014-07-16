@@ -112,6 +112,7 @@ public class NetworkConfig {
 	
 	// 组长处理申请时使用
 	public final static String URL_REPLY_REQUEST = SERVER + "SmartLife/index.php/Api/getJoinRequest";
+	public final static String KEY_REPLY_REQUEST_GROUP_ID = "groupId";
 	public final static String KEY_REPLY_REQUEST_USER_ID = "userId";
 	public final static String KEY_REPLY_REQUEST_REPLY = "reply";
 	public final static int CODE_REPLY_REQUEST_SUCCESS = 0;

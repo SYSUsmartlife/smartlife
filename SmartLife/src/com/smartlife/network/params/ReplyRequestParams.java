@@ -10,11 +10,13 @@ import com.smartlife.network.NetworkConfig;
 
 public class ReplyRequestParams extends BasicNetworkParams {
 
+	private int groupId;
 	private int userId;
 	private boolean reply;
-	
-	public ReplyRequestParams(int userId, boolean reply) {
+
+	public ReplyRequestParams(int groupId, int userId, boolean reply) {
 		super();
+		this.groupId = groupId;
 		this.userId = userId;
 		this.reply = reply;
 	}
