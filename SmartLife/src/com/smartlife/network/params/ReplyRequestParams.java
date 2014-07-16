@@ -24,6 +24,7 @@ public class ReplyRequestParams extends BasicNetworkParams {
 	@Override
 	public List<NameValuePair> toNetworkParams() {
 		List<NameValuePair> params = new ArrayList<NameValuePair>();
+		params.add(new BasicNameValuePair(NetworkConfig.KEY_REPLY_REQUEST_GROUP_ID, Integer.toString(groupId)));
 		params.add(new BasicNameValuePair(NetworkConfig.KEY_REPLY_REQUEST_USER_ID, Integer.toString(userId)));
 		params.add(new BasicNameValuePair(NetworkConfig.KEY_REPLY_REQUEST_REPLY, Boolean.toString(reply)));
 		return params;

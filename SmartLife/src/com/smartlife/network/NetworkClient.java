@@ -23,11 +23,11 @@ public class NetworkClient {
 
 	private static volatile NetworkClient mSingleInstance;
 	private HttpClient mHttpClient;
-	
+
 	private NetworkClient() {
 		mHttpClient = new DefaultHttpClient();
 	}
-	
+
 	public static NetworkClient getInstance() {
 		if (mSingleInstance == null) {
 			synchronized (NetworkClient.class) {
@@ -38,8 +38,9 @@ public class NetworkClient {
 		}
 		return mSingleInstance;
 	}
-	
-	public void request(final String url, final BasicNetworkParams params, final NetworkHandler handler) {
+
+	public void request(final String url, final BasicNetworkParams params,
+			final NetworkHandler handler) {
 		new Thread() {
 
 			@Override
@@ -48,16 +49,20 @@ public class NetworkClient {
 				String returnString = "";
 				try {
 					HttpPost post = new HttpPost(url);
-					post.setEntity(new UrlEncodedFormEntity(params.toNetworkParams(), HTTP.UTF_8));
+					post.setEntity(new UrlEncodedFormEntity(params
+							.toNetworkParams(), HTTP.UTF_8));
 					HttpResponse response = mHttpClient.execute(post);
 					if (response.getStatusLine().getStatusCode() == 200) {
-						returnString = EntityUtils.toString(response.getEntity());
+						returnString = EntityUtils.toString(response
+								.getEntity());
 						JSONObject json = new JSONObject(returnString);
 						msg.what = NetworkConfig.CODE_RESPONSE_JSON;
 						msg.obj = json;
 					} else {
 						msg.what = NetworkConfig.CODE_NETWORK_ERROR;
-						msg.obj = NetworkConfig.MSG_NETWORK_ERROR + "返回码：" + response.getStatusLine().getStatusCode() + "！";
+						msg.obj = NetworkConfig.MSG_NETWORK_ERROR + "返回码："
+								+ response.getStatusLine().getStatusCode()
+								+ "！";
 					}
 				} catch (UnsupportedEncodingException e) {
 					e.printStackTrace();
@@ -83,8 +88,8 @@ public class NetworkClient {
 					handler.sendMessage(msg);
 				}
 			}
-			
+
 		}.start();
 	}
-	
+
 }
