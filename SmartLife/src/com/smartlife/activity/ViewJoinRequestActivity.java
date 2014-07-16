@@ -91,7 +91,7 @@ public class ViewJoinRequestActivity extends Activity{
 		groupId = getIntent().getIntExtra(NetworkConfig.KEY_RETURN_GROUP_ID, -1);
 		mRequestList = (ListView)findViewById(R.id.list_request);
 		mRequestData = new ArrayList<Map<String, Object>>();
-		mAdapter = new RequestListAdapter(this, mRequestData);
+		mAdapter = new RequestListAdapter(this, mRequestData, groupId);
 		mRequestList.setAdapter(mAdapter);
 	}
 

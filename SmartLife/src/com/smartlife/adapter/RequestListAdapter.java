@@ -7,10 +7,15 @@ package com.smartlife.adapter;
 import java.util.List;
 import java.util.Map;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import com.smartlife.activity.R;
 import com.smartlife.network.NetworkClient;
 import com.smartlife.network.NetworkConfig;
+import com.smartlife.network.NetworkHandler;
 import com.smartlife.network.params.ReplyRequestParams;
+import com.smartlife.util.UIHelperUtil;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -25,6 +30,40 @@ public class RequestListAdapter extends BaseAdapter{
 	
 	private Context mContext;
 	private List<Map<String, Object>> mData;
+	private int groupId;
+	protected NetworkHandler mNetworkHandler = new NetworkHandler() {
+		
+		@Override
+		public void handleResponseJson(JSONObject obj) {
+			try {
+				int returnCode = obj.getInt(NetworkConfig.KEY_RETURN_CODE);
+				switch (returnCode) {
+				case NetworkConfig.CODE_REPLY_REQUEST_SUCCESS:
+					UIHelperUtil.makeToast(mContext, "同意申请成功！");
+					break;
+				case NetworkConfig.CODE_REPLY_REQUEST_FAIL:
+					UIHelperUtil.makeToast(mContext, "同意申请失败！");
+					break;
+
+				default:
+					break;
+				}
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		@Override
+		public void handleResponseError(String errorMsg) {
+			UIHelperUtil.makeToast(mContext,errorMsg);
+		}
+		
+		@Override
+		public void handleNetworkError(String errorMsg) {
+			UIHelperUtil.makeToast(mContext,errorMsg);
+		}
+	};
+	
 	private OnClickListener mReplyListener = new OnClickListener() {
 		
 		@Override
@@ -38,15 +77,17 @@ public class RequestListAdapter extends BaseAdapter{
 			else {
 				reply = false;
 			}
-			ReplyRequestParams params = new ReplyRequestParams(userId, reply);
-			NetworkClient.getInstance().request(NetworkConfig.URL_REPLY_REQUEST, params, null);
+			v.setEnabled(false);
+			ReplyRequestParams params = new ReplyRequestParams(groupId, userId, reply);
+			NetworkClient.getInstance().request(NetworkConfig.URL_REPLY_REQUEST, params, mNetworkHandler );
 		}
 	};
 
-	public RequestListAdapter(Context mContext, List<Map<String, Object>> mData) {
+	public RequestListAdapter(Context mContext, List<Map<String, Object>> mData, int groupId) {
 		super();
 		this.mContext = mContext;
 		this.mData = mData;
+		this.groupId = groupId;
 	}
 
 	@Override
